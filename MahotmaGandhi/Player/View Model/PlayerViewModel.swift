@@ -68,6 +68,11 @@ struct PlayerViewModel: View {
             }//scrollview
             .navigationTitle("Add Player")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                NavigationLink(destination: PlayerTurnCardViewModel(allPlayer: $allPlayer)) {
+                    Text("Test")
+                }
+            }
         }
     }
 }
