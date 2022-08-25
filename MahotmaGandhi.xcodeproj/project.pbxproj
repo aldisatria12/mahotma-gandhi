@@ -17,6 +17,8 @@
 		3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69802F28B67149005F4B1E /* PlayerModel.swift */; };
 		3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */; };
 		3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803328B676AC005F4B1E /* PlayerViewModel.swift */; };
+		3E69803F28B7DC94005F4B1E /* PlayerTurnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803E28B7DC94005F4B1E /* PlayerTurnCardView.swift */; };
+		3E69804128B7DCAA005F4B1E /* PlayerTurnCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69804028B7DCAA005F4B1E /* PlayerTurnCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		3E69802F28B67149005F4B1E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarSelectionView.swift; sourceTree = "<group>"; };
 		3E69803328B676AC005F4B1E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		3E69803E28B7DC94005F4B1E /* PlayerTurnCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardView.swift; sourceTree = "<group>"; };
+		3E69804028B7DCAA005F4B1E /* PlayerTurnCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		3E69801628B63324005F4B1E /* MahotmaGandhi */ = {
 			isa = PBXGroup;
 			children = (
+				3E69803B28B7DC2B005F4B1E /* Player Turn */,
 				3E69802528B663E7005F4B1E /* Player */,
 				3E69801728B63324005F4B1E /* MahotmaGandhiApp.swift */,
 				3E69801928B63324005F4B1E /* ContentView.swift */,
@@ -115,6 +120,31 @@
 				3E69802F28B67149005F4B1E /* PlayerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3E69803B28B7DC2B005F4B1E /* Player Turn */ = {
+			isa = PBXGroup;
+			children = (
+				3E69803D28B7DC3D005F4B1E /* View Model */,
+				3E69803C28B7DC36005F4B1E /* View */,
+			);
+			path = "Player Turn";
+			sourceTree = "<group>";
+		};
+		3E69803C28B7DC36005F4B1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E69803E28B7DC94005F4B1E /* PlayerTurnCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E69803D28B7DC3D005F4B1E /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E69804028B7DCAA005F4B1E /* PlayerTurnCardViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +221,10 @@
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				3E69802C28B66682005F4B1E /* CardAddPlayerView.swift in Sources */,
+				3E69804128B7DCAA005F4B1E /* PlayerTurnCardViewModel.swift in Sources */,
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
+				3E69803F28B7DC94005F4B1E /* PlayerTurnCardView.swift in Sources */,
 				3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */,
 				3E69802E28B670FA005F4B1E /* CardPlayerInputView.swift in Sources */,
 			);
