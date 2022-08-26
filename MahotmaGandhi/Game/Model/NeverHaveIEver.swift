@@ -10,8 +10,14 @@ import Foundation
 class NeverHaveIEver {
     let title = "Never Have I Ever"
     let helpText = ""
-    private var questions : [String] = [""]
-    private var availableQuestions : [String] = [""]
+    private var questions : [String] = [
+        "Never Have I Ever farted in a classroom.",
+        "xxxx"
+    ]
+    private var availableQuestions : [String] = [
+        "Never Have I Ever farted in a classroom.",
+        "xxxx"
+    ]
     
     func getQuestion() -> Floor {
         
