@@ -17,6 +17,8 @@
 		3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69802F28B67149005F4B1E /* PlayerModel.swift */; };
 		3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */; };
 		3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803328B676AC005F4B1E /* PlayerViewModel.swift */; };
+		A3A28FE028B8B5AA0031DCDA /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FDF28B8B5AA0031DCDA /* PauseMenuView.swift */; };
+		A3A28FE228B8B62E0031DCDA /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE128B8B62E0031DCDA /* MainMenuView.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		3E69802F28B67149005F4B1E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarSelectionView.swift; sourceTree = "<group>"; };
 		3E69803328B676AC005F4B1E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		A3A28FDF28B8B5AA0031DCDA /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
+		A3A28FE128B8B62E0031DCDA /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +69,7 @@
 		3E69801628B63324005F4B1E /* MahotmaGandhi */ = {
 			isa = PBXGroup;
 			children = (
+				A3A28FD928B8B54A0031DCDA /* Menu */,
 				F7F1609828B7A8F400E83273 /* Game */,
 				3E69802528B663E7005F4B1E /* Player */,
 				3E69801728B63324005F4B1E /* MahotmaGandhiApp.swift */,
@@ -118,6 +123,39 @@
 				3E69802F28B67149005F4B1E /* PlayerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A3A28FD928B8B54A0031DCDA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A3A28FDC28B8B5630031DCDA /* View Model */,
+				A3A28FDB28B8B55D0031DCDA /* Model */,
+				A3A28FDA28B8B5550031DCDA /* View */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A3A28FDA28B8B5550031DCDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3A28FDF28B8B5AA0031DCDA /* PauseMenuView.swift */,
+				A3A28FE128B8B62E0031DCDA /* MainMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3A28FDB28B8B55D0031DCDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3A28FDC28B8B5630031DCDA /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		F7F1609828B7A8F400E83273 /* Game */ = {
@@ -223,9 +261,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
+				A3A28FE228B8B62E0031DCDA /* MainMenuView.swift in Sources */,
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
+				A3A28FE028B8B5AA0031DCDA /* PauseMenuView.swift in Sources */,
 				3E69802C28B66682005F4B1E /* CardAddPlayerView.swift in Sources */,
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
@@ -359,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = QT6B66A8Y8;
+				DEVELOPMENT_TEAM = N98Z7YMPQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -388,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = QT6B66A8Y8;
+				DEVELOPMENT_TEAM = N98Z7YMPQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
