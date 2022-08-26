@@ -9,7 +9,7 @@ import Foundation
 
 class GameModel {
     var id : String
-    var players : [PlayerModel]
+//    var players : [PlayerModel]
     var floorCounter : Int
     private var floorQueue : [FloorType] = []
     var floorInfo : Floor
@@ -23,9 +23,9 @@ class GameModel {
     ]
     
     
-    init(players : [PlayerModel]) {
+    init() {
         id = UUID().uuidString
-        self.players = players
+//        self.players = players
         floorCounter = 0
         floorInfo = Floor(gameType: "", question: "", helpText: "")
         neverHaveIEverGame = NeverHaveIEver()
@@ -34,14 +34,14 @@ class GameModel {
     
     func toNextFloor() {
         self.floorCounter += 1
+        if floorQueue.count < 1 {
+            addFloorQueue()
+        }
         getFloorInfo()
         removeFromQueue()
     }
     
     func getFloorInfo() {
-        if floorQueue.count < 1 {
-            addFloorQueue()
-        }
         let gameType = floorQueue[0]
         switch gameType {
         case .neverHaveIEver:

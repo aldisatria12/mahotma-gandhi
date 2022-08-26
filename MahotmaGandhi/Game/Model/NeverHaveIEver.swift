@@ -10,11 +10,20 @@ import Foundation
 class NeverHaveIEver {
     let title = "Never Have I Ever"
     let helpText = ""
-    private var questions : [String] = []
-    private var availableQuestions : [String] = []
+    private var questions : [String] = [""]
+    private var availableQuestions : [String] = [""]
     
     func getQuestion() -> Floor {
-        return Floor(gameType: self.title, question: "", helpText: self.helpText)
+        
+        if availableQuestions.isEmpty {
+            availableQuestions = questions
+        }
+        
+        let randomIndex = Int.random(in: 0..<availableQuestions.count)
+        let pickedQuestion = availableQuestions[randomIndex]
+        availableQuestions.remove(at: randomIndex)
+        
+        return Floor(gameType: self.title, question: pickedQuestion, helpText: self.helpText)
     }
     
 }
