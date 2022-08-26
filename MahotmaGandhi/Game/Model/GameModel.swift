@@ -11,14 +11,52 @@ class GameModel {
     var id : String
     var players : [PlayerModel]
     var floorCounter : Int
+    private var floorQueue : [FloorType] = []
+    var floorInfo : Floor
+    private var neverHaveIEverGame : NeverHaveIEver
+    private var tellYourTaleGame : TellYourTale
+    private var gameTypeSequence : [[FloorType]] = [
+        [.tellYourTale, .tellYourTale],
+        [.tellYourTale, .neverHaveIEver],
+        [.neverHaveIEver, .tellYourTale],
+        [.neverHaveIEver, .neverHaveIEver]
+    ]
+    
     
     init(players : [PlayerModel]) {
         id = UUID().uuidString
         self.players = players
-        floorCounter = 1
+        floorCounter = 0
+        floorInfo = Floor(gameType: "", question: "", helpText: "")
+        neverHaveIEverGame = NeverHaveIEver()
+        tellYourTaleGame = TellYourTale()
     }
     
-    func nextFloor() {
+    func toNextFloor() {
         self.floorCounter += 1
+        getFloorInfo()
+        removeFromQueue()
+    }
+    
+    func getFloorInfo() {
+        if floorQueue.count < 1 {
+            addFloorQueue()
+        }
+        let gameType = floorQueue[0]
+        switch gameType {
+        case .neverHaveIEver:
+            self.floorInfo = neverHaveIEverGame.getQuestion()
+        case .tellYourTale:
+            self.floorInfo = tellYourTaleGame.getQuestion()
+        }
+    }
+    
+    // random biasa
+    func addFloorQueue() {
+        floorQueue += gameTypeSequence.randomElement()!
+    }
+    
+    func removeFromQueue() {
+        floorQueue.remove(at: 0)
     }
 }

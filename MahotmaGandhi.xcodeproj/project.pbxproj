@@ -18,6 +18,10 @@
 		3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */; };
 		3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803328B676AC005F4B1E /* PlayerViewModel.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
+		F7F160A028B7B0B800E83273 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609F28B7B0B800E83273 /* Floor.swift */; };
+		F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A128B7B1C800E83273 /* TellYourTale.swift */; };
+		F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */; };
+		F7F160A628B7B39900E83273 /* FloorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A528B7B39900E83273 /* FloorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarSelectionView.swift; sourceTree = "<group>"; };
 		3E69803328B676AC005F4B1E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		F7F1609F28B7B0B800E83273 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		F7F160A128B7B1C800E83273 /* TellYourTale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellYourTale.swift; sourceTree = "<group>"; };
+		F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverHaveIEver.swift; sourceTree = "<group>"; };
+		F7F160A528B7B39900E83273 /* FloorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				F7F1609D28B7A93800E83273 /* GameModel.swift */,
+				F7F1609F28B7B0B800E83273 /* Floor.swift */,
+				F7F160A128B7B1C800E83273 /* TellYourTale.swift */,
+				F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */,
+				F7F160A528B7B39900E83273 /* FloorType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,13 +235,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
+				F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */,
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
+				F7F160A028B7B0B800E83273 /* Floor.swift in Sources */,
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
+				F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */,
 				3E69802C28B66682005F4B1E /* CardAddPlayerView.swift in Sources */,
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
 				3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */,
+				F7F160A628B7B39900E83273 /* FloorType.swift in Sources */,
 				3E69802E28B670FA005F4B1E /* CardPlayerInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
