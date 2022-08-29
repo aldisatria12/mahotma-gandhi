@@ -17,6 +17,8 @@
 		3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69802F28B67149005F4B1E /* PlayerModel.swift */; };
 		3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */; };
 		3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803328B676AC005F4B1E /* PlayerViewModel.swift */; };
+		3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */; };
+		3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
 		F7F160A028B7B0B800E83273 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609F28B7B0B800E83273 /* Floor.swift */; };
 		F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A128B7B1C800E83273 /* TellYourTale.swift */; };
@@ -38,6 +40,8 @@
 		3E69802F28B67149005F4B1E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarSelectionView.swift; sourceTree = "<group>"; };
 		3E69803328B676AC005F4B1E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardView.swift; sourceTree = "<group>"; };
+		3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardViewModel.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		F7F1609F28B7B0B800E83273 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		F7F160A128B7B1C800E83273 /* TellYourTale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellYourTale.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		3E69801628B63324005F4B1E /* MahotmaGandhi */ = {
 			isa = PBXGroup;
 			children = (
+				3EA10E7B28BCB74D008780D8 /* Player Turn */,
 				F7F1609828B7A8F400E83273 /* Game */,
 				3E69802528B663E7005F4B1E /* Player */,
 				3E69801728B63324005F4B1E /* MahotmaGandhiApp.swift */,
@@ -130,6 +135,39 @@
 				3E69802F28B67149005F4B1E /* PlayerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3EA10E7B28BCB74D008780D8 /* Player Turn */ = {
+			isa = PBXGroup;
+			children = (
+				3EA10E7E28BCB768008780D8 /* View */,
+				3EA10E7D28BCB761008780D8 /* Model */,
+				3EA10E7C28BCB754008780D8 /* View Model */,
+			);
+			path = "Player Turn";
+			sourceTree = "<group>";
+		};
+		3EA10E7C28BCB754008780D8 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		3EA10E7D28BCB761008780D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3EA10E7E28BCB768008780D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F7F1609828B7A8F400E83273 /* Game */ = {
@@ -240,6 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */,
+				3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */,
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
 				F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */,
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
