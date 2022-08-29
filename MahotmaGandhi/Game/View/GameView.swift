@@ -12,14 +12,27 @@ struct GameView: View {
     @StateObject var vm : GameViewModel = GameViewModel()
     
     var body: some View {
-        VStack {
-            Text(vm.gameFloor)
-            Text(vm.gameTitle)
-            Text(vm.gameQuestion)
-            Button ("Next Floor") {
-                vm.goToNextFloor()
+        
+        ZStack {
+            ZStack {
+                FloorView(keyFrameIndex: vm.counterFirst)
+                FloorView(keyFrameIndex: vm.counterSecond)
+                FloorView(keyFrameIndex: vm.counterThird)
             }
-        }.onAppear {
+            VStack {
+                TopMenuView(floorNumber: vm.gameFloor)
+                Spacer()
+                Text(vm.gameTitle)
+                Text(vm.gameQuestion)
+                Button ("Next Floor") {
+                    vm.goToNextFloor()
+                    vm.animateMovement()
+                }
+                Spacer()
+            }
+        }
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .onAppear {
             vm.goToNextFloor()
         }
     }
