@@ -10,4 +10,5 @@ import Foundation
 struct PlayerModel {
     var name: String
     var avatar: String
+    var chances: Int = 1
 }

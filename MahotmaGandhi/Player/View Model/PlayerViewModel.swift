@@ -18,10 +18,33 @@ struct PlayerViewModel: View {
                     ScrollView(.horizontal){
                         HStack{
                             ForEach(0..<allPlayer.count, id: \.self) { i in
-                                CardPlayerMiniView(name: allPlayer[i].name, avatar: allPlayer[i].avatar, selected: selectedPlayer == i ? Color.green : Color.black)
-                                    .simultaneousGesture(TapGesture().onEnded({ _ in
-                                        selectedPlayer = i
-                                    }))
+                                ZStack{
+                                    CardPlayerMiniView(name: allPlayer[i].name, avatar: allPlayer[i].avatar, selected: selectedPlayer == i ? Color.green : Color.black)
+                                        .simultaneousGesture(TapGesture().onEnded({ _ in
+                                            selectedPlayer = i
+                                        }))
+                                    //Remove button
+                                    if i > 0 {
+                                        VStack{
+                                            HStack{
+                                                Spacer()
+                                                Button {
+                                                    if i <= selectedPlayer {
+                                                        selectedPlayer -= 1
+                                                    }
+                                                    allPlayer.remove(at: i)
+                                                } label: {
+                                                    Image(systemName: "minus.square.fill")
+                                                        .resizable()
+                                                        .foregroundColor(Color.red)
+                                                        .frame(width: 16, height: 16)
+                                                }
+                                            }
+                                            Spacer()
+                                        }
+                                    }// remove button if
+                                    //
+                                }//Card player mini
                             }//foreach
                             if allPlayer.count < 6 {
                                 CardAddPlayerView()
@@ -38,7 +61,6 @@ struct PlayerViewModel: View {
                         .padding(5)
                     }//scrollviewH
                     .padding(.horizontal)
-                    
                     CardPlayerInputView(selectedPlayer: $allPlayer[selectedPlayer])
                     PlayerAvatarSelectionView(allPlayer: $allPlayer, selectedPlayer: $allPlayer[selectedPlayer], avatarName: $avatarName)
                     Spacer()
@@ -46,6 +68,11 @@ struct PlayerViewModel: View {
             }//scrollview
             .navigationTitle("Add Player")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                NavigationLink(destination: PlayerTurnCardViewModel(allPlayer: $allPlayer)) {
+                    Text("Test")
+                }
+            }
         }
     }
 }
