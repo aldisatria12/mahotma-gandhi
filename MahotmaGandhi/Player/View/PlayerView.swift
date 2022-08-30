@@ -59,8 +59,8 @@ struct PlayerView: View {
         .navigationTitle("Add Player")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            NavigationLink(destination: GameView(vm: GameViewModel(players: playerViewModel.allPlayer))) {
-                Text("Start")
+            NavigationLink(destination: PlayerTurnView(playerTurnViewModel: PlayerTurnCardViewModel(playerVM: playerViewModel))) {
+                Text("Test")
             }
         }
     }

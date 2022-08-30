@@ -24,20 +24,19 @@ struct PlayerTurnCardView: View {
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
                     Image(avatar)
                         .resizable()
-                        .frame(width: 42, height: 42)
+                        .frame(width: 72, height: 72)
                         .scaledToFit()
                         .clipShape(Circle())
                     Text(name)
-                        .font(.caption2)
                 }//vstack
-                .frame(width: 55, height: 42)
-//                if divider {
-//                    Divider()
-//                }
+                .padding(5)
+                if divider {
+                    Divider()                    
+                }
             }
             
         }//zstack
-//        .frame(width: 96, height: 138)
+        .frame(width: 96, height: 138)
         
         //Animation 1
         .offset(x: offset)
