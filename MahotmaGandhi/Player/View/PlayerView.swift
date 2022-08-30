@@ -19,7 +19,7 @@ struct PlayerView: View {
                             ZStack{
                                 CardPlayerMiniView(name: playerViewModel.allPlayer[i].name, avatar: playerViewModel.allPlayer[i].avatar, selected: playerViewModel.selectedPlayer == i ? Color.green : Color.black)
                                     .simultaneousGesture(TapGesture().onEnded({ _ in
-                                        playerViewModel.selectedPlayer = i
+                                        playerViewModel.playerSelect(selectPlayer: i)
                                     }))
                                 //Remove button
                                 if i > 0 {
@@ -27,10 +27,7 @@ struct PlayerView: View {
                                         HStack{
                                             Spacer()
                                             Button {
-                                                if i <= playerViewModel.selectedPlayer {
-                                                    playerViewModel.selectedPlayer -= 1
-                                                }
-                                                playerViewModel.allPlayer.remove(at: i)
+                                                playerViewModel.playerRemove(removeAt: i)
                                             } label: {
                                                 Image(systemName: "minus.square.fill")
                                                     .resizable()
@@ -47,12 +44,7 @@ struct PlayerView: View {
                         if playerViewModel.allPlayer.count < 6 {
                             CardAddPlayerView()
                                 .simultaneousGesture(TapGesture().onEnded({ _ in
-                                    var randomAva = "M1"
-                                    playerViewModel.selectedPlayer = playerViewModel.allPlayer.count
-                                    while playerViewModel.allPlayer.contains(where: {$0.avatar == randomAva}) {
-                                        randomAva = playerViewModel.avatarName[Int.random(in: 0...playerViewModel.avatarName.count - 1)]
-                                    }
-                                    playerViewModel.allPlayer.append(PlayerModel(name: "", avatar: randomAva))
+                                    playerViewModel.addPlayer()
                                 }))
                         }//if allPlayer
                     }//hstack
