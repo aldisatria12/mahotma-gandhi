@@ -9,7 +9,7 @@ import Foundation
 
 class GameModel {
     var id : String
-//    var players : [PlayerModel]
+    var players : [PlayerModel]
     var floorCounter : Int
     private var floorQueue : [FloorType] = []
     var floorInfo : Floor
@@ -23,9 +23,9 @@ class GameModel {
     ]
     
     
-    init() {
+    init(players: [PlayerModel]) {
         id = UUID().uuidString
-//        self.players = players
+        self.players = players
         floorCounter = 0
         floorInfo = Floor(gameType: "", question: "", helpText: "")
         neverHaveIEverGame = NeverHaveIEver()
