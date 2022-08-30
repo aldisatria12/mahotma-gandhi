@@ -22,6 +22,7 @@
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
 		3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
+		A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE728BE01CB0031DCDA /* CardGameView.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
 		F7F160A028B7B0B800E83273 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609F28B7B0B800E83273 /* Floor.swift */; };
 		F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A128B7B1C800E83273 /* TellYourTale.swift */; };
@@ -52,6 +53,7 @@
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
+		A3A28FE728BE01CB0031DCDA /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		F7F1609F28B7B0B800E83273 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		F7F160A128B7B1C800E83273 /* TellYourTale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellYourTale.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				F7F160CD28BD060400E83273 /* FloorView.swift */,
 				F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */,
 				F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */,
+				A3A28FE728BE01CB0031DCDA /* CardGameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */,
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
 				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
+				A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */,
 				F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */,
 				3E69802C28B66682005F4B1E /* CardAddPlayerView.swift in Sources */,
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
@@ -451,7 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = QT6B66A8Y8;
+				DEVELOPMENT_TEAM = N98Z7YMPQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -480,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = QT6B66A8Y8;
+				DEVELOPMENT_TEAM = N98Z7YMPQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
