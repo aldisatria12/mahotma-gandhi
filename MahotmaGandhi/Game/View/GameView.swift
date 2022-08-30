@@ -11,6 +11,8 @@ struct GameView: View {
     
     @StateObject var vm : GameViewModel = GameViewModel()
     
+    @State var cardOpen = false
+    
     var body: some View {
         
         ZStack {
@@ -21,11 +23,17 @@ struct GameView: View {
             }
             VStack {
                 TopMenuView(floorNumber: vm.gameFloor)
-//                Spacer()
-//                Text(vm.gameTitle)
-//                Text(vm.gameQuestion)
+                Spacer()
+                Button (action: {
+                    cardOpen.toggle()
+                }, label: {
+                    Text("klik")
+                })
                 Spacer()
                 BottomMenuView(vm: vm)
+            }
+            if cardOpen {
+                CardGameView(vm: vm, openCard: $cardOpen)
             }
         }
 //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

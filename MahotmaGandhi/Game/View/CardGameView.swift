@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct CardGameView: View{
-    @StateObject var vm : GameViewModel = GameViewModel()
-    
     @State var flipped: Bool = false
     
     @State var degree = 0.0
     @State var content = 0.0
+    
+    var vm: GameViewModel
+    
+    @Binding var openCard: Bool
     
     var body: some View {
         ZStack {
@@ -50,12 +52,25 @@ struct CardGameView: View{
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
-                                .padding(.init(top: 20, leading: 0, bottom: 0, trailing: 0))
+                                .padding(.init(top: 25, leading: 0, bottom: 0, trailing: 0))
                             Text(vm.gameQuestion)
                                 .font(.title2)
                                 .fontWeight(.medium)
                                 .foregroundColor(.black)
-                                .frame(width: 250, height: 340, alignment: .center)
+                                .frame(width: 240, height: 275, alignment: .center)
+                            Button(action: {
+                                openCard.toggle()
+                                vm.goToNextFloor()
+                                vm.animateMovement()
+                            }, label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .foregroundColor(.gray)
+                                    Text("Done")
+                                        .foregroundColor(.blue)
+                                }
+                                .frame(width: 200, height: 40, alignment: .center)
+                            }).padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0))
                         }
                     }
                 }
@@ -77,8 +92,8 @@ struct CardGameView: View{
     }
 }
 
-struct CardGameView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardGameView()
-    }
-}
+//struct CardGameView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardGameView()
+//    }
+//}
