@@ -22,9 +22,8 @@ struct PlayerAnimationView: View {
         let timer = Timer.scheduledTimer(withTimeInterval: 0.032, repeats: true) { (Timer) in
             imageFrame = "Wayfarer\(index)"
             index += 1
-            
             if (index > 58) {
-                index = 1
+                index = 0
             }
         }
     }
