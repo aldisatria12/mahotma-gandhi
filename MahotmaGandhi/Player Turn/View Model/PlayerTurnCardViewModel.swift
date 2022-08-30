@@ -9,10 +9,10 @@ import SwiftUI
 
 class PlayerTurnCardViewModel: ObservableObject {
     @Published var randomTurnPlayer: [PlayerModel] = []
-    var playerViewModel: PlayerViewModel
+    var gameVM: GameViewModel
     
-    init(playerVM: PlayerViewModel) {
-        playerViewModel = playerVM
+    init(playerVM: GameViewModel) {
+        gameVM = playerVM
     }
     
     func randomizeTurn() -> [PlayerModel] {
@@ -21,21 +21,21 @@ class PlayerTurnCardViewModel: ObservableObject {
         var pickedPlayer: PlayerModel = PlayerModel(name: "", avatar: "")
         var sumChances = 0
         var randomPick = 0
-        for i in 0..<playerViewModel.allPlayer.count {
-            sumChances += playerViewModel.allPlayer[i].chances
-            playerList.append(playerViewModel.allPlayer[i])
+        for i in 0..<gameVM.game.players.count {
+            sumChances += gameVM.game.players[i].chances
+            playerList.append(gameVM.game.players[i])
             playerList[i].chances = sumChances
         }
-        while turnList.count < playerViewModel.allPlayer.count {
+        while turnList.count < gameVM.game.players.count {
             randomPick = Int.random(in: 1...sumChances)
-            for i in 0..<playerViewModel.allPlayer.count {
+            for i in 0..<gameVM.game.players.count {
                 if randomPick <= playerList[i].chances {
                     pickedPlayer = playerList[i]
                     if turnList.contains(where: {$0.avatar == pickedPlayer.avatar}){
                         break
                     }
                     turnList.append(pickedPlayer)
-                    playerViewModel.allPlayer[i].chances += turnList.count
+                    gameVM.game.players[i].chances += turnList.count
                     break
                 }
             }
