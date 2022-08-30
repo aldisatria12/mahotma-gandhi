@@ -29,9 +29,9 @@ struct PlayerTurnView: View {
         .onAppear {
             playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
         }
-        Text("Test")
-            .onTapGesture {
-                playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
-            }
+//        Text("Test")
+//            .onTapGesture {
+//                playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+//            }
     }
 }
