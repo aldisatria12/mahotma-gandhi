@@ -21,14 +21,11 @@ struct GameView: View {
             }
             VStack {
                 TopMenuView(floorNumber: vm.gameFloor)
+//                Spacer()
+//                Text(vm.gameTitle)
+//                Text(vm.gameQuestion)
                 Spacer()
-                Text(vm.gameTitle)
-                Text(vm.gameQuestion)
-                Button ("Next Floor") {
-                    vm.goToNextFloor()
-                    vm.animateMovement()
-                }
-                Spacer()
+                BottomMenuView(vm: vm)
             }
         }
 //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

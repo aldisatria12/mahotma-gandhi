@@ -12,9 +12,11 @@ struct FloorView: View {
     var keyFrameIndex : Int
     let floorHeight = UIScreen.main.bounds.height * 0.712
     let keyFrames = [
-        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * -0.37, animation: nil),
+        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * 1.63, animation: nil),
         KeyFrame(y: UIScreen.main.bounds.height * 0.712 * 0.63, animation: .linear(duration: 1)),
-        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * 1.63, animation: .linear(duration: 1))
+        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * -0.37, animation: .linear(duration: 1)),
+        
+        
     ]
     
     var body: some View {

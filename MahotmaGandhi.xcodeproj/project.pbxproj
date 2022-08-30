@@ -27,6 +27,7 @@
 		F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160CB28BD05A600E83273 /* KeyFrame.swift */; };
 		F7F160CE28BD060400E83273 /* FloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160CD28BD060400E83273 /* FloorView.swift */; };
 		F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */; };
+		F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		F7F160CB28BD05A600E83273 /* KeyFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFrame.swift; sourceTree = "<group>"; };
 		F7F160CD28BD060400E83273 /* FloorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorView.swift; sourceTree = "<group>"; };
 		F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
+		F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				F7F160A728B8A2E000E83273 /* GameView.swift */,
 				F7F160CD28BD060400E83273 /* FloorView.swift */,
 				F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */,
+				F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				F7F160CE28BD060400E83273 /* FloorView.swift in Sources */,
+				F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */,
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
 				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
 				F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */,
