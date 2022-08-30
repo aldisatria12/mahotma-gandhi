@@ -29,6 +29,10 @@
 		F7F160A628B7B39900E83273 /* FloorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A528B7B39900E83273 /* FloorType.swift */; };
 		F7F160A828B8A2E000E83273 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A728B8A2E000E83273 /* GameView.swift */; };
 		F7F160AA28B8A31700E83273 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160A928B8A31700E83273 /* GameViewModel.swift */; };
+		F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160CB28BD05A600E83273 /* KeyFrame.swift */; };
+		F7F160CE28BD060400E83273 /* FloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160CD28BD060400E83273 /* FloorView.swift */; };
+		F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */; };
+		F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		F7F160A528B7B39900E83273 /* FloorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorType.swift; sourceTree = "<group>"; };
 		F7F160A728B8A2E000E83273 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		F7F160A928B8A31700E83273 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		F7F160CB28BD05A600E83273 /* KeyFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFrame.swift; sourceTree = "<group>"; };
+		F7F160CD28BD060400E83273 /* FloorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorView.swift; sourceTree = "<group>"; };
+		F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
+		F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +204,7 @@
 				F7F160A128B7B1C800E83273 /* TellYourTale.swift */,
 				F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */,
 				F7F160A528B7B39900E83273 /* FloorType.swift */,
+				F7F160CB28BD05A600E83273 /* KeyFrame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +214,9 @@
 			children = (
 				F7F160A728B8A2E000E83273 /* GameView.swift */,
 				A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */,
+				F7F160CD28BD060400E83273 /* FloorView.swift */,
+				F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */,
+				F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,12 +310,16 @@
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */,
+				F7F160CE28BD060400E83273 /* FloorView.swift in Sources */,
+				F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */,
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
+				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
 				F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */,
 				3E69802C28B66682005F4B1E /* CardAddPlayerView.swift in Sources */,
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
 				3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */,
+				F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */,
 				F7F160A628B7B39900E83273 /* FloorType.swift in Sources */,
 				3E69802E28B670FA005F4B1E /* CardPlayerInputView.swift in Sources */,
 				3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */,
