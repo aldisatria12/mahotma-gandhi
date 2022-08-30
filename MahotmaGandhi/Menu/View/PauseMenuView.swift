@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PauseMenuView: View {
+    @Binding var closePauseMenu: Bool
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -19,7 +20,7 @@ struct PauseMenuView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                 Button(action: {
-                    
+                    closePauseMenu = false
                 }, label: {
                     Text("RESUME")
                         .font(.subheadline)
@@ -60,8 +61,8 @@ struct PauseMenuView: View {
     }
 }
 
-struct PauseMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        PauseMenuView()
-    }
-}
+//struct PauseMenuView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PauseMenuView()
+//    }
+//}
