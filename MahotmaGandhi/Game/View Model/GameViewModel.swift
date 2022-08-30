@@ -15,11 +15,8 @@ class GameViewModel : ObservableObject {
     @Published var counterFirst = 0
     @Published var counterSecond = 1
     @Published var counterThird = 2
-    var game: GameModel
     
-    init(players: [PlayerModel]) {
-        game = GameModel(players: players)
-    }
+    var game = GameModel()
     
     func goToNextFloor() {
         game.toNextFloor()

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject var vm : GameViewModel
+    
+    @StateObject var vm : GameViewModel = GameViewModel()
     
     var body: some View {
         
@@ -27,7 +28,6 @@ struct GameView: View {
                 BottomMenuView(vm: vm)
             }
         }
-        .navigationBarHidden(true)
 //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .onAppear {
             vm.goToNextFloor()
@@ -37,6 +37,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(vm: GameViewModel(players: [PlayerModel(name: "Test", avatar: "M1")]))
+        GameView()
     }
 }
