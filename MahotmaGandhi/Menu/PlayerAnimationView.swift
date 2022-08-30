@@ -13,6 +13,9 @@ struct PlayerAnimationView: View {
     var body: some View {
         VStack {
             Image(imageFrame)
+                .resizable()
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width * 0.179, height: UIScreen.main.bounds.height * 0.118)
                 .onAppear(perform: timerImage)
         }
     }

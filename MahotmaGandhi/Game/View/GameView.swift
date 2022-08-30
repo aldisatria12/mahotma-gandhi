@@ -20,6 +20,18 @@ struct GameView: View {
                 FloorView(keyFrameIndex: vm.counterThird)
             }
             VStack {
+                PlayerAnimationView()
+                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+            }
+            ZStack {
+                TopAnimationView(keyFrameIndex: vm.counterFirst)
+                BottomAnimationView(keyFrameIndex: vm.counterFirst)
+                TopAnimationView(keyFrameIndex: vm.counterSecond)
+                BottomAnimationView(keyFrameIndex: vm.counterSecond)
+                TopAnimationView(keyFrameIndex: vm.counterThird)
+                BottomAnimationView(keyFrameIndex: vm.counterThird)
+            }
+            VStack {
                 TopMenuView(floorNumber: vm.gameFloor)
 //                Spacer()
 //                Text(vm.gameTitle)

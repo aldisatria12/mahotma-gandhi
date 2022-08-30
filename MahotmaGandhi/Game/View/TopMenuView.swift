@@ -21,7 +21,6 @@ struct TopMenuView: View {
             }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.094)
-        .background(.gray)
     }
 }
 
