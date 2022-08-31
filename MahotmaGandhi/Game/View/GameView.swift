@@ -11,6 +11,8 @@ struct GameView: View {
     @StateObject var vm : GameViewModel
     
     
+    @State var counter = 0
+    
     var body: some View {
             ZStack {
                 ZStack {
@@ -21,11 +23,22 @@ struct GameView: View {
                 VStack {
                     ZStack {
                         ForEach(0..<vm.game.players.count, id: \.self) { i in
-                            PlayerAnimationView(player: $vm.game.players[i])
+                        if vm.isMoving {
+                            PlayerAnimationWalkView()
                                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-                                .offset(y: CGFloat(i * 62))
+
+                        } else {
+                            PlayerAnimationIdleView()
+                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                        }
+                            // PlayerAnimationView(player: $vm.game.players[i])
+                            //     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                            //     .offset(y: CGFloat(i * 62))
                         }
                     }
+                    
+//                    PlayerAnimationView()
+//                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                 }
                 ZStack {
                     TopAnimationView(keyFrameIndex: vm.counterFirst)
@@ -38,7 +51,6 @@ struct GameView: View {
                 VStack {
                     if vm.isTopMenuShowed {
                         TopMenuView(floorNumber: vm.gameFloor)
-                        let _ = print("masuk top menu")
                     }
                     //                Spacer()
                     //                Text(vm.gameTitle)

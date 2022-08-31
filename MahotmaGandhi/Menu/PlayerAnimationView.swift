@@ -41,8 +41,47 @@ struct PlayerAnimationView: View {
     }
 }
 
-struct PlayerAnimationView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerAnimationView(player: .constant(PlayerModel(name: "Atest", avatar: "M1")))
+struct PlayerAnimationWalkView: View {
+    @State var imageFrame: String = ""
+    
+    let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
+    @State var index = 0
+    var body: some View {
+        VStack {
+            Image(imageFrame)
+                .onReceive(timer) { _ in
+                    imageFrame = "Wayfarer\(index)"
+                    index += 1
+                    if (index > 58) {
+                        index = 0
+                    }
+                }
+        }
+    }
+    
+}
+
+struct PlayerAnimationIdleView: View {
+    @State var imageFrame: String = ""
+    
+    let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
+    @State var index = 0
+    var body: some View {
+        VStack {
+            Image(imageFrame)
+                .onReceive(timer) { _ in
+                    imageFrame = "Wayfarer_Idle\(index)"
+                    index += 1
+                    if (index > 117) {
+                        index = 0
+                    }
+                }
+        }
     }
 }
+
+//struct PlayerAnimationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerAnimationView()
+//    }
+//}

@@ -33,6 +33,8 @@ class GameViewModel : ObservableObject {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
     }
+    @Published var isTopMenuShowed = false
+    @Published var isMoving = true
     
     
     func goToNextFloor() {
@@ -43,6 +45,7 @@ class GameViewModel : ObservableObject {
         baseColor = game.floorInfo.cardBaseColor
         cardImageName = game.floorInfo.cardImage
         isTopMenuShowed = true
+        isMoving = false
     }
     
     func animateMovement() {
@@ -50,6 +53,7 @@ class GameViewModel : ObservableObject {
         counterSecond = addCounter(counter: counterSecond)
         counterThird = addCounter(counter: counterThird)
         isTopMenuShowed = false
+        isMoving = true
     }
     
     func addCounter(counter : Int) -> Int {
