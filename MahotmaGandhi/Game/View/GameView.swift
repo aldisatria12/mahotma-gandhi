@@ -12,6 +12,8 @@ struct GameView: View {
     
     @State var cardOpen = false
     
+    @State var counter = 0
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -21,8 +23,16 @@ struct GameView: View {
                     FloorView(keyFrameIndex: vm.counterThird)
                 }
                 VStack {
-                    PlayerAnimationView()
-                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                    if vm.isMoving {
+                        PlayerAnimationWalkView()
+                            .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+
+                    } else {
+                        PlayerAnimationIdleView()
+                            .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                    }
+//                    PlayerAnimationView()
+//                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                 }
                 ZStack {
                     TopAnimationView(keyFrameIndex: vm.counterFirst)
@@ -35,16 +45,15 @@ struct GameView: View {
                 VStack {
                     if vm.isTopMenuShowed {
                         TopMenuView(floorNumber: vm.gameFloor)
-                        let _ = print("masuk top menu")
                     }
                     Button (action: {
-                    cardOpen.toggle()
-                }, label: {
-                    Image("Chest")
-                })
-    //                Spacer()
-    //                Text(vm.gameTitle)
-    //                Text(vm.gameQuestion)
+                        cardOpen.toggle()
+                    }, label: {
+                        Image("Chest")
+                    })
+                    //                Spacer()
+                    //                Text(vm.gameTitle)
+                    //                Text(vm.gameQuestion)
                     Spacer()
                     BottomMenuView(vm: vm)
                 }
@@ -54,7 +63,7 @@ struct GameView: View {
             }
         }
         .navigationBarHidden(true)
-//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .onAppear {
             vm.goToNextFloor()
         }

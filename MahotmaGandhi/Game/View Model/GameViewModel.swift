@@ -23,6 +23,7 @@ class GameViewModel : ObservableObject {
         game = GameModel(players: players)
     }
     @Published var isTopMenuShowed = false
+    @Published var isMoving = true
     
     // var game = GameModel()
     
@@ -32,6 +33,7 @@ class GameViewModel : ObservableObject {
         gameQuestion = game.floorInfo.question
         gameFloor = game.floorCounter
         isTopMenuShowed = true
+        isMoving = false
     }
     
     func animateMovement() {
@@ -39,6 +41,7 @@ class GameViewModel : ObservableObject {
         counterSecond = addCounter(counter: counterSecond)
         counterThird = addCounter(counter: counterThird)
         isTopMenuShowed = false
+        isMoving = true
     }
     
     func addCounter(counter : Int) -> Int {
