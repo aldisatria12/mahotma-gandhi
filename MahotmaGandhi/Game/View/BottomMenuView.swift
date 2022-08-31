@@ -22,7 +22,6 @@ struct BottomMenuView: View {
             }
             .padding([.horizontal], UIScreen.main.bounds.width / 2 - 50)
             .padding(.vertical)
-        
             .border(.gray)
             .background(.gray)
             .padding(.bottom)
