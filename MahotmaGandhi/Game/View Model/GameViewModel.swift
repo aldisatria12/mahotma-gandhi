@@ -23,6 +23,7 @@ class GameViewModel : ObservableObject {
     
     @Published var isTopMenuShowed = false
     @Published var isCardOpen = false
+    @Published var isMoving = true
     
     var game: GameModel
     
@@ -33,8 +34,7 @@ class GameViewModel : ObservableObject {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
     }
-    @Published var isTopMenuShowed = false
-    @Published var isMoving = true
+    
     
     
     func goToNextFloor() {
