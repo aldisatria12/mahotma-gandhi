@@ -13,6 +13,8 @@ struct CardGameView: View{
     @State var degree = 0.0
     @State var content = 0.0
     
+    @State var counter = 0
+    
     var vm: GameViewModel
     
     @Binding var openCard: Bool
@@ -26,7 +28,7 @@ struct CardGameView: View{
                         .scaledToFit()
                         .frame(width: 280, height: 400, alignment: .center)
                     Button(action: {
-                        tapFlipCard()
+                        tapFlipBack()
                     },label: {
                         Image(systemName: "chevron.backward.circle")
                             .foregroundColor(.black)
@@ -62,6 +64,7 @@ struct CardGameView: View{
                                 openCard.toggle()
                                 vm.goToNextFloor()
                                 vm.animateMovement()
+                                counter()
                             }, label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 12)
@@ -71,6 +74,7 @@ struct CardGameView: View{
                                 }
                                 .frame(width: 200, height: 40, alignment: .center)
                             }).padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0))
+                            //if counter{PlayerAnimationView(counter:$counter)}
                         }
                     }
                 }
@@ -87,6 +91,17 @@ struct CardGameView: View{
         }
         withAnimation(Animation.linear(duration: 0.001).delay(animationDuration/2)) {
             content += 180
+            flipped.toggle()
+        }
+    }
+    
+    func tapFlipBack() {
+        let animationDuration = 1.0
+        withAnimation(Animation.linear(duration: animationDuration)) {
+            degree -= 180
+        }
+        withAnimation(Animation.linear(duration: 0.001).delay(animationDuration/2)) {
+            content -= 180
             flipped.toggle()
         }
     }
