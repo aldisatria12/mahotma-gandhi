@@ -20,7 +20,7 @@ struct CardGameView: View{
     @Binding var openCard: Bool
     
     var body: some View {
-        ZStack {
+        ZStack (alignment: .center){
             if flipped {
                 ZStack (alignment: .topTrailing){
                     Image("BackgroundDescription")
