@@ -10,6 +10,8 @@ import SwiftUI
 struct GameView: View {
     @StateObject var vm : GameViewModel
     
+    @State var cardOpen = false
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -34,12 +36,20 @@ struct GameView: View {
                     if vm.isTopMenuShowed {
                         TopMenuView(floorNumber: vm.gameFloor)
                     }
+                    Button (action: {
+                    cardOpen.toggle()
+                }, label: {
+                    Image("Chest")
+                })
     //                Spacer()
     //                Text(vm.gameTitle)
     //                Text(vm.gameQuestion)
                     Spacer()
                     BottomMenuView(vm: vm)
                 }
+            }
+            if cardOpen {
+                CardGameView(vm: vm, openCard: $cardOpen)
             }
         }
         .navigationBarHidden(true)
