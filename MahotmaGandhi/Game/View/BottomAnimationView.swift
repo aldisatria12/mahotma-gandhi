@@ -12,9 +12,9 @@ struct BottomAnimationView: View {
     //animation ke atas
 //    let keyFrames = [
 ////        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * -0.027, animation: .linear(duration: 3)),
-//        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * -0.027, animation:nil),
-//        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * 0.973, animation: .linear(duration: 3)),
-//        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * 1.973, animation:  .linear(duration: 3)),
+//        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * -0.027) - 44, animation:nil),
+//        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * 0.973) - 44, animation: .linear(duration: 3)),
+//        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * 1.973) - 44, animation:  .linear(duration: 3)),
 //    ]
     
     let keyFrames = [
