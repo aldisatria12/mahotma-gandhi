@@ -10,15 +10,14 @@ import SwiftUI
 struct GameView: View {
     @StateObject var vm : GameViewModel
     
-    @State var cardOpen = false
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 ZStack {
-                    FloorView(keyFrameIndex: vm.counterFirst)
-                    FloorView(keyFrameIndex: vm.counterSecond)
-                    FloorView(keyFrameIndex: vm.counterThird)
+                    FloorView(keyFrameIndex: vm.counterFirst, gameVM: vm)
+                    FloorView(keyFrameIndex: vm.counterSecond, gameVM: vm)
+                    FloorView(keyFrameIndex: vm.counterThird, gameVM: vm)
                 }
                 VStack {
                     ZStack {
@@ -42,24 +41,19 @@ struct GameView: View {
                         TopMenuView(floorNumber: vm.gameFloor)
                         let _ = print("masuk top menu")
                     }
-                    Button (action: {
-                    cardOpen.toggle()
-                }, label: {
-                    Image("Chest")
-                })
-    //                Spacer()
-    //                Text(vm.gameTitle)
-    //                Text(vm.gameQuestion)
+                    //                Spacer()
+                    //                Text(vm.gameTitle)
+                    //                Text(vm.gameQuestion)
                     Spacer()
                     BottomMenuView(vm: vm, card: $cardOpen)
                 }
             }
-            if cardOpen {
-                CardGameView(vm: vm, openCard: $cardOpen)
+            if vm.isCardOpen {
+                CardGameView(vm: vm, openCard: $vm.isCardOpen)
             }
         }
         .navigationBarHidden(true)
-//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .onAppear {
             vm.goToNextFloor()
         }

@@ -17,6 +17,11 @@ class GameViewModel : ObservableObject {
     @Published var counterFirst = 0
     @Published var counterSecond = 1
     @Published var counterThird = 2
+    
+    
+    @Published var isTopMenuShowed = false
+    @Published var isCardOpen = false
+    
     var game: GameModel
     
     // turn view model
@@ -26,9 +31,7 @@ class GameViewModel : ObservableObject {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
     }
-    @Published var isTopMenuShowed = false
     
-    // var game = GameModel()
     
     func goToNextFloor() {
         game.toNextFloor()
