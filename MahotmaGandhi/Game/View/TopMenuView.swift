@@ -15,13 +15,21 @@ struct TopMenuView: View {
         HStack {
             Text("Floor - \(floorNumber)")
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.047)
+                .font(.system(size: 30))
+                .foregroundColor(blue04)
             Spacer()
-            Button("Menu") {
+            Button {
                 
+            } label: {
+                Image(systemName: "questionmark.square")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width * 24 / 390, height: UIScreen.main.bounds.height * 31 / 844)
+                    .foregroundColor(blue04)
+                    .padding(.trailing, 15)
             }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.094)
-        .background(.gray)
     }
 }
 

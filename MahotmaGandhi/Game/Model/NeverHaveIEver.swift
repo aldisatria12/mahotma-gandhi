@@ -9,7 +9,8 @@ import Foundation
 
 class NeverHaveIEver {
     let title = "Never Have I Ever"
-    let helpText = ""
+    let helpImage = ""
+    let cardImage = ""
     private var questions : [String] = [
         "Never Have I Ever farted in a classroom.",
         "xxxx"
@@ -29,7 +30,7 @@ class NeverHaveIEver {
         let pickedQuestion = availableQuestions[randomIndex]
         availableQuestions.remove(at: randomIndex)
         
-        return Floor(gameType: self.title, question: pickedQuestion, helpText: self.helpText)
+        return Floor(gameType: self.title, question: pickedQuestion, helpImage: self.helpImage, cardImage: self.cardImage)
     }
     
 }
