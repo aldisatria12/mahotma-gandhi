@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopMenuView: View {
+    @State var showingPauseMenu = false
     
     var floorNumber : Int
     
@@ -19,7 +20,7 @@ struct TopMenuView: View {
                 .foregroundColor(blue04)
             Spacer()
             Button {
-                
+                showingPauseMenu = true
             } label: {
                 Image(systemName: "questionmark.square")
                     .resizable()
@@ -27,6 +28,9 @@ struct TopMenuView: View {
                     .frame(width: UIScreen.main.bounds.width * 24 / 390, height: UIScreen.main.bounds.height * 31 / 844)
                     .foregroundColor(blue04)
                     .padding(.trailing, 15)
+            }
+            if showingPauseMenu{
+                PauseMenuView(closePauseMenu: $showingPauseMenu)
             }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.094)
