@@ -13,15 +13,14 @@ struct PlayerTurnView: View {
         ZStack{
 //            RoundedRectangle(cornerRadius: 20)
 //                .foregroundColor(.gray)
-            ScrollView(.horizontal){
+//            ScrollView(.horizontal){
                 HStack{
                     ForEach(0..<playerTurnViewModel.randomTurnPlayer.count, id: \.self) {i in
                         PlayerTurnCardView(name: playerTurnViewModel.randomTurnPlayer[i].name, avatar: playerTurnViewModel.randomTurnPlayer[i].avatar, turns: i + 1, divider: i == playerTurnViewModel.randomTurnPlayer.count - 1 ? false : true)
-                        Text("\(playerTurnViewModel.playerViewModel.allPlayer[i].chances)")
 //                        Divider()
                     }
                 }//HStack
-            }//ScrollView
+//            }//ScrollView
             .padding()
             .padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
         }//ZStack
