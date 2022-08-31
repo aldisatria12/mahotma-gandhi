@@ -13,6 +13,8 @@ class GameViewModel : ObservableObject {
     @Published var gameTitle = ""
     @Published var gameQuestion = ""
     @Published var gameFloor = 0
+    @Published var baseColor = Color.red
+    @Published var cardImageName = ""
     // counter for animation
     @Published var counterFirst = 0
     @Published var counterSecond = 1
@@ -31,6 +33,8 @@ class GameViewModel : ObservableObject {
         gameTitle = game.floorInfo.gameType
         gameQuestion = game.floorInfo.question
         gameFloor = game.floorCounter
+        baseColor = game.floorInfo.cardBaseColor
+        cardImageName = game.floorInfo.cardImage
         isTopMenuShowed = true
     }
     

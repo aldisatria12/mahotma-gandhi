@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Floor {
     let gameType : String
     let question : String
     let helpImage : String
     let cardImage : String
+    let cardBaseColor : Color
 }

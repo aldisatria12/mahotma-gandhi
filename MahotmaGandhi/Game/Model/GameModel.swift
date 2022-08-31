@@ -27,7 +27,7 @@ class GameModel {
         id = UUID().uuidString
         self.players = players
         floorCounter = 0
-        floorInfo = Floor(gameType: "", question: "", helpImage: "", cardImage: "")
+        floorInfo = Floor(gameType: "", question: "", helpImage: "", cardImage: "",  cardBaseColor: red01)
         neverHaveIEverGame = NeverHaveIEver()
         tellYourTaleGame = TellYourTale()
     }
