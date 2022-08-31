@@ -23,7 +23,7 @@ struct CardGameView: View{
         ZStack (alignment: .center){
             if flipped {
                 ZStack (alignment: .topTrailing){
-                    Image("BackgroundDescription")
+                    Image(vm.cardHelpName)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 280, height: 400, alignment: .center)
