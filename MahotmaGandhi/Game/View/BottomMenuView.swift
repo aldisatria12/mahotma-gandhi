@@ -10,14 +10,14 @@ import SwiftUI
 struct BottomMenuView: View {
     
     @ObservedObject var vm : GameViewModel
-    
+    @Binding var card: Bool
     var body: some View {
         VStack {
             ZStack{
                 Image("turnsBackground")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height * 0.21)
-                PlayerTurnView(playerTurnViewModel: PlayerTurnCardViewModel(playerVM: vm))
+                PlayerTurnView(playerTurnViewModel: PlayerTurnCardViewModel(game: vm.game), card: $card)
                     .offset(y: 15)
                 
             }
@@ -41,6 +41,6 @@ struct BottomMenuView: View {
 
 struct BottomMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomMenuView(vm: GameViewModel(players: [PlayerModel(name: "Atest", avatar: "M1")]))
+        BottomMenuView(vm: GameViewModel(players: [PlayerModel(name: "Atest", avatar: "M1")]), card: .constant(true))
     }
 }

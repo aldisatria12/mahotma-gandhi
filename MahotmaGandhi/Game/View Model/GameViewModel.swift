@@ -26,8 +26,12 @@ class GameViewModel : ObservableObject {
     
     var game: GameModel
     
+    // turn view model
+    var playerTurn: PlayerTurnCardViewModel
+    
     init(players: [PlayerModel]) {
         game = GameModel(players: players)
+        playerTurn = PlayerTurnCardViewModel(game: game)
     }
     
     

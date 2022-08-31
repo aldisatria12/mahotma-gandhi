@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerAnimationView: View {
     @State var imageFrame: String = ""
+    @Binding var player: PlayerModel
     
     let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
     @State var counter = 0
@@ -19,9 +20,11 @@ struct PlayerAnimationView: View {
                 .onReceive(timer) { _ in
                     if counter == 118 {
                         imageFrame = "Wayfarer_Idle\(index)"
+//                        imageFrame = "\(player.avatar)_Idle\(index)"
                     } else {
                         self.counter += 1
                         imageFrame = "Wayfarer\(index)"
+//                        imageFrame = "\(player.avatar,index)"
                     }
                     index += 1
                     if counter == 118 {
@@ -40,6 +43,6 @@ struct PlayerAnimationView: View {
 
 struct PlayerAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerAnimationView()
+        PlayerAnimationView(player: .constant(PlayerModel(name: "Atest", avatar: "M1")))
     }
 }
