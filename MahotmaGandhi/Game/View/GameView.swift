@@ -35,6 +35,7 @@ struct GameView: View {
                 VStack {
                     if vm.isTopMenuShowed {
                         TopMenuView(floorNumber: vm.gameFloor)
+                        let _ = print("masuk top menu")
                     }
                     Button (action: {
                     cardOpen.toggle()

@@ -62,8 +62,10 @@ struct CardGameView: View{
                                 .frame(width: 240, height: 275, alignment: .center)
                             Button(action: {
                                 openCard.toggle()
-                                vm.goToNextFloor()
                                 vm.animateMovement()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                    vm.goToNextFloor()
+                                }
 //                                counter()
                             }, label: {
                                 ZStack {
