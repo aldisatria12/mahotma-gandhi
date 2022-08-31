@@ -12,7 +12,6 @@ struct GameView: View {
     
     
     var body: some View {
-        GeometryReader { geometry in
             ZStack {
                 ZStack {
                     FloorView(keyFrameIndex: vm.counterFirst, gameVM: vm)
@@ -21,7 +20,6 @@ struct GameView: View {
                 }
                 VStack {
                     PlayerAnimationView()
-                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                 }
                 ZStack {
                     TopAnimationView(keyFrameIndex: vm.counterFirst)
@@ -41,6 +39,9 @@ struct GameView: View {
                     //                Text(vm.gameQuestion)
                     Spacer()
                     BottomMenuView(vm: vm)
+                }
+                if cardOpen {
+                    CardGameView(vm: vm, openCard: $cardOpen)
                 }
             }
             if vm.isCardOpen {
