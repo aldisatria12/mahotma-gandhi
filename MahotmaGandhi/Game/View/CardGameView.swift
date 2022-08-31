@@ -50,7 +50,7 @@ struct CardGameView: View{
                                 Image(systemName: "questionmark.circle")
                                     .resizable()
                                     .scaledToFit()
-                                    .font(Font.title.weight(.regular))
+//                                    .font(Font.title.weight(.regular))
                                     .background(yellow03)
                                     .clipShape(Circle())
                                     .foregroundColor(vm.baseColor)
@@ -67,10 +67,11 @@ struct CardGameView: View{
 //                                .foregroundColor(.black)
 //                                .padding(.init(top: 25, leading: 0, bottom: 0, trailing: 0))
                             Text(vm.gameQuestion)
-                                .font(.title2)
-                                .fontWeight(.medium)
-                                .foregroundColor(.black)
-                                .frame(width: 240, height: 275, alignment: .center)
+                                .font(.system(.title, design: .rounded))
+                                .fontWeight(.bold)
+                                .foregroundColor(yellow01)
+                                .multilineTextAlignment(.center)
+                                .frame(width: 220, height: 275, alignment: .center)
                             Button(action: {
                                 openCard.toggle()
                                 vm.animateMovement()
@@ -81,9 +82,9 @@ struct CardGameView: View{
                             }, label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 12)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(blue01)
                                     Text("Done")
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(yellow03)
                                 }
                                 .frame(width: 200, height: 40, alignment: .center)
                             }).padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0))
