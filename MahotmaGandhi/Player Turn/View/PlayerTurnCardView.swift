@@ -22,7 +22,7 @@ struct PlayerTurnCardView: View {
                 VStack{
                     Text("\(turns)")
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
-                    Image(player.avatar)
+                    Image("\(player.avatar)_icon")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .scaledToFit()
