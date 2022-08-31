@@ -40,21 +40,18 @@ struct GameView: View {
                     Spacer()
                     BottomMenuView(vm: vm)
                 }
-                if cardOpen {
-                    CardGameView(vm: vm, openCard: $cardOpen)
+                if vm.isCardOpen {
+                    CardGameView(vm: vm, openCard: $vm.isCardOpen)
                 }
             }
-            if vm.isCardOpen {
-                CardGameView(vm: vm, openCard: $vm.isCardOpen)
+            .navigationBarHidden(true)
+            .onAppear {
+                vm.goToNextFloor()
             }
         }
-        .navigationBarHidden(true)
         //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        .onAppear {
-            vm.goToNextFloor()
-        }
     }
-}
+
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
