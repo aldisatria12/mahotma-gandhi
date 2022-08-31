@@ -45,7 +45,7 @@ struct GameView: View {
                     //                Text(vm.gameTitle)
                     //                Text(vm.gameQuestion)
                     Spacer()
-                    BottomMenuView(vm: vm, card: $cardOpen)
+                    BottomMenuView(vm: vm, card: $vm.isCardOpen)
                 }
             }
             if vm.isCardOpen {
