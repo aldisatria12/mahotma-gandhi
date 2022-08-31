@@ -10,25 +10,30 @@ import SwiftUI
 struct PlayerAnimationView: View {
     @State var imageFrame: String = ""
     
+    let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
+    @State var counter = 0
+    @State var index = 0
     var body: some View {
         VStack {
             Image(imageFrame)
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 0.179, height: UIScreen.main.bounds.height * 0.118)
-                .onAppear(perform: timerImage)
-        }
-    }
-    
-    func timerImage() {
-        var index = 1
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.032, repeats: true) { (Timer) in
-            imageFrame = "Wayfarer\(index)"
-            index += 1
-            
-            if (index > 58) {
-                index = 1
-            }
+                .onReceive(timer) { _ in
+                    if counter == 118 {
+                        imageFrame = "Wayfarer_Idle\(index)"
+                    } else {
+                        self.counter += 1
+                        imageFrame = "Wayfarer\(index)"
+                    }
+                    index += 1
+                    if counter == 118 {
+                        if (index > 117) {
+                            index = 0
+                        }
+                    } else {
+                        if (index > 58) {
+                            index = 0
+                        }
+                    }
+                }
         }
     }
 }
