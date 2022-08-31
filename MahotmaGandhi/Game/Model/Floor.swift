@@ -10,5 +10,6 @@ import Foundation
 struct Floor {
     let gameType : String
     let question : String
-    let helpText : String
+    let helpImage : String
+    let cardImage : String
 }

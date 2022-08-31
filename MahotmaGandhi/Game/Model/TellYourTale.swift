@@ -9,7 +9,8 @@ import Foundation
 
 class TellYourTale {
     let title = "Tell Your Tale"
-    let helpText = ""
+    let helpImage = ""
+    let cardImage = ""
     private var questions : [String] = [
         "Given the choice of anyone in the world, whom would you want as a dinner guest?",
         "xxx"
@@ -28,7 +29,7 @@ class TellYourTale {
         let pickedQuestion = availableQuestions[randomIndex]
         availableQuestions.remove(at: randomIndex)
         
-        return Floor(gameType: self.title, question: pickedQuestion, helpText: self.helpText)
+        return Floor(gameType: self.title, question: pickedQuestion, helpImage: self.helpImage, cardImage: self.cardImage)
     }
     
 }
