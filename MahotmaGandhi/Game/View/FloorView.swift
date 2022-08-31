@@ -10,19 +10,17 @@ import SwiftUI
 struct FloorView: View {
     
     var keyFrameIndex : Int
-    let floorHeight = UIScreen.main.bounds.height * 0.712
     let keyFrames = [
-        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * 1.63, animation: nil),
-        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * 0.63, animation: .linear(duration: 1)),
-        KeyFrame(y: UIScreen.main.bounds.height * 0.712 * -0.37, animation: .linear(duration: 1)),
         
-        
+        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * -0.5, animation: nil),
+        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 0.5, animation: .linear(duration: 3)),
+        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 1.5, animation:  .linear(duration: 3)),
     ]
     
     var body: some View {
         Image("stage")
             .resizable()
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.712)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
             .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))
             .animation(keyFrames[keyFrameIndex].animation, value: keyFrameIndex)
             .onChange(of: keyFrameIndex) {_ in

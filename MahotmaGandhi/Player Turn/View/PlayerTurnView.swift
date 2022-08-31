@@ -25,14 +25,14 @@ struct PlayerTurnView: View {
             .padding()
             .padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
         }//ZStack
-        .frame(height: 200)
+        .frame(height: 126)
         .padding()
         .onAppear {
             playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
         }
-        Text("Test")
-            .onTapGesture {
-                playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
-            }
+//        Text("Test")
+//            .onTapGesture {
+//                playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+//            }
     }
 }
