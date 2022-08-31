@@ -25,7 +25,7 @@ struct GameView: View {
                         ForEach(0..<vm.game.players.count, id: \.self) { i in
                             PlayerAnimationView(player: $vm.game.players[i])
                                 .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-                                .offset(y: CGFloat(i * 75))
+                                .offset(y: CGFloat(i * 62))
                         }
                     }
                 }
