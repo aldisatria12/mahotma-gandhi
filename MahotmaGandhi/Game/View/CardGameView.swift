@@ -13,7 +13,7 @@ struct CardGameView: View{
     @State var degree = 0.0
     @State var content = 0.0
     
-    @State var counter = 0
+//    @State var counter = 0
     
     var vm: GameViewModel
     
@@ -64,7 +64,7 @@ struct CardGameView: View{
                                 openCard.toggle()
                                 vm.goToNextFloor()
                                 vm.animateMovement()
-                                counter()
+//                                counter()
                             }, label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 12)
