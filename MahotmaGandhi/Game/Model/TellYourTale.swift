@@ -9,7 +9,7 @@ import Foundation
 
 class TellYourTale {
     let title = "Tell a Tale"
-    let helpImage = "Card_NeverHave_Guide"
+    let helpImage = "Card_TellATale_Guide"
     let cardImage = "Card_TellATale_Front"
     let baseColor = red01
     private var questions : [String] = [

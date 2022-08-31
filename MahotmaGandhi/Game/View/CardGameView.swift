@@ -31,8 +31,15 @@ struct CardGameView: View{
                         tapFlipBack()
                     },label: {
                         Image(systemName: "chevron.backward.circle")
-                            .foregroundColor(.black)
-                            .frame(width: 45, height: 33, alignment: .bottomLeading)
+                            .resizable()
+                            .scaledToFit()
+                            .font(Font.title.weight(.semibold))
+                            .background(yellow03)
+                            .clipShape(Circle())
+                            .foregroundColor(vm.baseColor)
+                            .frame(width: 30, height: 30, alignment: .bottomLeading)
+                            .padding(.top, 20)
+                            .padding(.trailing, 20)
                     })
                 }
             } else {
@@ -50,7 +57,7 @@ struct CardGameView: View{
                                 Image(systemName: "questionmark.circle")
                                     .resizable()
                                     .scaledToFit()
-//                                    .font(Font.title.weight(.regular))
+                                    .font(Font.title.weight(.semibold))
                                     .background(yellow03)
                                     .clipShape(Circle())
                                     .foregroundColor(vm.baseColor)
@@ -83,7 +90,9 @@ struct CardGameView: View{
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 12)
                                         .foregroundColor(blue01)
-                                    Text("Done")
+                                    Text("Next Floor")
+                                        .font(.system(.title, design: .rounded))
+                                        .fontWeight(.medium)
                                         .foregroundColor(yellow03)
                                 }
                                 .frame(width: 200, height: 40, alignment: .center)
@@ -100,7 +109,7 @@ struct CardGameView: View{
     }
     
     func tapFlipCard() {
-        let animationDuration = 1.0
+        let animationDuration = 0.75
         withAnimation(Animation.linear(duration: animationDuration)) {
             degree += 180
         }
@@ -111,7 +120,7 @@ struct CardGameView: View{
     }
     
     func tapFlipBack() {
-        let animationDuration = 1.0
+        let animationDuration = 0.75
         withAnimation(Animation.linear(duration: animationDuration)) {
             degree -= 180
         }
