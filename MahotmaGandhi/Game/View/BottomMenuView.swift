@@ -15,8 +15,10 @@ struct BottomMenuView: View {
         VStack {
             Spacer()
             Button("Next Floor") {
-                vm.goToNextFloor()
                 vm.animateMovement()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    vm.goToNextFloor()
+                }
             }
             .padding([.horizontal], UIScreen.main.bounds.width / 2 - 50)
             .padding(.vertical)
@@ -27,7 +29,7 @@ struct BottomMenuView: View {
             .foregroundColor(.black)
             .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.15)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.12)
         .background(.blue)
     }
 }

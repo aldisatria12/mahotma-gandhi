@@ -15,6 +15,8 @@ struct TopMenuView: View {
         HStack {
             Text("Floor - \(floorNumber)")
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.047)
+                .font(.system(size: 30))
+                .foregroundColor(blue04)
             Spacer()
             Button("Menu") {
                 
