@@ -10,11 +10,19 @@ import SwiftUI
 struct FloorView: View {
     
     var keyFrameIndex : Int
+    // Gerak ke atas
+//    let keyFrames = [
+//
+//        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * -0.5, animation: nil),
+//        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 0.5, animation: .linear(duration: 3)),
+//        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 1.5, animation:  .linear(duration: 3)),
+//    ]
+    
     let keyFrames = [
         
-        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * -0.5, animation: nil),
+        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 1.5, animation:  nil),
         KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 0.5, animation: .linear(duration: 3)),
-        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * 1.5, animation:  .linear(duration: 3)),
+        KeyFrame(y: UIScreen.main.bounds.height * 671 / 844 * -0.5, animation: .linear(duration: 3)),
     ]
     
     var body: some View {
