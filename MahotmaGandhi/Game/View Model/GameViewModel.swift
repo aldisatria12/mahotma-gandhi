@@ -17,14 +17,17 @@ class GameViewModel : ObservableObject {
     @Published var counterFirst = 0
     @Published var counterSecond = 1
     @Published var counterThird = 2
+    
+    
+    @Published var isTopMenuShowed = false
+    @Published var isCardOpen = false
+    
     var game: GameModel
     
     init(players: [PlayerModel]) {
         game = GameModel(players: players)
     }
-    @Published var isTopMenuShowed = false
     
-    // var game = GameModel()
     
     func goToNextFloor() {
         game.toNextFloor()

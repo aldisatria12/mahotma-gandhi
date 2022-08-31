@@ -10,6 +10,8 @@ import SwiftUI
 struct FloorView: View {
     
     var keyFrameIndex : Int
+    @ObservedObject var gameVM : GameViewModel
+    
     // Gerak ke atas
 //    let keyFrames = [
 //
@@ -30,13 +32,22 @@ struct FloorView: View {
             Image("stage")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
-                .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))
-                .animation(keyFrames[keyFrameIndex].animation, value: keyFrameIndex)
-                .onChange(of: keyFrameIndex) {_ in
-                    advanceKeyFrame()
-                }
-                .onAppear { advanceKeyFrame()}
+            Button (action: {
+                gameVM.isCardOpen.toggle()
+            }, label: {
+                Image("Chest")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width * 81 / 390, height: UIScreen.main.bounds.height * 111 / 844)
+                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 532.5 / 844)
+            })
+        }// ZStack Pertama
+        .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))
+        .animation(keyFrames[keyFrameIndex].animation, value: keyFrameIndex)
+        .onChange(of: keyFrameIndex) {_ in
+            advanceKeyFrame()
         }
+        .onAppear { advanceKeyFrame()}
     }
     
     func advanceKeyFrame() {
@@ -56,6 +67,6 @@ struct FloorView: View {
 
 struct FloorView_Previews: PreviewProvider {
     static var previews: some View {
-        FloorView(keyFrameIndex: 1)
+        FloorView(keyFrameIndex: 1, gameVM: GameViewModel(players: []))
     }
 }
