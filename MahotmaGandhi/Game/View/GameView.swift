@@ -27,7 +27,7 @@ struct GameView: View {
                 Button (action: {
                     cardOpen.toggle()
                 }, label: {
-                    Text("klik")
+                    Image("Chest")
                 })
                 Spacer()
                 BottomMenuView(vm: vm)
