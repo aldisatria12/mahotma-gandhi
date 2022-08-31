@@ -22,7 +22,7 @@ struct GameView: View {
                     ZStack {
                         ForEach(0..<vm.game.players.count, id: \.self) { i in
                             PlayerAnimationView(player: $vm.game.players[i])
-                                .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
                         }
                     }
@@ -45,6 +45,7 @@ struct GameView: View {
                     //                Text(vm.gameQuestion)
                     Spacer()
                     BottomMenuView(vm: vm, card: $vm.isCardOpen)
+                        .offset(y: 38)
                 }
                 if vm.isCardOpen {
                     CardGameView(vm: vm, openCard: $vm.isCardOpen)

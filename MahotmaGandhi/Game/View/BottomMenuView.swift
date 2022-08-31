@@ -34,7 +34,7 @@ struct BottomMenuView: View {
 //            .foregroundColor(.black)
 //            .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.15)
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.15)
         .background(.black)
     }
 }
