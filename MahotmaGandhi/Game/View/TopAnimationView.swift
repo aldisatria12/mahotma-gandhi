@@ -12,15 +12,15 @@ struct TopAnimationView: View {
     //animation ke atas
 //    let keyFrames = [
 //
-//        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * -0.921, animation: nil),
-//        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * 0.079, animation: .linear(duration: 3)),
-//        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * 1.079, animation:  .linear(duration: 3)),
+//        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * -0.921) - 44, animation: nil),
+//        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * 0.079) - 44, animation: .linear(duration: 3)),
+//        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * 1.079) - 44, animation:  .linear(duration: 3)),
 //    ]
     let keyFrames = [
     
-        KeyFrame(y: UIScreen.main.bounds.height * 0.796 * 1.079, animation: nil),
-            KeyFrame(y: UIScreen.main.bounds.height * 0.796 * 0.079, animation: .linear(duration: 3)),
-            KeyFrame(y: UIScreen.main.bounds.height * 0.796 * -0.921, animation:  .linear(duration: 3)),
+        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * 1.079) - 44, animation: nil),
+        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * 0.079) - 44, animation: .linear(duration: 3)),
+        KeyFrame(y: (UIScreen.main.bounds.height * 0.796 * -0.921) - 44, animation:  .linear(duration: 3)),
         ]
     
     var body: some View {
