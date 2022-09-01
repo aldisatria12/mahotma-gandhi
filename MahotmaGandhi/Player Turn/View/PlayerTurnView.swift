@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerTurnView: View {
     @StateObject var playerTurnViewModel: PlayerTurnCardViewModel
+    @Binding var card: Bool
     var body: some View {
         ZStack{
 //            RoundedRectangle(cornerRadius: 20)
@@ -16,18 +17,32 @@ struct PlayerTurnView: View {
 //            ScrollView(.horizontal){
                 HStack{
                     ForEach(0..<playerTurnViewModel.randomTurnPlayer.count, id: \.self) {i in
-                        PlayerTurnCardView(name: playerTurnViewModel.randomTurnPlayer[i].name, avatar: playerTurnViewModel.randomTurnPlayer[i].avatar, turns: i + 1, divider: i == playerTurnViewModel.randomTurnPlayer.count - 1 ? false : true)
+                        PlayerTurnCardView(player: $playerTurnViewModel.randomTurnPlayer[i], card: $card, turns: i + 1, divider: i == playerTurnViewModel.randomTurnPlayer.count - 1 ? false : true)
 //                        Divider()
                     }
+//                    Button {
+//                        playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+//                    } label: {
+//                        Text("Test")
+//                    }
+
                 }//HStack
 //            }//ScrollView
             .padding()
             .padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
+            
         }//ZStack
         .frame(height: 126)
         .padding()
         .onAppear {
             playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+        }
+        .onChange(of: card) { newValue in
+            if card == false {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+                }
+            }
         }
 //        Text("Test")
 //            .onTapGesture {

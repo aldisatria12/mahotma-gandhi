@@ -167,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				3EA10E7E28BCB768008780D8 /* View */,
-				3EA10E7D28BCB761008780D8 /* Model */,
 				3EA10E7C28BCB754008780D8 /* View Model */,
 			);
 			path = "Player Turn";
@@ -179,13 +178,6 @@
 				3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */,
 			);
 			path = "View Model";
-			sourceTree = "<group>";
-		};
-		3EA10E7D28BCB761008780D8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3EA10E7E28BCB768008780D8 /* View */ = {
@@ -479,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = N98Z7YMPQ8;
+				DEVELOPMENT_TEAM = H4B8Q4454B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -508,7 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = N98Z7YMPQ8;
+				DEVELOPMENT_TEAM = H4B8Q4454B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

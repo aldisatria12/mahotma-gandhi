@@ -10,56 +10,69 @@ import SwiftUI
 struct GameView: View {
     @StateObject var vm : GameViewModel
     
-    @State var cardOpen = false
+    
+    @State var counter = 0
     
     var body: some View {
-        GeometryReader { geometry in
+        ZStack {
             ZStack {
-                ZStack {
-                    FloorView(keyFrameIndex: vm.counterFirst)
-                    FloorView(keyFrameIndex: vm.counterSecond)
-                    FloorView(keyFrameIndex: vm.counterThird)
-                }
-                VStack {
-                    PlayerAnimationView()
-                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-                }
-                ZStack {
-                    TopAnimationView(keyFrameIndex: vm.counterFirst)
-                    BottomAnimationView(keyFrameIndex: vm.counterFirst)
-                    TopAnimationView(keyFrameIndex: vm.counterSecond)
-                    BottomAnimationView(keyFrameIndex: vm.counterSecond)
-                    TopAnimationView(keyFrameIndex: vm.counterThird)
-                    BottomAnimationView(keyFrameIndex: vm.counterThird)
-                }
-                VStack {
-                    if vm.isTopMenuShowed {
-                        TopMenuView(floorNumber: vm.gameFloor)
-                        let _ = print("masuk top menu")
-                    }
-                    Button (action: {
-                    cardOpen.toggle()
-                }, label: {
-                    Image("Chest")
-                })
-    //                Spacer()
-    //                Text(vm.gameTitle)
-    //                Text(vm.gameQuestion)
-                    Spacer()
-                    BottomMenuView(vm: vm)
-                }
+                FloorView(keyFrameIndex: vm.counterFirst, gameVM: vm)
+                FloorView(keyFrameIndex: vm.counterSecond, gameVM: vm)
+                FloorView(keyFrameIndex: vm.counterThird, gameVM: vm)
             }
-            if cardOpen {
-                CardGameView(vm: vm, openCard: $cardOpen)
+            VStack {
+                ZStack {
+                    ForEach(0..<vm.game.players.count, id: \.self) { i in
+                        if vm.isMoving {
+                            PlayerAnimationWalkView()
+                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                                .offset(y: CGFloat(i * 62))
+                            
+                        } else {
+                            PlayerAnimationIdleView()
+                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                                .offset(y: CGFloat(i * 62))
+                        }
+                        // PlayerAnimationView(player: $vm.game.players[i])
+                        //     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                        //     .offset(y: CGFloat(i * 62))
+                    }
+                }
+                
+                //                    PlayerAnimationView()
+                //                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+            }
+            ZStack {
+                TopAnimationView(keyFrameIndex: vm.counterFirst)
+                BottomAnimationView(keyFrameIndex: vm.counterFirst)
+                TopAnimationView(keyFrameIndex: vm.counterSecond)
+                BottomAnimationView(keyFrameIndex: vm.counterSecond)
+                TopAnimationView(keyFrameIndex: vm.counterThird)
+                BottomAnimationView(keyFrameIndex: vm.counterThird)
+            }
+            VStack {
+                if vm.isTopMenuShowed {
+                    TopMenuView(floorNumber: vm.gameFloor)
+                }
+                //                Spacer()
+                //                Text(vm.gameTitle)
+                //                Text(vm.gameQuestion)
+                Spacer()
+                BottomMenuView(vm: vm, card: $vm.isCardOpen)
+                    .offset(y: 38)
+            }
+            if vm.isCardOpen {
+                CardGameView(vm: vm, openCard: $vm.isCardOpen)
             }
         }
         .navigationBarHidden(true)
-//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .onAppear {
             vm.goToNextFloor()
         }
     }
+    //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 }
+
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {

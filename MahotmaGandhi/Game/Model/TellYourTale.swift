@@ -8,16 +8,33 @@
 import Foundation
 
 class TellYourTale {
-    let title = "Tell Your Tale"
-    let helpImage = ""
-    let cardImage = ""
+    let title = "Tell a Tale"
+    let helpImage = "Card_TellATale_Guide"
+    let cardImage = "Card_TellATale_Front"
+    let baseColor = red01
     private var questions : [String] = [
-        "Given the choice of anyone in the world, whom would you want as a dinner guest?",
-        "xxx"
+        "Would you like to be famous? In what way?",
+        "Before making a telephone call, do you ever rehearse what you are going to say? Why?",
+        "For what in your life do you feel most grateful?",
+        "What do you value most in a friendship?",
+        "Tell us about your first love",
+        "What is your favorite childhood memory?",
+        "When did you last sing to yourself? To someone else?",
+        "If you could change anything about the way you were raised, what would it be?",
+        "If you could wake up tomorrow having gained any one quality or ability, what would it be?",
+        "Is there something that you’ve dreamed of doing for a long time? Why haven’t you done it?"
     ]
     private var availableQuestions : [String] = [
-        "Given the choice of anyone in the world, whom would you want as a dinner guest?",
-        "xxx"
+        "Would you like to be famous? In what way?",
+        "Before making a telephone call, do you ever rehearse what you are going to say? Why?",
+        "For what in your life do you feel most grateful?",
+        "What do you value most in a friendship?",
+        "Tell us about your first love",
+        "What is your favorite childhood memory?",
+        "When did you last sing to yourself? To someone else?",
+        "If you could change anything about the way you were raised, what would it be?",
+        "If you could wake up tomorrow having gained any one quality or ability, what would it be?",
+        "Is there something that you’ve dreamed of doing for a long time? Why haven’t you done it?"
     ]
     
     func getQuestion() -> Floor {
@@ -29,7 +46,7 @@ class TellYourTale {
         let pickedQuestion = availableQuestions[randomIndex]
         availableQuestions.remove(at: randomIndex)
         
-        return Floor(gameType: self.title, question: pickedQuestion, helpImage: self.helpImage, cardImage: self.cardImage)
+        return Floor(gameType: self.title, question: pickedQuestion, helpImage: self.helpImage, cardImage: self.cardImage, cardBaseColor: self.baseColor)
     }
     
 }
