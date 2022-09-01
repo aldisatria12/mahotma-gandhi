@@ -11,7 +11,8 @@ struct PauseMenuView: View {
     @Binding var closePauseMenu: Bool
     var body: some View {
         ZStack {
-            BlurView(style: .light)
+            BlurView(style: .regular)
+                .opacity(0.0)
             ZStack {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .foregroundColor(.white)
