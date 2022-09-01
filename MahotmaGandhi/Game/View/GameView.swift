@@ -54,9 +54,6 @@ struct GameView: View {
                 if vm.isTopMenuShowed {
                     TopMenuView(floorNumber: vm.gameFloor)
                 }
-                //                Spacer()
-                //                Text(vm.gameTitle)
-                //                Text(vm.gameQuestion)
                 Spacer()
                 BottomMenuView(vm: vm, card: $vm.isCardOpen)
                     .offset(y: 38)

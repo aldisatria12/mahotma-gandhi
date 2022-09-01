@@ -38,9 +38,9 @@ struct FloorView: View {
                 Image("Chest")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width * 81 / 390, height: UIScreen.main.bounds.height * 111 / 844)
-                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 240 / 844)
             })
+            .frame(width: UIScreen.main.bounds.width * 81 / 390, height: UIScreen.main.bounds.height * 111 / 844)
+            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 240 / 844)
         }// ZStack Pertama
         .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))
         .animation(keyFrames[keyFrameIndex].animation, value: keyFrameIndex)
