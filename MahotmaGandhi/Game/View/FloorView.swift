@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FloorView: View {
     
+    let id : Int
     var keyFrameIndex : Int
     @ObservedObject var gameVM : GameViewModel
     
@@ -29,7 +30,7 @@ struct FloorView: View {
     
     var body: some View {
         ZStack {
-            Image("stage")
+            Image(gameVM.floorImageIndex[id] ?? "")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
             Button (action: {
@@ -38,9 +39,9 @@ struct FloorView: View {
                 Image("Chest")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width * 81 / 390, height: UIScreen.main.bounds.height * 111 / 844)
-                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 240 / 844)
             })
+            .frame(width: UIScreen.main.bounds.width * 81 / 390, height: UIScreen.main.bounds.height * 111 / 844)
+            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 240 / 844)
         }// ZStack Pertama
         .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))
         .animation(keyFrames[keyFrameIndex].animation, value: keyFrameIndex)
@@ -67,6 +68,6 @@ struct FloorView: View {
 
 struct FloorView_Previews: PreviewProvider {
     static var previews: some View {
-        FloorView(keyFrameIndex: 1, gameVM: GameViewModel(players: []))
+        FloorView(id: 0, keyFrameIndex: 1, gameVM: GameViewModel(players: []))
     }
 }

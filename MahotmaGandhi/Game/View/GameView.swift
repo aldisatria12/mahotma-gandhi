@@ -16,9 +16,9 @@ struct GameView: View {
     var body: some View {
         ZStack {
             ZStack {
-                FloorView(keyFrameIndex: vm.counterFirst, gameVM: vm)
-                FloorView(keyFrameIndex: vm.counterSecond, gameVM: vm)
-                FloorView(keyFrameIndex: vm.counterThird, gameVM: vm)
+                FloorView(id:0, keyFrameIndex: vm.counterFirst, gameVM: vm)
+                FloorView(id:1, keyFrameIndex: vm.counterSecond, gameVM: vm)
+                FloorView(id:2, keyFrameIndex: vm.counterThird, gameVM: vm)
             }
             VStack {
                 ZStack {
