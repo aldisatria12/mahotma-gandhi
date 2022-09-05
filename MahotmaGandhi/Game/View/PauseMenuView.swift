@@ -13,7 +13,8 @@ struct PauseMenuView: View {
     var body: some View {
         ZStack {
             BlurView(style: .regular)
-                .opacity(0.0)
+                .ignoresSafeArea()
+//                .opacity(0.5)
             ZStack {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .foregroundColor(.white)
@@ -63,6 +64,7 @@ struct PauseMenuView: View {
             }
             .frame(width: 220, height: 280, alignment: .center)
         }
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 }
 

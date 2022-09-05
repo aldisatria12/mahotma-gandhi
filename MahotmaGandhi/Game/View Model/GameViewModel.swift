@@ -26,6 +26,7 @@ class GameViewModel : ObservableObject {
     @Published var isTopMenuShowed = false
     @Published var isCardOpen = false
     @Published var isMoving = true
+    @Published var showingPauseMenu = false
     
     var game: GameModel
     

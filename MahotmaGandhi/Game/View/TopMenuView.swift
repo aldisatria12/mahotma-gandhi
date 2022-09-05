@@ -9,19 +9,18 @@ import SwiftUI
 
 struct TopMenuView: View {
     
-    var floorNumber : Int
+    var gameVM : GameViewModel
     
-    @State var showingPauseMenu = false
     
     var body: some View {
         HStack {
-            Text("Floor - \(floorNumber)")
+            Text("Floor - \(gameVM.gameFloor)")
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 18 / 844)
                 .font(.system(size: 30,design: .rounded))
                 .foregroundColor(blue04)
             Spacer()
             Button {
-                showingPauseMenu = true
+                gameVM.showingPauseMenu = true
             } label: {
                 Image(systemName: "pause.fill")
                     .resizable()
@@ -32,12 +31,11 @@ struct TopMenuView: View {
             }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.094)
-        if showingPauseMenu{PauseMenuView(closePauseMenu: $showingPauseMenu)}
     }
 }
 
 struct TopMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        TopMenuView(floorNumber: 1)
+        TopMenuView(gameVM: GameViewModel(players: []))
     }
 }

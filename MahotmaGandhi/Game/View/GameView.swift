@@ -44,7 +44,7 @@ struct GameView: View {
             } // ZStack
             VStack {
                 if vm.isTopMenuShowed {
-                    TopMenuView(floorNumber: vm.gameFloor)
+                    TopMenuView(gameVM: vm)
                 }
                 Spacer()
                 BottomMenuView(vm: vm, card: $vm.isCardOpen)
@@ -53,6 +53,7 @@ struct GameView: View {
             if vm.isCardOpen {
                 CardGameView(vm: vm, openCard: $vm.isCardOpen)
             }
+            if vm.showingPauseMenu{PauseMenuView(closePauseMenu: $vm.showingPauseMenu)}
         }
         .navigationBarHidden(true)
         .onAppear {
