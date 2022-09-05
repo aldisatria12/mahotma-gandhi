@@ -14,7 +14,8 @@ struct PauseMenuView: View {
         ZStack {
             BlurView(style: .regular)
                 .ignoresSafeArea()
-//                .opacity(0.5)
+                .background(.black)
+                .opacity(0.8)
             ZStack {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .foregroundColor(.white)
