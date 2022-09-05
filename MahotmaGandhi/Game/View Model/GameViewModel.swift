@@ -21,6 +21,7 @@ class GameViewModel : ObservableObject {
     @Published var counterSecond = 1
     @Published var counterThird = 2
     
+    @Published var floorImageIndex : [Int:String] = [:]
     
     @Published var isTopMenuShowed = false
     @Published var isCardOpen = false
@@ -34,6 +35,9 @@ class GameViewModel : ObservableObject {
     init(players: [PlayerModel]) {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
+        for i in 0...2 {
+            floorImageIndex[i] = randomFloorImage()
+        }
     }
     
     
@@ -54,6 +58,7 @@ class GameViewModel : ObservableObject {
         counterFirst = addCounter(counter: counterFirst)
         counterSecond = addCounter(counter: counterSecond)
         counterThird = addCounter(counter: counterThird)
+        changeFloorImageIndex()
         isTopMenuShowed = false
         isMoving = true
     }
@@ -64,5 +69,14 @@ class GameViewModel : ObservableObject {
         } else {
             return counter + 1
         }
+    }
+    
+    func changeFloorImageIndex() {
+        floorImageIndex[(game.floorCounter * 2) % 3] = randomFloorImage()
+        print("Floor : \((game.floorCounter * 2) % 3), \(floorImageIndex[(game.floorCounter * 2) % 3])")
+    }
+    
+    func randomFloorImage() -> String {
+        return game.floorImages.randomElement() ?? ""
     }
 }
