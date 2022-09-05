@@ -14,7 +14,7 @@ struct PlayerTurnView: View {
         ZStack{
 //            RoundedRectangle(cornerRadius: 20)
 //                .foregroundColor(.gray)
-//            ScrollView(.horizontal){
+            ScrollView(.horizontal){
                 HStack{
                     ForEach(0..<playerTurnViewModel.randomTurnPlayer.count, id: \.self) {i in
                         PlayerTurnCardView(player: $playerTurnViewModel.randomTurnPlayer[i], card: $card, turns: i + 1, divider: i == playerTurnViewModel.randomTurnPlayer.count - 1 ? false : true)
@@ -27,9 +27,9 @@ struct PlayerTurnView: View {
 //                    }
 
                 }//HStack
-//            }//ScrollView
-            .padding()
-            .padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
+                .padding()
+                .padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
+            }//ScrollView
             
         }//ZStack
         .frame(height: 126)

@@ -30,10 +30,7 @@ struct PlayerTurnCardView: View {
                     Text(player.name)
                         .font(.caption2)
                 }//vstack
-                .frame(width: 55, height: 42)
-                if divider {
-                    Divider()
-                }
+                .frame(width: 62, height: 42)
             }
             
         }//zstack
