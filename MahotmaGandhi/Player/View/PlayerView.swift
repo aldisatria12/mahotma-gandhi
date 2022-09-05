@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct PlayerView: View {
-    @StateObject var playerViewModel: PlayerViewModel = PlayerViewModel()
+    @StateObject var playerViewModel: PlayerViewModel
     var body: some View {
-        NavigationView{
-            ScrollView{
+        ScrollView{
             VStack{
                 ScrollView(.horizontal){
                     HStack{
@@ -65,10 +64,9 @@ struct PlayerView: View {
         }
     }
 }
-}
 
-struct PlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerView()
-    }
-}
+//struct PlayerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerView()
+//    }
+//}

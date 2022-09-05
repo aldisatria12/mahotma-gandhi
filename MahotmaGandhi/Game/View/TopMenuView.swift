@@ -11,6 +11,8 @@ struct TopMenuView: View {
     
     var floorNumber : Int
     
+    @State var showingPauseMenu = false
+    
     var body: some View {
         HStack {
             Text("Floor - \(floorNumber)")
@@ -19,9 +21,9 @@ struct TopMenuView: View {
                 .foregroundColor(blue04)
             Spacer()
             Button {
-                
+                showingPauseMenu = true
             } label: {
-                Image(systemName: "questionmark.square")
+                Image(systemName: "pause.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width * 24 / 390, height: UIScreen.main.bounds.height * 31 / 844)
@@ -30,6 +32,7 @@ struct TopMenuView: View {
             }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.094)
+        if showingPauseMenu{PauseMenuView(closePauseMenu: $showingPauseMenu)}
     }
 }
 
