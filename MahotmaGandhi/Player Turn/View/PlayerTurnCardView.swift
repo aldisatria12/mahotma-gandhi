@@ -37,24 +37,24 @@ struct PlayerTurnCardView: View {
 //        .frame(width: 96, height: 138)
         
         //Animation 1
-//        .offset(x: offset)
-//        .onAppear {
-//            withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
-//                offset = 0
-//            }
-//        }
-        //
-        //Animation 2
-        .offset(y: offset)
+        .offset(x: offset)
         .onAppear {
             withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
                 offset = 0
             }
         }
+        //
+        //Animation 2
+//        .offset(y: offset)
+//        .onAppear {
+//            withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
+//                offset = 0
+//            }
+//        }
         .onChange(of: card) { newValue in
             if card == false {
                 withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2)) {
-                    offset = 400
+                    offset = 500
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                     withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
