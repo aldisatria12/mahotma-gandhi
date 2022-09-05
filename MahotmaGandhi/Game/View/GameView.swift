@@ -19,7 +19,7 @@ struct GameView: View {
                 FloorView(id:0, keyFrameIndex: vm.counterFirst, gameVM: vm)
                 FloorView(id:1, keyFrameIndex: vm.counterSecond, gameVM: vm)
                 FloorView(id:2, keyFrameIndex: vm.counterThird, gameVM: vm)
-            }
+            } // ZStack
             VStack {
                 ZStack {
                     ForEach(0..<vm.game.players.count, id: \.self) { i in
@@ -33,34 +33,23 @@ struct GameView: View {
                                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
                         }
-                        // PlayerAnimationView(player: $vm.game.players[i])
-                        //     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-                        //     .offset(y: CGFloat(i * 62))
                     }
-                }
+                } // ZStack
                 
-                //                    PlayerAnimationView()
-                //                        .position(x: geometry.size.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-            }
+            } // VStack
             ZStack {
-                TopAnimationView(keyFrameIndex: vm.counterFirst)
-                BottomAnimationView(keyFrameIndex: vm.counterFirst)
-                TopAnimationView(keyFrameIndex: vm.counterSecond)
-                BottomAnimationView(keyFrameIndex: vm.counterSecond)
-                TopAnimationView(keyFrameIndex: vm.counterThird)
-                BottomAnimationView(keyFrameIndex: vm.counterThird)
-            }
+                AnimationView(keyFrameIndex: vm.counterFirst, id:0, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.counterSecond, id:1, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.counterThird, id:2, gameVM: vm)
+            } // ZStack
             VStack {
                 if vm.isTopMenuShowed {
                     TopMenuView(floorNumber: vm.gameFloor)
                 }
-                //                Spacer()
-                //                Text(vm.gameTitle)
-                //                Text(vm.gameQuestion)
                 Spacer()
                 BottomMenuView(vm: vm, card: $vm.isCardOpen)
                     .offset(y: 38)
-            }
+            } // VStack
             if vm.isCardOpen {
                 CardGameView(vm: vm, openCard: $vm.isCardOpen)
             }
