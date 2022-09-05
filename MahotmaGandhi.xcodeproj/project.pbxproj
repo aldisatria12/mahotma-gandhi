@@ -22,6 +22,7 @@
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
 		3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */; };
 		A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328067728BF49B8004EB8B3 /* PauseMenuView.swift */; };
+		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
 		A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE728BE01CB0031DCDA /* CardGameView.swift */; };
 		F7BD343728BE0BC600EA99EB /* TopAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343628BE0BC600EA99EB /* TopAnimationView.swift */; };
@@ -57,6 +58,7 @@
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnView.swift; sourceTree = "<group>"; };
 		A328067728BF49B8004EB8B3 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
+		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
 		A3A28FE728BE01CB0031DCDA /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		F7BD343628BE0BC600EA99EB /* TopAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAnimationView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */,
+				A35CA19B28C5D938001FFE97 /* MainMenuView.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */,
 				3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */,
 				3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */,
 				A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */,
@@ -471,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = H4B8Q4454B;
+				DEVELOPMENT_TEAM = N98Z7YMPQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -500,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = H4B8Q4454B;
+				DEVELOPMENT_TEAM = N98Z7YMPQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

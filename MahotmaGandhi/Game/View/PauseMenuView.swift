@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PauseMenuView: View {
     @Binding var closePauseMenu: Bool
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         ZStack {
             BlurView(style: .regular)
@@ -35,7 +36,7 @@ struct PauseMenuView: View {
                                 .opacity(0.5))
                     })
                     Button(action: {
-                        
+                        self.presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("MANAGE PLAYER")
                             .font(.subheadline)
@@ -47,7 +48,7 @@ struct PauseMenuView: View {
                                 .opacity(0.5))
                     })
                     Button(action: {
-                        
+                        NavigationUtil.popToRootView()
                     }, label: {
                         Text("MAIN MENU")
                             .font(.subheadline)
@@ -65,10 +66,33 @@ struct PauseMenuView: View {
     }
 }
 
+struct NavigationUtil {
+    static func popToRootView() {
+        findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
+            .popToRootViewController(animated: true)
+    }
+    
+    static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {
+        guard let viewController = viewController else {
+            return nil
+        }
+        
+        if let navigationController = viewController as? UINavigationController {
+            return navigationController
+        }
+        
+        for childViewController in viewController.children {
+            return findNavigationController(viewController: childViewController)
+        }
+        
+        return nil
+    }
+}
+
 struct BlurView: UIViewRepresentable {
-
+    
     let style: UIBlurEffect.Style
-
+    
     func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
         let view = UIView(frame: .zero)
         view.backgroundColor = .clear
@@ -82,12 +106,12 @@ struct BlurView: UIViewRepresentable {
         ])
         return view
     }
-
+    
     func updateUIView(_ uiView: UIView,
                       context: UIViewRepresentableContext<BlurView>) {
-
+        
     }
-
+    
 }
 
 //struct PauseMenuView_Previews: PreviewProvider {
