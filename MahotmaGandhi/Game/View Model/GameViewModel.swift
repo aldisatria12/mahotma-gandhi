@@ -28,6 +28,8 @@ class GameViewModel : ObservableObject {
     @Published var isMoving = true
     @Published var showingPauseMenu = false
     
+    @Published var showingPlayerMenu = false
+    
     var game: GameModel
     
     // turn view model
