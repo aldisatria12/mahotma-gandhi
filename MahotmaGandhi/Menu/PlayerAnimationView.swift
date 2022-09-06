@@ -70,7 +70,7 @@ struct PlayerAnimationIdleView: View {
         VStack {
             Image(imageFrame)
                 .onReceive(timer) { _ in
-                    imageFrame = "Wayfarer_Idle\(index)"
+                    imageFrame = "Wayfarer_Idle_\(index)"
                     index += 1
                     if (index > 117) {
                         index = 0

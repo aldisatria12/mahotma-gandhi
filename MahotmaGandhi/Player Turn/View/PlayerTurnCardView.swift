@@ -22,42 +22,41 @@ struct PlayerTurnCardView: View {
                 VStack{
                     Text("\(turns)")
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
+//                        .font(.caption)
+                        .font(.system(.caption, design: .rounded))
                     Image("\(player.avatar)_icon")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .scaledToFit()
                         .clipShape(Circle())
                     Text(player.name)
-                        .font(.caption2)
+                        .font(.system(.caption2, design: .rounded))
                 }//vstack
-                .frame(width: 55, height: 42)
-                if divider {
-                    Divider()
-                }
+                .frame(width: 62, height: 42)
             }
             
         }//zstack
 //        .frame(width: 96, height: 138)
         
         //Animation 1
-//        .offset(x: offset)
-//        .onAppear {
-//            withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
-//                offset = 0
-//            }
-//        }
-        //
-        //Animation 2
-        .offset(y: offset)
+        .offset(x: offset)
         .onAppear {
             withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
                 offset = 0
             }
         }
+        //
+        //Animation 2
+//        .offset(y: offset)
+//        .onAppear {
+//            withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
+//                offset = 0
+//            }
+//        }
         .onChange(of: card) { newValue in
             if card == false {
                 withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2)) {
-                    offset = 400
+                    offset = 500
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                     withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2).delay(Double(turns) * 0.333)) {
