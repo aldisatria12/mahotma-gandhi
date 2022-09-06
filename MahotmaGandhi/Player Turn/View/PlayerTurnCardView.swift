@@ -22,14 +22,15 @@ struct PlayerTurnCardView: View {
                 VStack{
                     Text("\(turns)")
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
-                        .font(.system(.caption, design: .rounded).bold())
-                    Image("\(player.avatar)_icon")
+//                        .font(.caption)
+                        .font(.system(.caption, design: .rounded))
+                    Image("\(player.avatar)_Icon")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .scaledToFit()
                         .clipShape(Circle())
                     Text(player.name)
-                        .font(.system(.caption2, design: .rounded).bold())
+                        .font(.system(.caption2, design: .rounded))
                 }//vstack
                 .frame(width: 62, height: 42)
             }
