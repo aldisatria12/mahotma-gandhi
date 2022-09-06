@@ -24,7 +24,7 @@ struct PlayerTurnCardView: View {
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
 //                        .font(.caption)
                         .font(.system(.caption, design: .rounded))
-                    Image("\(player.avatar)_icon")
+                    Image("\(player.avatar)_Icon")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .scaledToFit()

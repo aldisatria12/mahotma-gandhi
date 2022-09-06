@@ -17,7 +17,7 @@ struct CardPlayerMiniView: View {
                 .foregroundColor(.gray)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(selected, lineWidth: 2))
             VStack{
-                Image(avatar)
+                Image("\(avatar)_Icon")
                     .resizable()
                     .frame(width: 72, height: 72)
                     .scaledToFit()
