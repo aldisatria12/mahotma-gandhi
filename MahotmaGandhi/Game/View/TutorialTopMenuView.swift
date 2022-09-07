@@ -14,7 +14,7 @@ struct TutorialTopMenuView: View {
     var body: some View {
         HStack {
             Button {
-                gameVM.finishTutorial()
+//                gameVM.finishTutorial()
             } label: {
                 Text("Skip")
             }

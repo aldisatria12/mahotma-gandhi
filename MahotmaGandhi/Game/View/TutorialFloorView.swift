@@ -26,9 +26,6 @@ struct TutorialFloorView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
             Button (action: {
                 gameVM.animateTutorialMovement()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    gameVM.finishTutorial()
-                }
             }, label: {
                 Image("Chest")
                     .resizable()

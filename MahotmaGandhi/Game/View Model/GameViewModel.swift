@@ -18,7 +18,7 @@ class GameViewModel : ObservableObject {
     @Published var cardHelpName = ""
     // counter for animation
     @Published var mainCounter = [0 : 0, 1 : 1, 2 : 2]
-    @Published var tutorialCounter = [0 : 0 , 1 : 1]
+//    @Published var tutorialCounter = [0 : 0 , 1 : 1]
     
     @Published var floorImageIndex : [Int:String] = [:]
     
@@ -27,7 +27,6 @@ class GameViewModel : ObservableObject {
     @Published var isMoving = true
     @Published var showingPauseMenu = false
 //    @AppStorage("isTutorial") var isTutorial = true
-    @Published var isTutorial = true
     
     var game: GameModel
     
@@ -38,11 +37,12 @@ class GameViewModel : ObservableObject {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
         for i in 0...2 {
-            if i == 1 {
-                floorImageIndex[i] = "stage"
-            } else {
-                floorImageIndex[i] = randomFloorImage()
-            }
+//            if i == 1 {
+//                floorImageIndex[i] = "stage"
+//            } else {
+//                floorImageIndex[i] = randomFloorImage()
+//            }
+            floorImageIndex[i] = randomFloorImage()
         }
     }
     
@@ -85,14 +85,11 @@ class GameViewModel : ObservableObject {
         return game.floorImages.randomElement() ?? ""
     }
     
-    func animateTutorialMovement() {
-        tutorialCounter[0] = 1
-        tutorialCounter[1] = 2
-    }
+//    func animateTutorialMovement() {
+//        tutorialCounter[0] = 1
+//        tutorialCounter[1] = 2
+//    }
     
-    func finishTutorial() {
-        isTutorial = false
-    }
     
     
 }

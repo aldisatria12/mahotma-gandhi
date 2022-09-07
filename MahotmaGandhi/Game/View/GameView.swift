@@ -14,14 +14,9 @@ struct GameView: View {
     var body: some View {
         ZStack {
             ZStack {
-                if vm.isTutorial {
-                    FloorView(id: 1, keyFrameIndex: vm.tutorialCounter[0] ?? 0, gameVM: vm)
-                    TutorialFloorView(keyFrameIndex: vm.tutorialCounter[1] ?? 1, gameVM: vm)
-                } else {
-                    FloorView(id:0, keyFrameIndex: vm.mainCounter[0] ?? 0, gameVM: vm)
-                    FloorView(id:1, keyFrameIndex: vm.mainCounter[1] ?? 1, gameVM: vm)
-                    FloorView(id:2, keyFrameIndex: vm.mainCounter[2] ?? 2, gameVM: vm)
-                }
+                FloorView(id:0, keyFrameIndex: vm.mainCounter[0] ?? 0, gameVM: vm)
+                FloorView(id:1, keyFrameIndex: vm.mainCounter[1] ?? 1, gameVM: vm)
+                FloorView(id:2, keyFrameIndex: vm.mainCounter[2] ?? 2, gameVM: vm)
             } // ZStack
             VStack {
                 ZStack {
@@ -41,22 +36,13 @@ struct GameView: View {
                 
             } // VStack
             ZStack {
-                if vm.isTutorial {
-                    AnimationView(keyFrameIndex: vm.tutorialCounter[0] ?? 0, id:0, gameVM: vm)
-                    AnimationView(keyFrameIndex: vm.tutorialCounter[1] ?? 1, id:1, gameVM: vm)
-                } else {
-                    AnimationView(keyFrameIndex: vm.mainCounter[0] ?? 0, id:0, gameVM: vm)
-                    AnimationView(keyFrameIndex: vm.mainCounter[1] ?? 1, id:1, gameVM: vm)
-                    AnimationView(keyFrameIndex: vm.mainCounter[2] ?? 2, id:2, gameVM: vm)
-                }
+                AnimationView(keyFrameIndex: vm.mainCounter[0] ?? 0, id:0, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.mainCounter[1] ?? 1, id:1, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.mainCounter[2] ?? 2, id:2, gameVM: vm)
             } // ZStack
             VStack {
                 if vm.isTopMenuShowed {
-                    if vm.isTutorial {
-                        TutorialTopMenuView(gameVM: vm)
-                    } else {
-                        TopMenuView(gameVM: vm)
-                    }
+                    TopMenuView(gameVM: vm)
                 }
                 Spacer()
                 BottomMenuView(vm: vm, card: $vm.isCardOpen)
