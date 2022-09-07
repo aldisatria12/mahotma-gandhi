@@ -28,6 +28,8 @@ class GameViewModel : ObservableObject {
     @Published var isMoving = true
     @Published var showingPauseMenu = false
     
+    @Published var showingPlayerMenu = false
+    
     var game: GameModel
     
     // turn view model
@@ -40,8 +42,6 @@ class GameViewModel : ObservableObject {
             floorImageIndex[i] = randomFloorImage()
         }
     }
-    
-    
     
     func goToNextFloor() {
         game.toNextFloor()
@@ -80,4 +80,5 @@ class GameViewModel : ObservableObject {
     func randomFloorImage() -> String {
         return game.floorImages.randomElement() ?? ""
     }
+    
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct GameView: View {
     @StateObject var vm : GameViewModel
     
-    
     @State var counter = 0
     
     var body: some View {
@@ -53,7 +52,12 @@ struct GameView: View {
             if vm.isCardOpen {
                 CardGameView(vm: vm, openCard: $vm.isCardOpen)
             }
-            if vm.showingPauseMenu{PauseMenuView(closePauseMenu: $vm.showingPauseMenu)}
+            if vm.showingPauseMenu {
+                PauseMenuView(closePauseMenu: $vm.showingPauseMenu, showingPlayerView: $vm.showingPlayerMenu)
+            }
+            if vm.showingPlayerMenu{
+                ManagePlayerView(gameVM: vm)
+            }
         }
         .navigationBarHidden(true)
         .onAppear {
