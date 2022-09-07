@@ -116,6 +116,7 @@ struct ManagePlayerView: View {
                                         randomAva = avatarName[Int.random(in: 0...avatarName.count - 1)]
                                     }
                                     gameVM.game.players.append(PlayerModel(name: "", avatar: randomAva))
+                                    gameVM.objectWillChange.send()
                                 }))
                         }//if allPlayer
                     }//hstack

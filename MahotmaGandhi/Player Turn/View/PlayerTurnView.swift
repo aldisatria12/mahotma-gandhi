@@ -16,8 +16,8 @@ struct PlayerTurnView: View {
 //                .foregroundColor(.gray)
             ScrollView(.horizontal){
                 HStack{
-                    ForEach(0..<playerTurnViewModel.randomTurnPlayer.count, id: \.self) {i in
-                        PlayerTurnCardView(player: $playerTurnViewModel.randomTurnPlayer[i], card: $card, turns: i + 1, divider: i == playerTurnViewModel.randomTurnPlayer.count - 1 ? false : true)
+                    ForEach(0..<playerTurnViewModel.gameVM.players.count, id: \.self) {i in
+                        PlayerTurnCardView(player: $playerTurnViewModel.gameVM.players[i], card: $card, turns: i + 1, divider: i == playerTurnViewModel.gameVM.players.count - 1 ? false : true)
 //                        Divider()
                     }
 //                    Button {
@@ -35,12 +35,12 @@ struct PlayerTurnView: View {
         .frame(height: 126)
         .padding()
         .onAppear {
-            playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+            playerTurnViewModel.randomizeTurn()
         }
         .onChange(of: card) { newValue in
             if card == false {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
+                    playerTurnViewModel.randomizeTurn()
                 }
             }
         }
