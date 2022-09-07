@@ -43,8 +43,6 @@ class GameViewModel : ObservableObject {
         }
     }
     
-    
-    
     func goToNextFloor() {
         game.toNextFloor()
         gameTitle = game.floorInfo.gameType
@@ -82,4 +80,5 @@ class GameViewModel : ObservableObject {
     func randomFloorImage() -> String {
         return game.floorImages.randomElement() ?? ""
     }
+    
 }

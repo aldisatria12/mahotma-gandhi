@@ -70,8 +70,19 @@ struct ManagePlayerView: View {
     @State var selectedPlayer = 0
     @State var avatarName = ["M1","M2","M3","M4","F1","F2","F3","F4"]
     var body: some View {
-        ScrollView{
-            VStack{
+        ZStack {
+            Rectangle()
+                .frame(width: .infinity, height: .infinity)
+                .ignoresSafeArea()
+                .foregroundColor(.gray)
+//            background(.gray)
+//                .ignoresSafeArea()
+            VStack {
+                Text("ManagePlayer")
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
                 ScrollView(.horizontal){
                     HStack{
                         ForEach(0..<gameVM.game.players.count, id: \.self) { i in
@@ -80,10 +91,10 @@ struct ManagePlayerView: View {
                                     name: gameVM.game.players[i].name,
                                     avatar: gameVM.game.players[i].avatar,
                                     selected: selectedPlayer == i ? Color.green : Color.black)
-                                    .simultaneousGesture(TapGesture().onEnded({ _ in
-                                        selectedPlayer = i
-                                    }))
-//                                Remove button
+                                .simultaneousGesture(TapGesture().onEnded({ _ in
+                                    selectedPlayer = i
+                                }))
+                                //                                Remove button
                                 if i > 0 {
                                     VStack{
                                         HStack{
@@ -93,6 +104,7 @@ struct ManagePlayerView: View {
                                                     selectedPlayer -= 1
                                                 }
                                                 gameVM.game.players.remove(at: i)
+                                                gameVM.objectWillChange.send()
                                             } label: {
                                                 Image(systemName: "minus.square.fill")
                                                     .resizable()
@@ -109,7 +121,7 @@ struct ManagePlayerView: View {
                         if gameVM.game.players.count < 6 {
                             CardAddPlayerView()
                                 .simultaneousGesture(TapGesture().onEnded({ _ in
-//                                    playerViewModel.addPlayer()
+                                    //                                    playerViewModel.addPlayer()
                                     var randomAva = "M1"
                                     selectedPlayer = gameVM.game.players.count
                                     while gameVM.game.players.contains(where: {$0.avatar == randomAva}) {
@@ -129,12 +141,19 @@ struct ManagePlayerView: View {
                 Button (action: {
                     gameVM.showingPlayerMenu.toggle()
                 }, label: {
-                    Text("Resume")
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundColor(blue01)
+                        Text("Resume")
+                            .font(.system(.title, design: .rounded))
+                            .fontWeight(.medium)
+                            .foregroundColor(yellow03)
+                    }
+                    .frame(width: 200, height: 40, alignment: .center)
                 })
             }//vstack
-        }//scrollview
-        .navigationTitle("Manage Player")
-        .navigationBarTitleDisplayMode(.inline)
+            
+        }//scrollview)
     }
 }
 
