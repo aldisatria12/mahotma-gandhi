@@ -31,11 +31,11 @@ struct AnimationView: View {
     
     var body: some View {
         VStack {
-            Image("\(gameVM.floorImageIndex[id] ?? "")_top")
+            Image("stage_top")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.127)
             Spacer()
-            Image("\(gameVM.floorImageIndex[id] ?? "")_bottom")
+            Image("stage_bottom")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.043)
         } // VStack
