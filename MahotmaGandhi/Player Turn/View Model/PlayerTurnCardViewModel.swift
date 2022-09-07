@@ -15,7 +15,7 @@ class PlayerTurnCardViewModel: ObservableObject {
         gameVM = game
     }
     
-    func randomizeTurn() -> [PlayerModel] {
+    func randomizeTurn() {
         var playerList: [PlayerModel] = []
         var turnList: [PlayerModel] = []
         var pickedPlayer: PlayerModel = PlayerModel(name: "", avatar: "")
@@ -40,7 +40,7 @@ class PlayerTurnCardViewModel: ObservableObject {
                 }
             }
         }
-        return turnList
+        gameVM.players = turnList
     }
     
 }

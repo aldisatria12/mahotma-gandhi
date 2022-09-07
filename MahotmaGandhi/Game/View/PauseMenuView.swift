@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PauseMenuView: View {
     @Binding var closePauseMenu: Bool
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var showingPlayerView: Bool
     var body: some View {
         ZStack {
             BlurView(style: .regular)
@@ -38,7 +38,7 @@ struct PauseMenuView: View {
                                 .opacity(0.5))
                     })
                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        showingPlayerView = true
                     }, label: {
                         Text("MANAGE PLAYER")
                             .font(.subheadline)
