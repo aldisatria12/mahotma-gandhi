@@ -21,7 +21,7 @@ class GameModel {
         [.neverHaveIEver, .tellYourTale],
         [.neverHaveIEver, .neverHaveIEver]
     ]
-    var floorImages : [String] = ["stage"]
+    var floorImages : [String] = ["stage_1", "stage_2"]
     
     
     init(players: [PlayerModel]) {
