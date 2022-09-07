@@ -38,7 +38,7 @@ struct PlayerTurnView: View {
             playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
         }
         .onChange(of: card) { newValue in
-            if card == false {
+            if card == true {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
                 }

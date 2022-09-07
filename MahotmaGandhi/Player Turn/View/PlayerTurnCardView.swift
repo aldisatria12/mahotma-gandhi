@@ -54,7 +54,7 @@ struct PlayerTurnCardView: View {
 //            }
 //        }
         .onChange(of: card) { newValue in
-            if card == false {
+            if card == true {
                 withAnimation(.interactiveSpring(response: 1, dampingFraction: 1, blendDuration: 2)) {
                     offset = 500
                 }
