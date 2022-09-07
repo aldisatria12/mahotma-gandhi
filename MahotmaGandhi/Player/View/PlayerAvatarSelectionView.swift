@@ -26,7 +26,7 @@ struct PlayerAvatarSelectionView: View {
                         LazyVGrid(columns: columns, spacing: 2) {
                             ForEach(avatarName, id: \.self) { item in
                                 if allPlayer.contains(where: {$0.avatar == item}){
-                                    Image(item)
+                                    Image("\(item)_Icon")
                                         .resizable()
                                         .frame(width: 72, height: 72)
                                         .scaledToFit()
@@ -35,7 +35,7 @@ struct PlayerAvatarSelectionView: View {
                                         .overlay(Circle().stroke(Color.green,lineWidth: selectedPlayer.avatar == item ? 2 : 0))
                                     
                                 } else {
-                                    Image(item)
+                                    Image("\(item)_Icon")
                                         .resizable()
                                         .frame(width: 72, height: 72)
                                         .scaledToFit()
@@ -56,8 +56,8 @@ struct PlayerAvatarSelectionView: View {
     }
 }
 
-struct PlayerAvatarSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerAvatarSelectionView(allPlayer: .constant([PlayerModel(name: "Testing", avatar: "M1")]), selectedPlayer: .constant(PlayerModel(name: "Testing", avatar: "M1")), avatarName: .constant(["M1","M2","M3","M4","F1","F2","F3","F4"]))
-    }
-}
+//struct PlayerAvatarSelectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerAvatarSelectionView(allPlayer: .constant([PlayerModel(name: "Testing", avatar: "M1")]), selectedPlayer: .constant(PlayerModel(name: "Testing", avatar: "M1")), avatarName: .constant(["M1","M2","M3","M4","F1","F2","F3","F4"]))
+//    }
+//}
