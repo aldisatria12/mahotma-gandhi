@@ -23,6 +23,7 @@
 		3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */; };
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
 		3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */; };
+		A313B02628C9FFE7004C1035 /* CardPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B02528C9FFE7004C1035 /* CardPlayerView.swift */; };
 		A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328067728BF49B8004EB8B3 /* PauseMenuView.swift */; };
 		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
@@ -60,6 +61,7 @@
 		3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardViewModel.swift; sourceTree = "<group>"; };
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnView.swift; sourceTree = "<group>"; };
+		A313B02528C9FFE7004C1035 /* CardPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlayerView.swift; sourceTree = "<group>"; };
 		A328067728BF49B8004EB8B3 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
 		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
@@ -148,6 +150,7 @@
 				3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */,
 				3EA10E7F28BDABD5008780D8 /* PlayerView.swift */,
 				3E4792AB28C9CC66006F9D1B /* AllPlayerView.swift */,
+				A313B02528C9FFE7004C1035 /* CardPlayerView.swift */,
 				3E4792AD28C9D689006F9D1B /* AllPlayerNavBarView.swift */,
 			);
 			path = View;
@@ -337,6 +340,7 @@
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */,
 				F7F160CE28BD060400E83273 /* FloorView.swift in Sources */,
+				A313B02628C9FFE7004C1035 /* CardPlayerView.swift in Sources */,
 				F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */,
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
 				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
