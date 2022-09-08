@@ -25,6 +25,8 @@
 		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
 		A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE728BE01CB0031DCDA /* CardGameView.swift */; };
+		F79EE61F28C72D7E004B7A72 /* TutorialFloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */; };
+		F79EE62128C74693004B7A72 /* TutorialTopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */; };
 		F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79FE6E028C5F5D800322A7A /* AnimationView.swift */; };
 		F7BD343C28BEFECE00EA99EB /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
@@ -60,6 +62,8 @@
 		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
 		A3A28FE728BE01CB0031DCDA /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
+		F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFloorView.swift; sourceTree = "<group>"; };
+		F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTopMenuView.swift; sourceTree = "<group>"; };
 		F79FE6E028C5F5D800322A7A /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				A3A28FE728BE01CB0031DCDA /* CardGameView.swift */,
 				A328067728BF49B8004EB8B3 /* PauseMenuView.swift */,
 				F79FE6E028C5F5D800322A7A /* AnimationView.swift */,
+				F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */,
+				F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				F7F160AA28B8A31700E83273 /* GameViewModel.swift in Sources */,
 				F7F160A028B7B0B800E83273 /* Floor.swift in Sources */,
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
+				F79EE62128C74693004B7A72 /* TutorialTopMenuView.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */,
 				F7F160CE28BD060400E83273 /* FloorView.swift in Sources */,
@@ -339,6 +346,7 @@
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
 				3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */,
+				F79EE61F28C72D7E004B7A72 /* TutorialFloorView.swift in Sources */,
 				F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */,
 				F7F160A628B7B39900E83273 /* FloorType.swift in Sources */,
 				3E69802E28B670FA005F4B1E /* CardPlayerInputView.swift in Sources */,

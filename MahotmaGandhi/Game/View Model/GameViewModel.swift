@@ -17,9 +17,8 @@ class GameViewModel : ObservableObject {
     @Published var cardImageName = ""
     @Published var cardHelpName = ""
     // counter for animation
-    @Published var counterFirst = 0
-    @Published var counterSecond = 1
-    @Published var counterThird = 2
+    @Published var mainCounter = [0 : 0, 1 : 1, 2 : 2]
+//    @Published var tutorialCounter = [0 : 0 , 1 : 1]
     
     @Published var floorImageIndex : [Int:String] = [:]
     
@@ -27,6 +26,7 @@ class GameViewModel : ObservableObject {
     @Published var isCardOpen = false
     @Published var isMoving = true
     @Published var showingPauseMenu = false
+//    @AppStorage("isTutorial") var isTutorial = true
     
     @Published var showingPlayerMenu = false
     
@@ -39,6 +39,11 @@ class GameViewModel : ObservableObject {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
         for i in 0...2 {
+//            if i == 1 {
+//                floorImageIndex[i] = "stage"
+//            } else {
+//                floorImageIndex[i] = randomFloorImage()
+//            }
             floorImageIndex[i] = randomFloorImage()
         }
     }
@@ -56,9 +61,9 @@ class GameViewModel : ObservableObject {
     }
     
     func animateMovement() {
-        counterFirst = addCounter(counter: counterFirst)
-        counterSecond = addCounter(counter: counterSecond)
-        counterThird = addCounter(counter: counterThird)
+        for i in 0...2 {
+            mainCounter[i] = addCounter(counter: mainCounter[i]!)
+        }
         changeFloorImageIndex()
         isTopMenuShowed = false
         isMoving = true
@@ -74,11 +79,17 @@ class GameViewModel : ObservableObject {
     
     func changeFloorImageIndex() {
         floorImageIndex[(game.floorCounter * 2) % 3] = randomFloorImage()
-        print("Floor : \((game.floorCounter * 2) % 3), \(floorImageIndex[(game.floorCounter * 2) % 3])")
     }
     
     func randomFloorImage() -> String {
         return game.floorImages.randomElement() ?? ""
     }
+    
+//    func animateTutorialMovement() {
+//        tutorialCounter[0] = 1
+//        tutorialCounter[1] = 2
+//    }
+    
+    
     
 }
