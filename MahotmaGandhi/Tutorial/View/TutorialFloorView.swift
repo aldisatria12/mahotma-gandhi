@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TutorialFloorView: View {
     
+    @ObservedObject var tutorialVM : TutorialViewModel
+    
     let keyFrameIndex : Int
     
     let keyFrames = [
@@ -23,7 +25,7 @@ struct TutorialFloorView: View {
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
             Button (action: {
-//                gameVM.animateTutorialMovement()
+                tutorialVM.isCardOpen.toggle()
             }, label: {
                 Image("Chest")
                     .resizable()
@@ -56,6 +58,6 @@ struct TutorialFloorView: View {
 
 struct TutorialFloorView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialFloorView(keyFrameIndex: 1)
+        TutorialFloorView(tutorialVM: TutorialViewModel(), keyFrameIndex: 1)
     }
 }

@@ -14,8 +14,8 @@ struct TutorialView: View {
     var body: some View {
         ZStack {
             ZStack {
-                TutorialFloorView(keyFrameIndex: tutorialVM.tutorialCounter[0] ?? 0)
-                TutorialFloorView(keyFrameIndex: tutorialVM.tutorialCounter[1] ?? 1)
+                TutorialFloorView(tutorialVM: tutorialVM, keyFrameIndex: tutorialVM.tutorialCounter[0] ?? 0)
+                TutorialFloorView(tutorialVM: tutorialVM, keyFrameIndex: tutorialVM.tutorialCounter[1] ?? 1)
             }
             ZStack {
                 TutorialAnimationView(keyFrameIndex: tutorialVM.tutorialCounter[0] ?? 0)
@@ -29,6 +29,9 @@ struct TutorialView: View {
                 TutorialBottomMenuView(vm: tutorialVM ,card: $tutorialVM.isCardOpen)
                     .offset(y: 38)
             } // VStack
+            if tutorialVM.isCardOpen {
+                TutorialCardView(vm: tutorialVM, openCard: $tutorialVM.isCardOpen)
+            }
         } // ZStack Pertama
         .navigationBarHidden(true)
     }

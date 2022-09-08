@@ -32,6 +32,7 @@
 		F79EE62A28C8A567004B7A72 /* TutorialAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62928C8A567004B7A72 /* TutorialAnimationView.swift */; };
 		F79EE62C28C9CE22004B7A72 /* TutorialBottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */; };
 		F79EE62E28C9D2B1004B7A72 /* TutorialTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */; };
+		F79EE63028C9D846004B7A72 /* TutorialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */; };
 		F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79FE6E028C5F5D800322A7A /* AnimationView.swift */; };
 		F7BD343C28BEFECE00EA99EB /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
@@ -74,6 +75,7 @@
 		F79EE62928C8A567004B7A72 /* TutorialAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAnimationView.swift; sourceTree = "<group>"; };
 		F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBottomMenuView.swift; sourceTree = "<group>"; };
 		F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTurnView.swift; sourceTree = "<group>"; };
+		F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCardView.swift; sourceTree = "<group>"; };
 		F79FE6E028C5F5D800322A7A /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				F79EE62928C8A567004B7A72 /* TutorialAnimationView.swift */,
 				F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */,
 				F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */,
+				F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */,
 				F7F160AA28B8A31700E83273 /* GameViewModel.swift in Sources */,
 				F7F160A028B7B0B800E83273 /* Floor.swift in Sources */,
+				F79EE63028C9D846004B7A72 /* TutorialCardView.swift in Sources */,
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
 				F79EE62128C74693004B7A72 /* TutorialTopMenuView.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
