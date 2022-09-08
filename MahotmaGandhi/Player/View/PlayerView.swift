@@ -51,7 +51,7 @@ struct PlayerView: View {
                 }//scrollviewH
                 .padding(.horizontal)
                 CardPlayerInputView(selectedPlayer: $playerViewModel.allPlayer[playerViewModel.selectedPlayer])
-                PlayerAvatarSelectionView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $playerViewModel.allPlayer[playerViewModel.selectedPlayer], avatarName: $playerViewModel.avatarName)
+                PlayerAvatarSelectionView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $playerViewModel.allPlayer[playerViewModel.selectedPlayer], avatarName: playerViewModel.avatarName)
                 Spacer()
             }//vstack
         }//scrollview
@@ -68,7 +68,7 @@ struct PlayerView: View {
 struct ManagePlayerView: View {
     @ObservedObject var gameVM: GameViewModel
     @State var selectedPlayer = 0
-    @State var avatarName = ["M1","M2","M3","M4","F1","F2","F3","F4"]
+    var avatarName = ["Wayfarer", "Guardian", "M1", "M2", "M3", "M4", "F1", "F2"]
     var body: some View {
         ZStack {
             Rectangle()
@@ -85,11 +85,11 @@ struct ManagePlayerView: View {
                     .multilineTextAlignment(.center)
                 ScrollView(.horizontal){
                     HStack{
-                        ForEach(0..<gameVM.game.players.count, id: \.self) { i in
+                        ForEach(0..<gameVM.allPlayers.count, id: \.self) { i in
                             ZStack{
                                 CardPlayerMiniView(
-                                    name: gameVM.game.players[i].name,
-                                    avatar: gameVM.game.players[i].avatar,
+                                    name: gameVM.allPlayers[i].name,
+                                    avatar: gameVM.allPlayers[i].avatar,
                                     selected: selectedPlayer == i ? Color.green : Color.black)
                                 .simultaneousGesture(TapGesture().onEnded({ _ in
                                     selectedPlayer = i
@@ -103,7 +103,7 @@ struct ManagePlayerView: View {
                                                 if i <= selectedPlayer {
                                                     selectedPlayer -= 1
                                                 }
-                                                gameVM.game.players.remove(at: i)
+                                                gameVM.allPlayers.remove(at: i)
                                                 gameVM.objectWillChange.send()
                                             } label: {
                                                 Image(systemName: "minus.square.fill")
@@ -123,11 +123,11 @@ struct ManagePlayerView: View {
                                 .simultaneousGesture(TapGesture().onEnded({ _ in
                                     //                                    playerViewModel.addPlayer()
                                     var randomAva = "M1"
-                                    selectedPlayer = gameVM.game.players.count
-                                    while gameVM.game.players.contains(where: {$0.avatar == randomAva}) {
+                                    selectedPlayer = gameVM.allPlayers.count
+                                    while gameVM.allPlayers.contains(where: {$0.avatar == randomAva}) {
                                         randomAva = avatarName[Int.random(in: 0...avatarName.count - 1)]
                                     }
-                                    gameVM.game.players.append(PlayerModel(name: "", avatar: randomAva))
+                                    gameVM.allPlayers.append(PlayerModel(name: "", avatar: randomAva))
                                     gameVM.objectWillChange.send()
                                 }))
                         }//if allPlayer
@@ -135,8 +135,8 @@ struct ManagePlayerView: View {
                     .padding(5)
                 }//scrollviewH
                 .padding(.horizontal)
-                CardPlayerInputView(selectedPlayer: $gameVM.game.players[selectedPlayer])
-                PlayerAvatarSelectionView(allPlayer: $gameVM.game.players, selectedPlayer: $gameVM.game.players[selectedPlayer], avatarName: $avatarName)
+                CardPlayerInputView(selectedPlayer: $gameVM.allPlayers[selectedPlayer])
+                PlayerAvatarSelectionView(allPlayer: $gameVM.allPlayers, selectedPlayer: $gameVM.allPlayers[selectedPlayer], avatarName: avatarName)
                 Spacer()
                 Button (action: {
                     gameVM.showingPlayerMenu.toggle()

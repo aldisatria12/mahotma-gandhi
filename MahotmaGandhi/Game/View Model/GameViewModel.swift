@@ -30,6 +30,7 @@ class GameViewModel : ObservableObject {
     
     @Published var showingPlayerMenu = false
     
+    @Published var allPlayers: [PlayerModel] = []
     var game: GameModel
     
     // turn view model
@@ -41,6 +42,7 @@ class GameViewModel : ObservableObject {
         for i in 0...2 {
             floorImageIndex[i] = randomFloorImage()
         }
+        allPlayers = game.players
     }
     
     func goToNextFloor() {

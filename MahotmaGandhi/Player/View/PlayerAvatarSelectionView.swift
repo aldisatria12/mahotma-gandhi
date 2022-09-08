@@ -10,8 +10,8 @@ import SwiftUI
 struct PlayerAvatarSelectionView: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var selectedPlayer: PlayerModel
-    @Binding var avatarName: [String]
-    @State var isToogle = false
+    var avatarName: [String]
+//    @State var isToogle = false
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
@@ -26,8 +26,8 @@ struct PlayerAvatarSelectionView: View {
             ScrollView {
                         LazyVGrid(columns: columns, spacing: 2) {
                             ForEach(avatarName, id: \.self) { item in
-                                if allPlayer.contains(where: {$0.avatar == item}) && (isToogle == true || isToogle == false){
-                                    Image(item)
+                                if allPlayer.contains(where: {$0.avatar == item}){
+                                    Image("\(item)_Icon")
                                         .resizable()
                                         .frame(width: 72, height: 72)
                                         .scaledToFit()
@@ -43,7 +43,6 @@ struct PlayerAvatarSelectionView: View {
                                         .clipShape(Circle())
                                         .simultaneousGesture(TapGesture().onEnded({ _ in
                                             selectedPlayer.avatar = item
-                                            isToogle.toggle()
                                         }))
                                 }
                                     
