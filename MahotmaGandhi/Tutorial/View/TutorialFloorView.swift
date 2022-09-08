@@ -11,8 +11,6 @@ struct TutorialFloorView: View {
     
     let keyFrameIndex : Int
     
-    @ObservedObject var gameVM : GameViewModel
-    
     let keyFrames = [
         KeyFrame(y: (UIScreen.main.bounds.height * 671 / 844 * -0.5) - 47, animation: nil),
         KeyFrame(y: (UIScreen.main.bounds.height * 671 / 844 * 0.5) - 47, animation: .linear(duration: 3)),
@@ -25,7 +23,7 @@ struct TutorialFloorView: View {
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
             Button (action: {
-                gameVM.animateTutorialMovement()
+//                gameVM.animateTutorialMovement()
             }, label: {
                 Image("Chest")
                     .resizable()
@@ -58,6 +56,6 @@ struct TutorialFloorView: View {
 
 struct TutorialFloorView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialFloorView(keyFrameIndex: 1, gameVM: GameViewModel(players: []))
+        TutorialFloorView(keyFrameIndex: 1)
     }
 }

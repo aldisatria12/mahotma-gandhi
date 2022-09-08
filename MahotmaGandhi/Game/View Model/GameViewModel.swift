@@ -18,7 +18,6 @@ class GameViewModel : ObservableObject {
     @Published var cardHelpName = ""
     // counter for animation
     @Published var mainCounter = [0 : 0, 1 : 1, 2 : 2]
-//    @Published var tutorialCounter = [0 : 0 , 1 : 1]
     
     @Published var floorImageIndex : [Int:String] = [:]
     
@@ -84,12 +83,5 @@ class GameViewModel : ObservableObject {
     func randomFloorImage() -> String {
         return game.floorImages.randomElement() ?? ""
     }
-    
-//    func animateTutorialMovement() {
-//        tutorialCounter[0] = 1
-//        tutorialCounter[1] = 2
-//    }
-    
-    
     
 }
