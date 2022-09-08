@@ -33,6 +33,7 @@
 		F79EE62C28C9CE22004B7A72 /* TutorialBottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */; };
 		F79EE62E28C9D2B1004B7A72 /* TutorialTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */; };
 		F79EE63028C9D846004B7A72 /* TutorialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */; };
+		F79EE63228C9EC6D004B7A72 /* TutorialCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */; };
 		F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79FE6E028C5F5D800322A7A /* AnimationView.swift */; };
 		F7BD343C28BEFECE00EA99EB /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
@@ -76,6 +77,7 @@
 		F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBottomMenuView.swift; sourceTree = "<group>"; };
 		F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTurnView.swift; sourceTree = "<group>"; };
 		F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCardView.swift; sourceTree = "<group>"; };
+		F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCoverView.swift; sourceTree = "<group>"; };
 		F79FE6E028C5F5D800322A7A /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */,
 				F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */,
 				F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */,
+				F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
 				3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */,
 				F79EE61F28C72D7E004B7A72 /* TutorialFloorView.swift in Sources */,
+				F79EE63228C9EC6D004B7A72 /* TutorialCoverView.swift in Sources */,
 				F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */,
 				F79EE62628C89F1E004B7A72 /* TutorialView.swift in Sources */,
 				F7F160A628B7B39900E83273 /* FloorType.swift in Sources */,

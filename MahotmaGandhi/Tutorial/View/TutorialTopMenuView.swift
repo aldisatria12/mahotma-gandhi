@@ -23,13 +23,12 @@ struct TutorialTopMenuView: View {
 //                .padding(.bottom, 40)
             Spacer()
             Button {
-//                gameVM.finishTutorial()
+                NavigationUtil.popToRootView()
             } label: {
                 Text("Skip")
             }
         } // HStack
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 45 / 844)
-//        .background(.gray)
     }
 }
 

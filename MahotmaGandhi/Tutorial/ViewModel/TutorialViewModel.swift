@@ -13,6 +13,8 @@ class TutorialViewModel : ObservableObject {
     
     @Published var isTopMenuShowed = true
     @Published var isCardOpen = false
+    @Published var isMoving = false
+    @Published var isTutorialPresented = true
     
     // ["M1","M2","M3","M4","F1","F2","F3","F4"]
     
