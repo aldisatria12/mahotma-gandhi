@@ -22,7 +22,7 @@
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
 		3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */; };
 		A313B02028C9CD4D004C1035 /* ArrowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */; };
-		A313B02428C9EAC9004C1035 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B02328C9EAC9004C1035 /* Tutorial.swift */; };
+		A313B02428C9EAC9004C1035 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B02328C9EAC9004C1035 /* Orientation.swift */; };
 		A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328067728BF49B8004EB8B3 /* PauseMenuView.swift */; };
 		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
@@ -61,7 +61,7 @@
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnView.swift; sourceTree = "<group>"; };
 		A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowAnimationView.swift; sourceTree = "<group>"; };
-		A313B02328C9EAC9004C1035 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		A313B02328C9EAC9004C1035 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		A328067728BF49B8004EB8B3 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
 		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
@@ -225,7 +225,7 @@
 				F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */,
 				F7F160A528B7B39900E83273 /* FloorType.swift */,
 				F7F160CB28BD05A600E83273 /* KeyFrame.swift */,
-				A313B02328C9EAC9004C1035 /* Tutorial.swift */,
+				A313B02328C9EAC9004C1035 /* Orientation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */,
 				3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */,
 				A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */,
-				A313B02428C9EAC9004C1035 /* Tutorial.swift in Sources */,
+				A313B02428C9EAC9004C1035 /* Orientation.swift in Sources */,
 				F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */,
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
 				F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */,
