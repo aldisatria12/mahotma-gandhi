@@ -17,6 +17,9 @@ struct TutorialView: View {
             ZStack {
                 TutorialFloorView(tutorialVM: tutorialVM, keyFrameIndex: tutorialVM.tutorialCounter[0] ?? 0)
                 TutorialFloorView(tutorialVM: tutorialVM, keyFrameIndex: tutorialVM.tutorialCounter[1] ?? 1)
+                Button("Activate Tutorial") {
+                    tutorialVM.isTutorialPresented.toggle()
+                }
             }
             VStack {
                 ZStack {
@@ -51,7 +54,7 @@ struct TutorialView: View {
                 TutorialCardView(vm: tutorialVM, openCard: $tutorialVM.isCardOpen)
             }
             if tutorialVM.isTutorialPresented {
-                TutorialCoverView()
+                TutorialPointerView(tutorialVM: tutorialVM)
             }
         } // ZStack Pertama
         .navigationBarHidden(true)

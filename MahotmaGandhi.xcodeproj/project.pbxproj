@@ -27,6 +27,8 @@
 		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
 		A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE728BE01CB0031DCDA /* CardGameView.swift */; };
+		F7711E9928CB230A00C6CB52 /* TutorialPointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7711E9828CB230A00C6CB52 /* TutorialPointerView.swift */; };
+		F7711E9B28CB248000C6CB52 /* TutorialDialogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7711E9A28CB248000C6CB52 /* TutorialDialogCardView.swift */; };
 		F79EE61F28C72D7E004B7A72 /* TutorialFloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */; };
 		F79EE62128C74693004B7A72 /* TutorialTopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */; };
 		F79EE62628C89F1E004B7A72 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62528C89F1E004B7A72 /* TutorialView.swift */; };
@@ -73,6 +75,8 @@
 		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
 		A3A28FE728BE01CB0031DCDA /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
+		F7711E9828CB230A00C6CB52 /* TutorialPointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPointerView.swift; sourceTree = "<group>"; };
+		F7711E9A28CB248000C6CB52 /* TutorialDialogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogCardView.swift; sourceTree = "<group>"; };
 		F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFloorView.swift; sourceTree = "<group>"; };
 		F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTopMenuView.swift; sourceTree = "<group>"; };
 		F79EE62528C89F1E004B7A72 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */,
 				F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */,
 				F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */,
+				F7711E9828CB230A00C6CB52 /* TutorialPointerView.swift */,
+				F7711E9A28CB248000C6CB52 /* TutorialDialogCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +407,7 @@
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
 				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
 				F79EE62C28C9CE22004B7A72 /* TutorialBottomMenuView.swift in Sources */,
+				F7711E9B28CB248000C6CB52 /* TutorialDialogCardView.swift in Sources */,
 				A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */,
 				F79EE62E28C9D2B1004B7A72 /* TutorialTurnView.swift in Sources */,
 				F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */,
@@ -417,6 +424,7 @@
 				F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */,
 				F79EE62628C89F1E004B7A72 /* TutorialView.swift in Sources */,
 				F7F160A628B7B39900E83273 /* FloorType.swift in Sources */,
+				F7711E9928CB230A00C6CB52 /* TutorialPointerView.swift in Sources */,
 				3E69802E28B670FA005F4B1E /* CardPlayerInputView.swift in Sources */,
 				3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */,
 			);
