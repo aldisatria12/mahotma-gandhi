@@ -11,10 +11,7 @@ struct PlayerAvatarSelectionView: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var selectedPlayer: PlayerModel
     var avatarName: [String]
-    @State var opac: CGFloat = 1
     @State var seen: Bool = true
-    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
-//    @State var isToogle = false
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
@@ -36,8 +33,12 @@ struct PlayerAvatarSelectionView: View {
                                         .scaledToFit()
                                         .clipShape(Circle())
                                         .grayscale(selectedPlayer.avatar == item ? 0 : 0.9995)
-                                        .overlay(Circle().stroke(yellow02,lineWidth: selectedPlayer.avatar == item ? 2 : 0).opacity(opac))
-//                                        .animation(Animation.linear(duration: 0.1).repeatForever())
+                                        .overlay(Circle().stroke(yellow02,lineWidth: selectedPlayer.avatar == item ? 3 : 0).opacity(seen ? 1 : 0))
+                                        .onAppear {
+                                            withAnimation (.linear(duration: 0.5).repeatForever()) {
+                                                seen.toggle()
+                                            }
+                                        }
                                 } else {
                                     Image("\(item)_Icon")
                                         .resizable()
@@ -49,16 +50,6 @@ struct PlayerAvatarSelectionView: View {
                                         }))
                                 }
                                     
-                            }
-                        }
-                        .onReceive(timer) { _ in
-                            seen.toggle()
-                            withAnimation {
-                                if seen {
-                                    opac = 1
-                                } else {
-                                    opac = 0.5
-                                }
                             }
                         }
                         .padding()
