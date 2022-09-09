@@ -10,14 +10,13 @@ import SwiftUI
 struct GameView: View {
     @StateObject var vm : GameViewModel
     
-    @State var counter = 0
     
     var body: some View {
         ZStack {
             ZStack {
-                FloorView(id:0, keyFrameIndex: vm.counterFirst, gameVM: vm)
-                FloorView(id:1, keyFrameIndex: vm.counterSecond, gameVM: vm)
-                FloorView(id:2, keyFrameIndex: vm.counterThird, gameVM: vm)
+                FloorView(id:0, keyFrameIndex: vm.mainCounter[0] ?? 0, gameVM: vm)
+                FloorView(id:1, keyFrameIndex: vm.mainCounter[1] ?? 1, gameVM: vm)
+                FloorView(id:2, keyFrameIndex: vm.mainCounter[2] ?? 2, gameVM: vm)
             } // ZStack
             VStack {
                 ZStack {
@@ -32,14 +31,14 @@ struct GameView: View {
                                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
                         }
-                    }
+                    } // ForEach
                 } // ZStack
                 
             } // VStack
             ZStack {
-                AnimationView(keyFrameIndex: vm.counterFirst, id:0, gameVM: vm)
-                AnimationView(keyFrameIndex: vm.counterSecond, id:1, gameVM: vm)
-                AnimationView(keyFrameIndex: vm.counterThird, id:2, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.mainCounter[0] ?? 0, id:0, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.mainCounter[1] ?? 1, id:1, gameVM: vm)
+                AnimationView(keyFrameIndex: vm.mainCounter[2] ?? 2, id:2, gameVM: vm)
             } // ZStack
             VStack {
                 if vm.isTopMenuShowed {
