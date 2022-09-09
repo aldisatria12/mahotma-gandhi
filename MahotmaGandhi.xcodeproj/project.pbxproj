@@ -212,9 +212,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F7711E9728CB220700C6CB52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A313B02328C9EAC9004C1035 /* Orientation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F79EE62228C89EC8004B7A72 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F7711E9728CB220700C6CB52 /* Model */,
 				F79EE62428C89ED6004B7A72 /* ViewModel */,
 				F79EE62328C89ED0004B7A72 /* View */,
 			);
@@ -224,6 +233,7 @@
 		F79EE62328C89ED0004B7A72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */,
 				F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */,
 				F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */,
 				F79EE62528C89F1E004B7A72 /* TutorialView.swift */,
@@ -272,7 +282,6 @@
 				F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */,
 				F7F160A528B7B39900E83273 /* FloorType.swift */,
 				F7F160CB28BD05A600E83273 /* KeyFrame.swift */,
-				A313B02328C9EAC9004C1035 /* Orientation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,7 +297,6 @@
 				A3A28FE728BE01CB0031DCDA /* CardGameView.swift */,
 				A328067728BF49B8004EB8B3 /* PauseMenuView.swift */,
 				F79FE6E028C5F5D800322A7A /* AnimationView.swift */,
-				A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
