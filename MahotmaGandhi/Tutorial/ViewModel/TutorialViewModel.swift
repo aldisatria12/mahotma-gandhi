@@ -16,13 +16,12 @@ class TutorialViewModel : ObservableObject {
     @Published var isMoving = false
     @Published var isTutorialPresented = true
     
-    // ["M1","M2","M3","M4","F1","F2","F3","F4"]
     
     let gameQuestion = "What is your favorite childhood memory?"
     
     var dummyPlayers : [PlayerModel] = [
-        PlayerModel(name: "Someone", avatar: "M1"),
-        PlayerModel(name: "Noone", avatar: "F1")
+        PlayerModel(name: "Someone", avatar: "Wayfarer"),
+        PlayerModel(name: "Noone", avatar: "Guardian")
     ]
     
     func animateTutorialMovement() {
