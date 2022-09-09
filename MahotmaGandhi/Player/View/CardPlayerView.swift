@@ -8,48 +8,45 @@
 import SwiftUI
 
 struct CardPlayerView: View {
+    @Binding var selectedPlayer: Int
+    @ObservedObject var playerViewModel = PlayerViewModel()
     var body: some View {
         ZStack {
-            Image("cardplayer")
-                .frame(width: 155, height: 220, alignment: .center)
+            Image("PlayerCard_Filled")
+                .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
             VStack {
                 PlayerAnimationWalkView()
                     .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
-                Text("Player")
+                Text(playerViewModel.allPlayer[selectedPlayer].name)
                     .padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
             }
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        
-                    }, label: {
-                        ZStack{
-                            Circle()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.purple)
-                            Circle()
-                                .frame(width: 35, height: 35)
-                                .foregroundColor(.red)
-                            Image(systemName: "xmark.circle")
-                                .resizable()
-                                .foregroundColor(.white)
-                                .frame(width: 25, height: 25)
-                        }
-                    })
-                }
-                Spacer()
+            if selectedPlayer > 0 {
+                Button(action: {
+                    playerViewModel.playerRemove(removeAt: selectedPlayer)
+                }, label: {
+                    ZStack{
+                        Circle()
+                            .frame(width: 35, height: 35)
+                            .foregroundColor(red01)
+                        Circle()
+                            .frame(width: 32, height: 32)
+                            .foregroundColor(red02)
+                        Image(systemName: "xmark.circle")
+                            .resizable()
+                            .foregroundColor(yellow03)
+                            .frame(width: 25, height: 25)
+                    }.position(x: 155, y: 10)
+                })
             }
         }
-        .frame(width: 175, height: 240)
     }
 }
 
 struct AddPlayerView: View {
     var body: some View {
         ZStack {
-            Image("card")
-                .frame(width: 155, height: 220, alignment: .center)
+            Image("PlayerCard_Empty")
+                .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
             VStack {
                 Button(action: {
                     
@@ -67,7 +64,15 @@ struct AddPlayerView: View {
                 Text("Add Player")
             }
         }
-        .frame(width: 175, height: 240)
+    }
+}
+
+struct BlankView: View {
+    var body: some View {
+        ZStack {
+            Image("PlayerCard_Empty")
+                .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
+        }
     }
 }
 

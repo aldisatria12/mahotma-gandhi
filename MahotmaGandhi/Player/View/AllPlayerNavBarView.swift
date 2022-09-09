@@ -10,9 +10,10 @@ import SwiftUI
 struct AllPlayerNavBarView: View {
     var body: some View {
         HStack{
-            
+            Image("CreateParty_NavBar")
         }
-        .frame(width: UIScreen.main.bounds.width * 24 / 390, height: UIScreen.main.bounds.height * 31 / 844)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 89 / 844)
+        
     }
 }
 

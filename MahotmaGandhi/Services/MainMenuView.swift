@@ -11,7 +11,7 @@ struct MainMenuView: View {
     var body: some View {
         NavigationView {
             NavigationLink(destination: {
-                PlayerView()
+                AllPlayerView()
             }, label: {
                 Image(systemName: "play.circle")
             })
