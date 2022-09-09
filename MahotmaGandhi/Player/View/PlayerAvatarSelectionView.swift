@@ -11,6 +11,9 @@ struct PlayerAvatarSelectionView: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var selectedPlayer: PlayerModel
     var avatarName: [String]
+    @State var opac: CGFloat = 1
+    @State var seen: Bool = true
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
 //    @State var isToogle = false
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
@@ -21,7 +24,7 @@ struct PlayerAvatarSelectionView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .foregroundColor(.gray)
+                .foregroundColor(blue02)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.black, lineWidth: 2))
             ScrollView {
                         LazyVGrid(columns: columns, spacing: 2) {
@@ -32,9 +35,9 @@ struct PlayerAvatarSelectionView: View {
                                         .frame(width: 72, height: 72)
                                         .scaledToFit()
                                         .clipShape(Circle())
-                                        .grayscale(0.9995)
-                                        .overlay(Circle().stroke(Color.green,lineWidth: selectedPlayer.avatar == item ? 2 : 0))
-                                    
+                                        .grayscale(selectedPlayer.avatar == item ? 0 : 0.9995)
+                                        .overlay(Circle().stroke(yellow02,lineWidth: selectedPlayer.avatar == item ? 2 : 0).opacity(opac))
+//                                        .animation(Animation.linear(duration: 0.1).repeatForever())
                                 } else {
                                     Image("\(item)_Icon")
                                         .resizable()
@@ -46,6 +49,16 @@ struct PlayerAvatarSelectionView: View {
                                         }))
                                 }
                                     
+                            }
+                        }
+                        .onReceive(timer) { _ in
+                            seen.toggle()
+                            withAnimation {
+                                if seen {
+                                    opac = 1
+                                } else {
+                                    opac = 0.5
+                                }
                             }
                         }
                         .padding()
