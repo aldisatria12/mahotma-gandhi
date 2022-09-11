@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TutorialDialogCardView: View {
     
-    var tutorialText : String
+    @ObservedObject var tutorialVM : TutorialViewModel
+    
+    let date : Date
     
     var body: some View {
         ZStack {
@@ -17,9 +19,13 @@ struct TutorialDialogCardView: View {
                 .foregroundColor(yellow03)
                 .cornerRadius(25)
             VStack {
-                Text(tutorialText)
+                Text(tutorialVM.tutorialPointerText)
                     .padding([.top])
                     .frame(width: (UIScreen.main.bounds.width * 324 / 392) - 20, height: (UIScreen.main.bounds.height * 139 / 844) - 20, alignment: .topLeading)
+                    .onChange(of: date) { _ in
+                        tutorialVM.animateTextAppearance()
+                    }
+                
                 Spacer()
                 HStack {
                     Spacer()
@@ -34,6 +40,6 @@ struct TutorialDialogCardView: View {
 
 struct TutorialDialogCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialDialogCardView(tutorialText: "Trial")
+        TutorialDialogCardView(tutorialVM: TutorialViewModel(), date: Date())
     }
 }

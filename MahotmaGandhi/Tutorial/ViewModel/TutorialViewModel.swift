@@ -16,6 +16,9 @@ class TutorialViewModel : ObservableObject {
     @Published var isCardOpen = false
     @Published var isMoving = false
     @Published var isTutorialPresented = false
+    @Published var isTextAnimated = false
+    
+//    @Published var letterShowing : Double = 0
     
     var tutorialState = (0, -1)
     
@@ -39,6 +42,9 @@ class TutorialViewModel : ObservableObject {
         ]
     ]
     
+    private var selectedPointer = ""
+    private var numberOfLetterShowed = 0
+    
     func animateTutorialMovement() {
         tutorialCounter[0] = 1
         tutorialCounter[1] = 2
@@ -53,11 +59,36 @@ class TutorialViewModel : ObservableObject {
         }
     }
     
+    func animateTextAppearance() {
+        if numberOfLetterShowed <= selectedPointer.count {
+            tutorialPointerText = "\(selectedPointer.prefix(numberOfLetterShowed))"
+            numberOfLetterShowed += 1
+        } else {
+            isTextAnimated = false
+        }
+    }
+    
     func getTutorialPointer() {
-        changeTutorialState()
-        print(tutorialState.0, " : ", tutorialState.1)
-        if tutorialState.1 != -1 {
-            tutorialPointerText = tutorialPointer[tutorialState.0]?[tutorialState.1] ?? "No Text Found"
+        if isTextAnimated {
+            isTextAnimated = false
+            tutorialPointerText = selectedPointer
+        }
+        else if tutorialPointerText == "No Text Found" {
+            isTextAnimated = false
+            isTutorialPresented = false
+        } else {
+            changeTutorialState()
+            print(tutorialState.0, " : ", tutorialState.1)
+            if tutorialState.1 != -1 {
+                if let tempSelectedPointer = tutorialPointer[tutorialState.0]?[tutorialState.1] {
+                    selectedPointer = tempSelectedPointer
+                    numberOfLetterShowed = 0
+                    isTextAnimated = true
+                } else {
+                    isTextAnimated = false
+                    tutorialPointerText = "No Text Found"
+                }
+            }
         }
     }
 }
