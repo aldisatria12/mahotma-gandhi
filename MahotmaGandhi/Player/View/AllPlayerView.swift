@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AllPlayerView: View {
     @StateObject var playerViewModel = PlayerViewModel()
-    
+    @State var editPlayer: Bool = false
+    @State var selectedPlayer: Int = 0
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
         GridItem(.flexible(minimum: 0, maximum: .infinity))
@@ -28,11 +29,11 @@ struct AllPlayerView: View {
             VStack {
                 Spacer().frame(height: (UIScreen.main.bounds.height * 89 / 844) + 15)
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(0 ..< 6) { i in
+                    ForEach(0 ..< 6, id: \.self) { i in
                         if playerViewModel.allPlayer.count == i {
-                            AddPlayerView()
+                            AddPlayerView(allPlayer: $playerViewModel.allPlayer, editedPlayer: $selectedPlayer, editMode: $editPlayer)
                         } else if i < playerViewModel.allPlayer.count {
-                            CardPlayerView(selectedPlayer: $playerViewModel.selectedPlayer)
+                            CardPlayerView(selectedPlayer: .constant(i), editedPlayer: $selectedPlayer, allPlayer: $playerViewModel.allPlayer, editMode: $editPlayer)
                         } else {
                             BlankView()
                         }
@@ -43,6 +44,9 @@ struct AllPlayerView: View {
             }
             //            .ignoresSafeArea()
             .navigationBarHidden(true)
+            if editPlayer {
+                NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $playerViewModel.allPlayer[selectedPlayer], avatarName: $playerViewModel.avatarName,  editMode: $editPlayer)
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayerAvatarSelectionView: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var selectedPlayer: PlayerModel
-    var avatarName: [String]
+    @Binding var avatarName: [String]
     @State var seen: Bool = true
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
@@ -20,9 +20,7 @@ struct PlayerAvatarSelectionView: View {
         ]
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .foregroundColor(blue02)
-                .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.black, lineWidth: 2))
+            Image("AddPlayer_Menu")
             ScrollView {
                         LazyVGrid(columns: columns, spacing: 2) {
                             ForEach(avatarName, id: \.self) { item in
@@ -57,7 +55,6 @@ struct PlayerAvatarSelectionView: View {
             
         }
         .padding()
-        .frame(height: 240)
     }
 }
 

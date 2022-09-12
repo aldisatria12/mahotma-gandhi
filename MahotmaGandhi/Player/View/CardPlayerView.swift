@@ -9,47 +9,70 @@ import SwiftUI
 
 struct CardPlayerView: View {
     @Binding var selectedPlayer: Int
-    @ObservedObject var playerViewModel = PlayerViewModel()
+    @Binding var editedPlayer: Int
+    @Binding var allPlayer: [PlayerModel]
+    @Binding var editMode: Bool
+    @State var check:Bool = false
     var body: some View {
         ZStack {
             Image("PlayerCard_Filled")
                 .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
             VStack {
-                PlayerAnimationWalkView()
-                    .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
-                Text(playerViewModel.allPlayer[selectedPlayer].name)
-                    .padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
+//                if let p = $allPlayer[selectedPlayer]{
+                if check == false{
+                    PlayerAnimationWalkView(player: $allPlayer[selectedPlayer], stopTimer: $check)
+                        .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
+                    Text(allPlayer[selectedPlayer].name)
+                        .padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
+                }
+//                }
+                
             }
-            if selectedPlayer > 0 {
-                Button(action: {
-                    playerViewModel.playerRemove(removeAt: selectedPlayer)
-                }, label: {
-                    ZStack{
-                        Circle()
-                            .frame(width: 35, height: 35)
-                            .foregroundColor(red01)
-                        Circle()
-                            .frame(width: 32, height: 32)
-                            .foregroundColor(red02)
-                        Image(systemName: "xmark.circle")
-                            .resizable()
-                            .foregroundColor(yellow03)
-                            .frame(width: 25, height: 25)
-                    }.position(x: 155, y: 10)
-                })
+            .onTapGesture {
+                editedPlayer = selectedPlayer
+                editMode = true
             }
+            ZStack {
+                if selectedPlayer > 0 {
+                    Button(action: {
+                        check = true
+                        allPlayer.remove(at: selectedPlayer)
+                        selectedPlayer = 0
+                    }, label: {
+                        ZStack{
+                            Circle()
+                                .frame(width: 35, height: 35)
+                                .foregroundColor(red01)
+                            Circle()
+                                .frame(width: 32, height: 32)
+                                .foregroundColor(red02)
+                            Image(systemName: "xmark.circle")
+                                .resizable()
+                                .foregroundColor(yellow03)
+                                .frame(width: 25, height: 25)
+                        }
+                    })
+                }
+            }
+            .frame(width: 35, height: 35)
+            .position(x: 155, y: 10)
         }
     }
 }
 
 struct AddPlayerView: View {
+    @Binding var allPlayer: [PlayerModel]
+    @Binding var editedPlayer: Int
+    @Binding var editMode: Bool
     var body: some View {
         ZStack {
             Image("PlayerCard_Empty")
                 .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
             VStack {
                 Button(action: {
-                    
+                    allPlayer.append(PlayerModel(name: "", avatar: ""))
+                    editedPlayer = allPlayer.count - 1
+                    editMode = true
                 }, label: {
                     ZStack{
                         Circle()

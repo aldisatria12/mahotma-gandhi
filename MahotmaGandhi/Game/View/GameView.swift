@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject var vm : GameViewModel
+    @StateObject var vm : GameViewModel 
     
     @State var counter = 0
     
@@ -22,16 +22,16 @@ struct GameView: View {
             VStack {
                 ZStack {
                     ForEach(0..<vm.game.players.count, id: \.self) { i in
-                        if vm.isMoving {
-                            PlayerAnimationWalkView()
-                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-                                .offset(y: CGFloat(i * 62))
-                            
-                        } else {
-                            PlayerAnimationIdleView()
-                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
-                                .offset(y: CGFloat(i * 62))
-                        }
+//                        if vm.isMoving {
+//                            PlayerAnimationWalkView(player: vm.game.players[0])
+//                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+//                                .offset(y: CGFloat(i * 62))
+//                            
+//                        } else {
+//                            PlayerAnimationIdleView(player: vm.game.players[0])
+//                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+//                                .offset(y: CGFloat(i * 62))
+//                        }
                     }
                 } // ZStack
                 
@@ -56,7 +56,7 @@ struct GameView: View {
                 PauseMenuView(closePauseMenu: $vm.showingPauseMenu, showingPlayerView: $vm.showingPlayerMenu)
             }
             if vm.showingPlayerMenu{
-                ManagePlayerView(gameVM: vm)
+//                ManagePlayerView(gameVM: vm)
             }
         }
         .navigationBarHidden(true)
