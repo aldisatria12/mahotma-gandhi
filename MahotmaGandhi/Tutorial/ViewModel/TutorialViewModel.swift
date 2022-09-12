@@ -28,7 +28,7 @@ class TutorialViewModel : ObservableObject {
     
     let gameQuestion = "What is your favorite childhood memory?"
     
-    let dummyPlayers : [PlayerModel] = [
+    var dummyPlayers : [PlayerModel] = [
         PlayerModel(name: "Someone", avatar: "Wayfarer"),
         PlayerModel(name: "Noone", avatar: "Guardian")
     ]
