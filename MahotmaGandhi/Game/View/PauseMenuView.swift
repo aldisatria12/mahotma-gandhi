@@ -9,11 +9,13 @@ import SwiftUI
 
 struct PauseMenuView: View {
     @Binding var closePauseMenu: Bool
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var showingPlayerView: Bool
     var body: some View {
         ZStack {
             BlurView(style: .regular)
-                .opacity(0.0)
+                .ignoresSafeArea()
+                .background(.black)
+                .opacity(0.8)
             ZStack {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .foregroundColor(.white)
@@ -36,7 +38,7 @@ struct PauseMenuView: View {
                                 .opacity(0.5))
                     })
                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        showingPlayerView = true
                     }, label: {
                         Text("MANAGE PLAYER")
                             .font(.subheadline)
@@ -63,6 +65,7 @@ struct PauseMenuView: View {
             }
             .frame(width: 220, height: 280, alignment: .center)
         }
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 }
 

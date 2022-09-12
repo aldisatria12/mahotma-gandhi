@@ -21,12 +21,22 @@
 		3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */; };
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
 		3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */; };
+		A313B02028C9CD4D004C1035 /* ArrowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */; };
+		A313B02428C9EAC9004C1035 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B02328C9EAC9004C1035 /* Orientation.swift */; };
 		A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328067728BF49B8004EB8B3 /* PauseMenuView.swift */; };
 		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
 		A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE728BE01CB0031DCDA /* CardGameView.swift */; };
-		F7BD343728BE0BC600EA99EB /* TopAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343628BE0BC600EA99EB /* TopAnimationView.swift */; };
-		F7BD343928BE0BD400EA99EB /* BottomAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343828BE0BD400EA99EB /* BottomAnimationView.swift */; };
+		F79EE61F28C72D7E004B7A72 /* TutorialFloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */; };
+		F79EE62128C74693004B7A72 /* TutorialTopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */; };
+		F79EE62628C89F1E004B7A72 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62528C89F1E004B7A72 /* TutorialView.swift */; };
+		F79EE62828C89F65004B7A72 /* TutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62728C89F65004B7A72 /* TutorialViewModel.swift */; };
+		F79EE62A28C8A567004B7A72 /* TutorialAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62928C8A567004B7A72 /* TutorialAnimationView.swift */; };
+		F79EE62C28C9CE22004B7A72 /* TutorialBottomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */; };
+		F79EE62E28C9D2B1004B7A72 /* TutorialTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */; };
+		F79EE63028C9D846004B7A72 /* TutorialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */; };
+		F79EE63228C9EC6D004B7A72 /* TutorialCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */; };
+		F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79FE6E028C5F5D800322A7A /* AnimationView.swift */; };
 		F7BD343C28BEFECE00EA99EB /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */; };
 		F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609D28B7A93800E83273 /* GameModel.swift */; };
 		F7F160A028B7B0B800E83273 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1609F28B7B0B800E83273 /* Floor.swift */; };
@@ -57,12 +67,22 @@
 		3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardViewModel.swift; sourceTree = "<group>"; };
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnView.swift; sourceTree = "<group>"; };
+		A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowAnimationView.swift; sourceTree = "<group>"; };
+		A313B02328C9EAC9004C1035 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		A328067728BF49B8004EB8B3 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
 		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
 		A3A28FE728BE01CB0031DCDA /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
-		F7BD343628BE0BC600EA99EB /* TopAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAnimationView.swift; sourceTree = "<group>"; };
-		F7BD343828BE0BD400EA99EB /* BottomAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAnimationView.swift; sourceTree = "<group>"; };
+		F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFloorView.swift; sourceTree = "<group>"; };
+		F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTopMenuView.swift; sourceTree = "<group>"; };
+		F79EE62528C89F1E004B7A72 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		F79EE62728C89F65004B7A72 /* TutorialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewModel.swift; sourceTree = "<group>"; };
+		F79EE62928C8A567004B7A72 /* TutorialAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAnimationView.swift; sourceTree = "<group>"; };
+		F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialBottomMenuView.swift; sourceTree = "<group>"; };
+		F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTurnView.swift; sourceTree = "<group>"; };
+		F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCardView.swift; sourceTree = "<group>"; };
+		F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCoverView.swift; sourceTree = "<group>"; };
+		F79FE6E028C5F5D800322A7A /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		F7BD343B28BEFECE00EA99EB /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		F7F1609D28B7A93800E83273 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		F7F1609F28B7B0B800E83273 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
@@ -107,6 +127,7 @@
 		3E69801628B63324005F4B1E /* MahotmaGandhi */ = {
 			isa = PBXGroup;
 			children = (
+				F79EE62228C89EC8004B7A72 /* Tutorial */,
 				F7BD343A28BEFEAD00EA99EB /* Services */,
 				3EA10E7B28BCB74D008780D8 /* Player Turn */,
 				F7F1609828B7A8F400E83273 /* Game */,
@@ -191,6 +212,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F79EE62228C89EC8004B7A72 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				F79EE62428C89ED6004B7A72 /* ViewModel */,
+				F79EE62328C89ED0004B7A72 /* View */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		F79EE62328C89ED0004B7A72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F79EE61E28C72D7E004B7A72 /* TutorialFloorView.swift */,
+				F79EE62028C74693004B7A72 /* TutorialTopMenuView.swift */,
+				F79EE62528C89F1E004B7A72 /* TutorialView.swift */,
+				F79EE62928C8A567004B7A72 /* TutorialAnimationView.swift */,
+				F79EE62B28C9CE22004B7A72 /* TutorialBottomMenuView.swift */,
+				F79EE62D28C9D2B1004B7A72 /* TutorialTurnView.swift */,
+				F79EE62F28C9D846004B7A72 /* TutorialCardView.swift */,
+				F79EE63128C9EC6D004B7A72 /* TutorialCoverView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F79EE62428C89ED6004B7A72 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F79EE62728C89F65004B7A72 /* TutorialViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F7BD343A28BEFEAD00EA99EB /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +272,7 @@
 				F7F160A328B7B20D00E83273 /* NeverHaveIEver.swift */,
 				F7F160A528B7B39900E83273 /* FloorType.swift */,
 				F7F160CB28BD05A600E83273 /* KeyFrame.swift */,
+				A313B02328C9EAC9004C1035 /* Orientation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,10 +285,10 @@
 				F7F160CD28BD060400E83273 /* FloorView.swift */,
 				F7F160CF28BD0D3D00E83273 /* TopMenuView.swift */,
 				F7F160D128BDD3CD00E83273 /* BottomMenuView.swift */,
-				F7BD343628BE0BC600EA99EB /* TopAnimationView.swift */,
-				F7BD343828BE0BD400EA99EB /* BottomAnimationView.swift */,
 				A3A28FE728BE01CB0031DCDA /* CardGameView.swift */,
 				A328067728BF49B8004EB8B3 /* PauseMenuView.swift */,
+				F79FE6E028C5F5D800322A7A /* AnimationView.swift */,
+				A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,29 +375,39 @@
 				3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */,
 				3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */,
 				A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */,
+				A313B02428C9EAC9004C1035 /* Orientation.swift in Sources */,
+				F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */,
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
 				F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */,
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
-				F7BD343728BE0BC600EA99EB /* TopAnimationView.swift in Sources */,
 				A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */,
 				F7F160AA28B8A31700E83273 /* GameViewModel.swift in Sources */,
 				F7F160A028B7B0B800E83273 /* Floor.swift in Sources */,
+				F79EE63028C9D846004B7A72 /* TutorialCardView.swift in Sources */,
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
+				F79EE62128C74693004B7A72 /* TutorialTopMenuView.swift in Sources */,
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */,
 				F7F160CE28BD060400E83273 /* FloorView.swift in Sources */,
 				F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */,
-				F7BD343928BE0BD400EA99EB /* BottomAnimationView.swift in Sources */,
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
 				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
+				F79EE62C28C9CE22004B7A72 /* TutorialBottomMenuView.swift in Sources */,
 				A3A28FE828BE01CB0031DCDA /* CardGameView.swift in Sources */,
+				F79EE62E28C9D2B1004B7A72 /* TutorialTurnView.swift in Sources */,
 				F7F160A428B7B20D00E83273 /* NeverHaveIEver.swift in Sources */,
 				F7BD343C28BEFECE00EA99EB /* ColorPallete.swift in Sources */,
+				F79EE62828C89F65004B7A72 /* TutorialViewModel.swift in Sources */,
 				3E69802C28B66682005F4B1E /* CardAddPlayerView.swift in Sources */,
 				3E69802A28B6651E005F4B1E /* CardPlayerMiniView.swift in Sources */,
+				F79EE62A28C8A567004B7A72 /* TutorialAnimationView.swift in Sources */,
 				3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */,
+				A313B02028C9CD4D004C1035 /* ArrowAnimationView.swift in Sources */,
 				3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */,
+				F79EE61F28C72D7E004B7A72 /* TutorialFloorView.swift in Sources */,
+				F79EE63228C9EC6D004B7A72 /* TutorialCoverView.swift in Sources */,
 				F7F160CC28BD05A600E83273 /* KeyFrame.swift in Sources */,
+				F79EE62628C89F1E004B7A72 /* TutorialView.swift in Sources */,
 				F7F160A628B7B39900E83273 /* FloorType.swift in Sources */,
 				3E69802E28B670FA005F4B1E /* CardPlayerInputView.swift in Sources */,
 				3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */,
@@ -475,14 +539,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = N98Z7YMPQ8;
+				DEVELOPMENT_TEAM = H4B8Q4454B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,14 +569,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = N98Z7YMPQ8;
+				DEVELOPMENT_TEAM = H4B8Q4454B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

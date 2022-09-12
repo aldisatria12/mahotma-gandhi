@@ -21,6 +21,7 @@ class GameModel {
         [.neverHaveIEver, .tellYourTale],
         [.neverHaveIEver, .neverHaveIEver]
     ]
+    var floorImages : [String] = ["stage_1", "stage_2"]
     
     
     init(players: [PlayerModel]) {
@@ -59,4 +60,6 @@ class GameModel {
     func removeFromQueue() {
         floorQueue.remove(at: 0)
     }
+    
+    
 }

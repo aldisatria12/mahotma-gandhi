@@ -17,14 +17,17 @@ class GameViewModel : ObservableObject {
     @Published var cardImageName = ""
     @Published var cardHelpName = ""
     // counter for animation
-    @Published var counterFirst = 0
-    @Published var counterSecond = 1
-    @Published var counterThird = 2
+    @Published var mainCounter = [0 : 0, 1 : 1, 2 : 2]
     
+    @Published var floorImageIndex : [Int:String] = [:]
     
     @Published var isTopMenuShowed = false
     @Published var isCardOpen = false
     @Published var isMoving = true
+    @Published var showingPauseMenu = false
+//    @AppStorage("isTutorial") var isTutorial = true
+    
+    @Published var showingPlayerMenu = false
     
     var game: GameModel
     
@@ -34,9 +37,15 @@ class GameViewModel : ObservableObject {
     init(players: [PlayerModel]) {
         game = GameModel(players: players)
         playerTurn = PlayerTurnCardViewModel(game: game)
+        for i in 0...2 {
+//            if i == 1 {
+//                floorImageIndex[i] = "stage"
+//            } else {
+//                floorImageIndex[i] = randomFloorImage()
+//            }
+            floorImageIndex[i] = randomFloorImage()
+        }
     }
-    
-    
     
     func goToNextFloor() {
         game.toNextFloor()
@@ -51,9 +60,10 @@ class GameViewModel : ObservableObject {
     }
     
     func animateMovement() {
-        counterFirst = addCounter(counter: counterFirst)
-        counterSecond = addCounter(counter: counterSecond)
-        counterThird = addCounter(counter: counterThird)
+        for i in 0...2 {
+            mainCounter[i] = addCounter(counter: mainCounter[i]!)
+        }
+        changeFloorImageIndex()
         isTopMenuShowed = false
         isMoving = true
     }
@@ -65,4 +75,13 @@ class GameViewModel : ObservableObject {
             return counter + 1
         }
     }
+    
+    func changeFloorImageIndex() {
+        floorImageIndex[(game.floorCounter * 2) % 3] = randomFloorImage()
+    }
+    
+    func randomFloorImage() -> String {
+        return game.floorImages.randomElement() ?? ""
+    }
+    
 }

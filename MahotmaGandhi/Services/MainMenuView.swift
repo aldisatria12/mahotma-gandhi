@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    @StateObject var playerViewModel = PlayerViewModel()
     var body: some View {
         NavigationView {
-            NavigationLink(destination: {
-                PlayerView(playerViewModel: playerViewModel)
-            }, label: {
-                Image(systemName: "play.circle")
-            })
-            
-        }
+            VStack {
+                NavigationLink(destination: {
+                    PlayerView()
+                }, label: {
+                    Image(systemName: "play.circle")
+                })
+                NavigationLink {
+                    TutorialView()
+                } label: {
+                    Text("Tutorial")
+                }
+
+            } // VStack
+        } // Navigation Link
     }
 }
 

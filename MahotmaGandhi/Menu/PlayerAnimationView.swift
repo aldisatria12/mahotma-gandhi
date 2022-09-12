@@ -45,14 +45,16 @@ struct PlayerAnimationWalkView: View {
     @State var imageFrame: String = ""
     @Binding var player: PlayerModel
     
+//    @Binding var player: PlayerModel
+    
     let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
     @State var index = 0
     var body: some View {
         VStack {
             Image(imageFrame)
                 .onReceive(timer) { _ in
-                    imageFrame = "Wayfarer\(index)"
-//                    imageFrame = "\(player.avatar,index)"
+                    imageFrame = "Wayfarer_Walking_\(index)"
+//                    imageFrame = "\(player.avatar)_Walking_\(index)"
                     index += 1
                     if (index > 58) {
                         index = 0
@@ -67,14 +69,16 @@ struct PlayerAnimationIdleView: View {
     @State var imageFrame: String = ""
     @Binding var player: PlayerModel
     
+//    @Binding var player: PlayerModel
+    
     let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
     @State var index = 0
     var body: some View {
         VStack {
             Image(imageFrame)
                 .onReceive(timer) { _ in
-                    imageFrame = "Wayfarer_Idle_\(index)"
-//                    imageFrame = "\(player.avatar)_Idle\(index)"
+                    imageFrame = "Guardian_Idle_\(index)"
+//                    imageFrame = "\(player.avatar)_Idle_\(index)"
                     index += 1
                     if (index > 117) {
                         index = 0

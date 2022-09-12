@@ -15,7 +15,7 @@ struct CardPlayerInputView: View {
                 .foregroundColor(.gray)
                 .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.black, lineWidth: 2))
             VStack{
-                Image(selectedPlayer.avatar)
+                Image("\(selectedPlayer.avatar)_Icon")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .scaledToFit()
