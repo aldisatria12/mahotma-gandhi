@@ -13,7 +13,7 @@ struct TutorialCardView: View {
     @State var degree = 0.0
     @State var content = 0.0
     
-//    @State var counter = 0
+    //    @State var counter = 0
     
     var vm: TutorialViewModel
     
@@ -29,7 +29,7 @@ struct TutorialCardView: View {
                         .scaledToFit()
                         .frame(width: 280, height: 400, alignment: .center)
                     Button(action: {
-                        tapFlipBack()
+                        vm.isCardFlipped.toggle()
                     },label: {
                         Image(systemName: "chevron.backward.circle")
                             .resizable()
@@ -53,7 +53,7 @@ struct TutorialCardView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                tapFlipCard()
+                                vm.isCardFlipped.toggle()
                             },label: {
                                 Image(systemName: "questionmark.circle")
                                     .resizable()
@@ -69,11 +69,11 @@ struct TutorialCardView: View {
                         }
                         
                         VStack {
-//                            Text(vm.gameTitle)
-//                                .font(.headline)
-//                                .fontWeight(.bold)
-//                                .foregroundColor(.black)
-//                                .padding(.init(top: 25, leading: 0, bottom: 0, trailing: 0))
+                            //                            Text(vm.gameTitle)
+                            //                                .font(.headline)
+                            //                                .fontWeight(.bold)
+                            //                                .foregroundColor(.black)
+                            //                                .padding(.init(top: 25, leading: 0, bottom: 0, trailing: 0))
                             Text(vm.gameQuestion)
                                 .font(.system(.title, design: .rounded))
                                 .fontWeight(.bold)
@@ -83,9 +83,9 @@ struct TutorialCardView: View {
                             Button(action: {
                                 openCard.toggle()
                                 vm.animateTutorialMovement()
-//                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                                    vm.goToNextFloor()
-//                                }
+                                //                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                //                                    vm.goToNextFloor()
+                                //                                }
                             }, label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 12)
@@ -106,6 +106,24 @@ struct TutorialCardView: View {
         .rotation3DEffect(.degrees(content), axis: (x: 0, y:1, z:0))
         .rotation3DEffect(.degrees(degree), axis: (x: 0, y:1, z:0))
         .frame(width: 280, height: 400)
+        .onChange(of: vm.isCardFlipped) { newValue in
+            let animationDuration = 0.75
+            withAnimation(Animation.linear(duration: animationDuration)) {
+                if vm.isCardFlipped {
+                    degree -= 180
+                } else {
+                    degree += 180
+                }
+            }
+            withAnimation(Animation.linear(duration: 0.001).delay(animationDuration/2)) {
+                if vm.isCardFlipped {
+                    content -= 180
+                } else {
+                    content += 180
+                }
+                flipped.toggle()
+            }
+        }
     }
     
     func tapFlipCard() {

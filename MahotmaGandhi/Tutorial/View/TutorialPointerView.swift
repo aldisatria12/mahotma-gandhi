@@ -16,9 +16,16 @@ struct TutorialPointerView: View {
         TimelineView(.animation(minimumInterval: 0.01, paused: !tutorialVM.isTextAnimated)) { timeline in
             ZStack {
                 TutorialCoverView()
+                if tutorialVM.isTutorialItemShowed {
+                    TutorialItemView(tutorialVM: tutorialVM)
+                }
                 TutorialDialogCardView(tutorialVM: tutorialVM, date: timeline.date)
                     .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 498 / 844) + (0.5 *  UIScreen.main.bounds.height * 139 / 844))
             } //ZStack
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+            
+            
         } // TimelineView
         .onAppear() {
             tutorialVM.getTutorialPointer()

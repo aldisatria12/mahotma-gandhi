@@ -17,10 +17,12 @@ class TutorialViewModel : ObservableObject {
     @Published var isMoving = false
     @Published var isTutorialPresented = false
     @Published var isTextAnimated = false
+    @Published var isTutorialItemShowed = false
+    @Published var isCardFlipped = false
     
 //    @Published var letterShowing : Double = 0
     
-    var tutorialState = (0, -1)
+    @Published var tutorialState = (0, -1)
     
     
     let gameQuestion = "What is your favorite childhood memory?"
@@ -39,6 +41,14 @@ class TutorialViewModel : ObservableObject {
         1 : [
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+        ],
+        2 : [
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        ],
+        3 : [
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
         ]
     ]
     
@@ -55,7 +65,7 @@ class TutorialViewModel : ObservableObject {
         if tutorialState.1 == tutorialPointer[tutorialState.0]?.count{
             tutorialState.0 += 1
             tutorialState.1 = -1
-            isTutorialPresented = false
+//            isTutorialPresented = false
         }
     }
     
@@ -72,11 +82,10 @@ class TutorialViewModel : ObservableObject {
         if isTextAnimated {
             isTextAnimated = false
             tutorialPointerText = selectedPointer
-        }
-        else if tutorialPointerText == "No Text Found" {
+        } else if tutorialPointerText == "No Text Found" {
             isTextAnimated = false
             isTutorialPresented = false
-        } else {
+        } else if tutorialState.1 != tutorialPointer[tutorialState.0]!.count - 1 {
             changeTutorialState()
             print(tutorialState.0, " : ", tutorialState.1)
             if tutorialState.1 != -1 {
@@ -84,6 +93,12 @@ class TutorialViewModel : ObservableObject {
                     selectedPointer = tempSelectedPointer
                     numberOfLetterShowed = 0
                     isTextAnimated = true
+                    if tutorialState.1 == tutorialPointer[tutorialState.0]!.count - 1 || (tutorialState.0 == 0 && tutorialState.1 == 1) {
+//                        print(tutorialPointer[tutorialState.0]?.count)
+                        isTutorialItemShowed = true
+                    } else {
+                        isTutorialItemShowed = false
+                    }
                 } else {
                     isTextAnimated = false
                     tutorialPointerText = "No Text Found"
@@ -91,4 +106,5 @@ class TutorialViewModel : ObservableObject {
             }
         }
     }
+//    if tutorialState.1 != tutorialPointer[tutorialState.0]?.count
 }
