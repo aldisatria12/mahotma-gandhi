@@ -31,6 +31,12 @@ struct TutorialDialogCardView: View {
                     Spacer()
                     Text("...")
                         .padding([.trailing, .bottom])
+//                        .animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0), value: tutorialVM.isDotsUp)
+//                        .onChange(of: tutorialVM.isDotsUp) { _ in
+//                            if tutorialVM.isDotsUp == true {
+//                                tutorialVM.isDotsUp = false
+//                            }
+//                        }
                 }
             }
         }

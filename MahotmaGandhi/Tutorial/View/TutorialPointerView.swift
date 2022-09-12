@@ -13,7 +13,7 @@ struct TutorialPointerView: View {
     
     var body: some View {
 //
-        TimelineView(.animation(minimumInterval: 0.01, paused: !tutorialVM.isTextAnimated)) { timeline in
+        TimelineView(.animation(minimumInterval: 0.05, paused: !tutorialVM.isTextAnimated)) { timeline in
             ZStack {
                 TutorialCoverView()
                 if tutorialVM.isTutorialItemShowed {

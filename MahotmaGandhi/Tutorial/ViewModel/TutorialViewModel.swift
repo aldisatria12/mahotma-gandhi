@@ -19,6 +19,7 @@ class TutorialViewModel : ObservableObject {
     @Published var isTextAnimated = false
     @Published var isTutorialItemShowed = false
     @Published var isCardFlipped = false
+//    @Published var isDotsUp = false
     
 //    @Published var letterShowing : Double = 0
     
@@ -27,12 +28,12 @@ class TutorialViewModel : ObservableObject {
     
     let gameQuestion = "What is your favorite childhood memory?"
     
-    var dummyPlayers : [PlayerModel] = [
+    let dummyPlayers : [PlayerModel] = [
         PlayerModel(name: "Someone", avatar: "Wayfarer"),
         PlayerModel(name: "Noone", avatar: "Guardian")
     ]
     
-    var tutorialPointer : [Int:[String]] = [
+    private let tutorialPointer : [Int:[String]] = [
         0 : [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
@@ -74,6 +75,7 @@ class TutorialViewModel : ObservableObject {
             tutorialPointerText = "\(selectedPointer.prefix(numberOfLetterShowed))"
             numberOfLetterShowed += 1
         } else {
+//            isDotsUp = true
             isTextAnimated = false
         }
     }
@@ -81,6 +83,7 @@ class TutorialViewModel : ObservableObject {
     func getTutorialPointer() {
         if isTextAnimated {
             isTextAnimated = false
+//            isDotsUp = true
             tutorialPointerText = selectedPointer
         } else if tutorialPointerText == "No Text Found" {
             isTextAnimated = false
