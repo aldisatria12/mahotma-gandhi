@@ -97,7 +97,6 @@ struct CardGameView: View{
         }
         .rotation3DEffect(.degrees(content), axis: (x: 0, y:1, z:0))
         .rotation3DEffect(.degrees(degree), axis: (x: 0, y:1, z:0))
-        .frame(width: 325, height: 475)
         .padding(.init(top: 00, leading: 0, bottom: 120, trailing: 0))
     }
     

@@ -17,55 +17,54 @@ struct PauseMenuView: View {
                 .background(.black)
                 .opacity(0.8)
             ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .foregroundColor(.white)
-                    .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 2))
+                Image("Pause_Menu")
+                    .resizable()
+                    .frame(width: 272, height: 310, alignment: .center)
                 VStack {
-                    Text("PAUSED")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.gray)
+                    Spacer()
                     Button(action: {
                         closePauseMenu = false
                     }, label: {
-                        Text("RESUME")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .frame(width: 180, height: 50, alignment: .center)
-                            .background(Color.gray
-                                .cornerRadius(12)
-                                .opacity(0.5))
+                        Text("Resume")
+                            .font(.system(size: 22, design: .rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(blue01)
+                            .background(yellow02
+                                .cornerRadius(25)
+                                .frame(width: 200, height: 50, alignment: .center))
                     })
+                    .frame(width: 200, height: 50, alignment: .center)
+                    .padding(.init(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Button(action: {
                         showingPlayerView = true
                     }, label: {
-                        Text("MANAGE PLAYER")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .frame(width: 180, height: 50, alignment: .center)
-                            .background(Color.gray
-                                .cornerRadius(12)
-                                .opacity(0.5))
+                        Text("Manage Party")
+                            .font(.system(size: 22, design: .rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(blue01)
+                            .background(yellow02
+                                .cornerRadius(25)
+                                .frame(width: 200, height: 50, alignment: .center))
                     })
+                    .frame(width: 200, height: 50, alignment: .center)
+                    .padding(.init(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Button(action: {
                         NavigationUtil.popToRootView()
                     }, label: {
-                        Text("MAIN MENU")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .frame(width: 180, height: 50, alignment: .center)
-                            .background(Color.gray
-                                .cornerRadius(12)
-                                .opacity(0.5))
+                        Text("Main Menu")
+                            .font(.system(size: 22, design: .rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(blue01)
+                            .background(yellow02
+                                .cornerRadius(25)
+                                .frame(width: 200, height: 50, alignment: .center))
                     })
+                    .frame(width: 200, height: 50, alignment: .center)
+                    .padding(.init(top: 0, leading: 0, bottom: 35, trailing: 0))
                 }
             }
-            .frame(width: 220, height: 280, alignment: .center)
+            .frame(width: 272, height: 310)
         }
-//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 }
 
