@@ -19,6 +19,7 @@
 		3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69802F28B67149005F4B1E /* PlayerModel.swift */; };
 		3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */; };
 		3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803328B676AC005F4B1E /* PlayerViewModel.swift */; };
+		3E7DB48228CB2B71009E30C0 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DB48128CB2B71009E30C0 /* NewPlayerView.swift */; };
 		3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */; };
 		3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */; };
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
@@ -57,6 +58,7 @@
 		3E69802F28B67149005F4B1E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarSelectionView.swift; sourceTree = "<group>"; };
 		3E69803328B676AC005F4B1E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		3E7DB48128CB2B71009E30C0 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardView.swift; sourceTree = "<group>"; };
 		3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardViewModel.swift; sourceTree = "<group>"; };
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				3E4792AB28C9CC66006F9D1B /* AllPlayerView.swift */,
 				A313B02528C9FFE7004C1035 /* CardPlayerView.swift */,
 				3E4792AD28C9D689006F9D1B /* AllPlayerNavBarView.swift */,
+				3E7DB48128CB2B71009E30C0 /* NewPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */,
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
 				F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */,
+				3E7DB48228CB2B71009E30C0 /* NewPlayerView.swift in Sources */,
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
 				A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */,
 				F7F160AA28B8A31700E83273 /* GameViewModel.swift in Sources */,
@@ -483,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = N98Z7YMPQ8;
+				DEVELOPMENT_TEAM = QT6B66A8Y8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -512,7 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MahotmaGandhi/Preview Content\"";
-				DEVELOPMENT_TEAM = N98Z7YMPQ8;
+				DEVELOPMENT_TEAM = QT6B66A8Y8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
