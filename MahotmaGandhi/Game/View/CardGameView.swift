@@ -13,7 +13,7 @@ struct CardGameView: View{
     @State var degree = 0.0
     @State var content = 0.0
     
-//    @State var counter = 0
+    //    @State var counter = 0
     
     var vm: GameViewModel
     
@@ -26,7 +26,7 @@ struct CardGameView: View{
                     Image(vm.cardHelpName)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 280, height: 400, alignment: .center)
+                        .frame(width: 325, height: 475, alignment: .center)
                     Button(action: {
                         tapFlipBack()
                     },label: {
@@ -47,7 +47,7 @@ struct CardGameView: View{
                     Image(vm.cardImageName)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 280, height: 400, alignment: .center)
+                        .frame(width: 325, height: 475, alignment: .center)
                     VStack (){
                         HStack {
                             Spacer()
@@ -61,55 +61,48 @@ struct CardGameView: View{
                                     .background(yellow03)
                                     .clipShape(Circle())
                                     .foregroundColor(vm.baseColor)
-                                    .frame(width: 30, height: 30, alignment: .bottomLeading)
-                                    .padding(.top, 20)
-                                    .padding(.trailing, 20)
+                                    .frame(width: 30, height: 30)
+                                    .position(x: 280, y: 35)
                             })
                         }
+                        Text(vm.gameQuestion)
+                            .font(.system(size: 31, design: .rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(earth01)
+                            .multilineTextAlignment(.center)
+                            .frame(width: 242, height: 349, alignment: .center)
+                        Button(action: {
+                            openCard.toggle()
+                            vm.animateMovement()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                vm.goToNextFloor()
+                            }
+                            //                                counter()
+                        }, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 21)
+                                    .foregroundColor(ocean01)
+                                Text("Next Floor")
+                                    .font(.system(size: 25, design: .rounded))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(yellow03)
+                            }
+                            .frame(width: 242, height: 41, alignment: .center)
+                        }).padding(.init(top: 0, leading: 0, bottom: 30, trailing: 0))
+                        //if counter{PlayerAnimationView(counter:$counter)}
                         
-                        VStack {
-//                            Text(vm.gameTitle)
-//                                .font(.headline)
-//                                .fontWeight(.bold)
-//                                .foregroundColor(.black)
-//                                .padding(.init(top: 25, leading: 0, bottom: 0, trailing: 0))
-                            Text(vm.gameQuestion)
-                                .font(.system(.title, design: .rounded))
-                                .fontWeight(.bold)
-                                .foregroundColor(yellow01)
-                                .multilineTextAlignment(.center)
-                                .frame(width: 220, height: 275, alignment: .center)
-                            Button(action: {
-                                openCard.toggle()
-                                vm.animateMovement()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                    vm.goToNextFloor()
-                                }
-//                                counter()
-                            }, label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .foregroundColor(blue01)
-                                    Text("Next Floor")
-                                        .font(.system(.title, design: .rounded))
-                                        .fontWeight(.medium)
-                                        .foregroundColor(yellow03)
-                                }
-                                .frame(width: 200, height: 40, alignment: .center)
-                            }).padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0))
-                            //if counter{PlayerAnimationView(counter:$counter)}
-                        }
                     }
                 }
             }
         }
         .rotation3DEffect(.degrees(content), axis: (x: 0, y:1, z:0))
         .rotation3DEffect(.degrees(degree), axis: (x: 0, y:1, z:0))
-        .frame(width: 280, height: 400)
+        .frame(width: 325, height: 475)
+        .padding(.init(top: 00, leading: 0, bottom: 120, trailing: 0))
     }
     
     func tapFlipCard() {
-        let animationDuration = 0.75
+        let animationDuration = 0.6
         withAnimation(Animation.linear(duration: animationDuration)) {
             degree += 180
         }
@@ -120,7 +113,7 @@ struct CardGameView: View{
     }
     
     func tapFlipBack() {
-        let animationDuration = 0.75
+        let animationDuration = 0.6
         withAnimation(Animation.linear(duration: animationDuration)) {
             degree -= 180
         }
