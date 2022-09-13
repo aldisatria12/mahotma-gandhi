@@ -48,29 +48,27 @@ struct CardGameView: View{
                         .resizable()
                         .scaledToFit()
                         .frame(width: 325, height: 475, alignment: .center)
-                    VStack (){
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                tapFlipCard()
-                            },label: {
-                                Image(systemName: "questionmark.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .font(Font.title.weight(.semibold))
-                                    .background(yellow03)
-                                    .clipShape(Circle())
-                                    .foregroundColor(vm.baseColor)
-                                    .frame(width: 30, height: 30)
-                                    .position(x: 280, y: 35)
-                            })
-                        }
+                    VStack {
+                        Button(action: {
+                            tapFlipCard()
+                        },label: {
+                            Image(systemName: "questionmark.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .font(Font.title.weight(.semibold))
+                                .background(yellow03)
+                                .clipShape(Circle())
+                                .foregroundColor(vm.baseColor)
+                                .frame(width: 30, height: 30)
+                                .position(x: 320, y: 120)
+                        })
                         Text(vm.gameQuestion)
                             .font(.system(size: 31, design: .rounded))
                             .fontWeight(.bold)
                             .foregroundColor(earth01)
                             .multilineTextAlignment(.center)
-                            .frame(width: 242, height: 349, alignment: .center)
+                            .frame(width: 242, height: 299, alignment: .center)
+                            .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                         Button(action: {
                             openCard.toggle()
                             vm.animateMovement()
@@ -88,16 +86,14 @@ struct CardGameView: View{
                                     .foregroundColor(yellow03)
                             }
                             .frame(width: 242, height: 41, alignment: .center)
-                        }).padding(.init(top: 0, leading: 0, bottom: 30, trailing: 0))
-                        //if counter{PlayerAnimationView(counter:$counter)}
-                        
+                        }).padding(.init(top: 0, leading: 0, bottom: 110, trailing: 0))
                     }
                 }
             }
         }
         .rotation3DEffect(.degrees(content), axis: (x: 0, y:1, z:0))
         .rotation3DEffect(.degrees(degree), axis: (x: 0, y:1, z:0))
-        .padding(.init(top: 00, leading: 0, bottom: 120, trailing: 0))
+        .padding(.init(top: 0, leading: 0, bottom: 120, trailing: 0))
     }
     
     func tapFlipCard() {
