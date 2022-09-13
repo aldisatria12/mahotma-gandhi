@@ -16,6 +16,8 @@ struct MainMenuView: View {
                 }, label: {
                     Image(systemName: "play.circle")
                 })
+                Spacer()
+                    .frame(width: UIScreen.main.bounds.width, height: 40)
                 NavigationLink {
                     TutorialView()
                 } label: {
