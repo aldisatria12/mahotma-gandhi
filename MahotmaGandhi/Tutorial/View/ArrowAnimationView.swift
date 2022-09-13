@@ -17,34 +17,39 @@ struct ArrowAnimationView: View {
     
     let timer = Timer.publish(every: 0.3, on: .main, in: .common).autoconnect()
     var body: some View {
-        Image(systemName: "arrowtriangle.\(orientation.imageType).fill")
-            .resizable()
-            .frame(width: 25, height: 30)
-            .offset(x: offsetx, y: offsety)
-            .onReceive(timer) { _ in
-                animation.toggle()
-                withAnimation {
-                    if orientation.vertical {
-                        if animation{
-                            offsety = -5
+        ZStack {
+            Image(systemName: "arrowtriangle.\(orientation.imageType).fill")
+                .resizable()
+                .frame(width: 25, height: 30)
+                .foregroundColor(yellow02)
+                .offset(x: offsetx, y: offsety)
+                .onReceive(timer) { _ in
+                    animation.toggle()
+                    withAnimation {
+                        if orientation.vertical {
+                            if animation{
+                                offsety = -5
+                            } else {
+                                offsety = 5
+                            }
+                            
                         } else {
-                            offsety = 5
-                        }
-                        
-                    } else {
-                        if animation{
-                            offsetx = -5
-                        } else {
-                            offsetx = 5
+                            if animation{
+                                offsetx = -5
+                            } else {
+                                offsetx = 5
+                            }
                         }
                     }
                 }
-            }
+        }
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        
     }
 }
 
-//struct ArrowAnimationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ArrowAnimationView()
-//    }
-//}
+struct ArrowAnimationView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArrowAnimationView(orientation: .down)
+    }
+}

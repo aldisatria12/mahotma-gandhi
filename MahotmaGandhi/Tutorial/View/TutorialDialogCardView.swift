@@ -15,13 +15,16 @@ struct TutorialDialogCardView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(yellow03)
-                .cornerRadius(25)
+            Image("DialogBox")
+                .frame(width: UIScreen.main.bounds.width * 324 / 392, height: UIScreen.main.bounds.height * 141 / 844)
+//                
             VStack {
                 Text(tutorialVM.tutorialPointerText)
-                    .padding([.top])
-                    .frame(width: (UIScreen.main.bounds.width * 324 / 392) - 20, height: (UIScreen.main.bounds.height * 139 / 844) - 20, alignment: .topLeading)
+//                    .padding(.top, 34)
+//                    .padding(.leading, 31)
+//                    .padding(.trailing, 25)
+                    .frame(width: (UIScreen.main.bounds.width * 268 / 392),  height: (UIScreen.main.bounds.height * 67 / 844), alignment: .topLeading)
+                    .offset(x: 5, y: 25)
                     .onChange(of: date) { _ in
                         tutorialVM.animateTextAppearance()
                     }
@@ -40,7 +43,7 @@ struct TutorialDialogCardView: View {
                 }
             }
         }
-        .frame(width: UIScreen.main.bounds.width * 324 / 392, height: UIScreen.main.bounds.height * 139 / 844)
+        .frame(width: UIScreen.main.bounds.width * 324 / 392, height: UIScreen.main.bounds.height * 141 / 844)
     }
 }
 

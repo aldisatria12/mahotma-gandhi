@@ -50,6 +50,10 @@ class TutorialViewModel : ObservableObject {
         3 : [
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+        ],
+        4 : [
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         ]
     ]
     
@@ -66,7 +70,6 @@ class TutorialViewModel : ObservableObject {
         if tutorialState.1 == tutorialPointer[tutorialState.0]?.count{
             tutorialState.0 += 1
             tutorialState.1 = -1
-//            isTutorialPresented = false
         }
     }
     
@@ -83,7 +86,6 @@ class TutorialViewModel : ObservableObject {
     func getTutorialPointer() {
         if isTextAnimated {
             isTextAnimated = false
-//            isDotsUp = true
             tutorialPointerText = selectedPointer
         } else if tutorialPointerText == "No Text Found" {
             isTextAnimated = false
@@ -97,7 +99,6 @@ class TutorialViewModel : ObservableObject {
                     numberOfLetterShowed = 0
                     isTextAnimated = true
                     if tutorialState.1 == tutorialPointer[tutorialState.0]!.count - 1 || (tutorialState.0 == 0 && tutorialState.1 == 1) {
-//                        print(tutorialPointer[tutorialState.0]?.count)
                         isTutorialItemShowed = true
                     } else {
                         isTutorialItemShowed = false
@@ -107,7 +108,8 @@ class TutorialViewModel : ObservableObject {
                     tutorialPointerText = "No Text Found"
                 }
             }
+        } else if tutorialState.1 == tutorialPointer[tutorialState.0]!.count - 1 && tutorialState.0 == 4 {
+            NavigationUtil.popToRootView()
         }
     }
-//    if tutorialState.1 != tutorialPointer[tutorialState.0]?.count
 }

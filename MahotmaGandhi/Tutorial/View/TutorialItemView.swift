@@ -16,11 +16,17 @@ struct TutorialItemView: View {
             if tutorialVM.tutorialState.0 == 0 && tutorialVM.tutorialState.1 == 1 {
                 TutorialBottomMenuView(vm: tutorialVM, card: $tutorialVM.isCardOpen)
                     .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height) - (UIScreen.main.bounds.height * 129 / 844))
+                ArrowAnimationView(orientation: .down)
+                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height) - (UIScreen.main.bounds.height * 129 * 2 / 844))
             } else if tutorialVM.tutorialState.0 == 0 && tutorialVM.tutorialState.1 == 2 {
                 Button (action: {
-                    tutorialVM.isCardOpen.toggle()
-                    tutorialVM.changeTutorialState()
-                    tutorialVM.getTutorialPointer()
+                    if tutorialVM.isTextAnimated {
+                        tutorialVM.getTutorialPointer()
+                    } else {
+                        tutorialVM.isCardOpen.toggle()
+                        tutorialVM.changeTutorialState()
+                        tutorialVM.getTutorialPointer()
+                    }
                 }, label: {
                     Image("Chest")
                         .resizable()
@@ -28,11 +34,22 @@ struct TutorialItemView: View {
                 })
                 .frame(width: UIScreen.main.bounds.width * 59 / 390, height: UIScreen.main.bounds.height * 80 / 844)
                 .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 844))
+                ArrowAnimationView(orientation: .down)
+                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 844) - (UIScreen.main.bounds.height * 40 / 844))
             } else if tutorialVM.tutorialState.0 == 1 {
                 Button(action: {
-                    tutorialVM.isCardFlipped.toggle()
-                    tutorialVM.changeTutorialState()
-                    tutorialVM.getTutorialPointer()
+                    if tutorialVM.isTextAnimated {
+                        tutorialVM.getTutorialPointer()
+                    } else {
+                        tutorialVM.isTutorialPresented = false
+                        tutorialVM.isCardFlipped.toggle()
+                        tutorialVM.changeTutorialState()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                            tutorialVM.isTutorialPresented = true
+                            //// Mark : Tidak perlu karena sudah ada di onAppear
+    //                        tutorialVM.getTutorialPointer()
+                        }
+                    }
                 },label: {
                     Image(systemName: "questionmark.circle")
                         .resizable()
@@ -44,11 +61,22 @@ struct TutorialItemView: View {
                 })
                 .frame(width: 30, height: 30, alignment: .bottomLeading)
                 .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) + 15)
+                ArrowAnimationView(orientation: .down)
+                    .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) - 15)
             } else if tutorialVM.tutorialState.0 == 2 {
                 Button(action: {
-                    tutorialVM.isCardFlipped.toggle()
-                    tutorialVM.changeTutorialState()
-                    tutorialVM.getTutorialPointer()
+                    if tutorialVM.isTextAnimated {
+                        tutorialVM.getTutorialPointer()
+                    } else {
+                        tutorialVM.isTutorialPresented = false
+                        tutorialVM.isCardFlipped.toggle()
+                        tutorialVM.changeTutorialState()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                            tutorialVM.isTutorialPresented = true
+    //                        tutorialVM.getTutorialPointer()
+                        }
+                    }
+                    
                 },label: {
                     Image(systemName: "chevron.backward.circle")
                         .resizable()
@@ -60,10 +88,21 @@ struct TutorialItemView: View {
                 })
                 .frame(width: 30, height: 30, alignment: .bottomLeading)
                 .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) + 15)
+                ArrowAnimationView(orientation: .down)
+                    .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) - 15)
             } else if tutorialVM.tutorialState.0 == 3 {
                 Button(action: {
-//                    openCard.toggle()
-//                    vm.animateTutorialMovement()
+                    if tutorialVM.isTextAnimated {
+                        tutorialVM.getTutorialPointer()
+                    } else {
+                        tutorialVM.isTutorialPresented = false
+                        tutorialVM.isCardOpen.toggle()
+                        tutorialVM.changeTutorialState()
+                        tutorialVM.animateTutorialMovement()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            tutorialVM.isTutorialPresented = true
+                        }
+                    }
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
