@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject var vm : GameViewModel
+    @StateObject var vm : GameViewModel 
     
     
     var body: some View {
@@ -55,7 +55,7 @@ struct GameView: View {
                 PauseMenuView(closePauseMenu: $vm.showingPauseMenu, showingPlayerView: $vm.showingPlayerMenu)
             }
             if vm.showingPlayerMenu{
-                ManagePlayerView(gameVM: vm)
+//                ManagePlayerView(gameVM: vm)
             }
         }
         .navigationBarHidden(true)

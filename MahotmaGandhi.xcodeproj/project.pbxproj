@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E4792AC28C9CC66006F9D1B /* AllPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4792AB28C9CC66006F9D1B /* AllPlayerView.swift */; };
+		3E4792AE28C9D689006F9D1B /* AllPlayerNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4792AD28C9D689006F9D1B /* AllPlayerNavBarView.swift */; };
 		3E69801828B63324005F4B1E /* MahotmaGandhiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69801728B63324005F4B1E /* MahotmaGandhiApp.swift */; };
 		3E69801A28B63324005F4B1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69801928B63324005F4B1E /* ContentView.swift */; };
 		3E69801C28B63325005F4B1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E69801B28B63325005F4B1E /* Assets.xcassets */; };
@@ -17,12 +19,14 @@
 		3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69802F28B67149005F4B1E /* PlayerModel.swift */; };
 		3E69803228B671F2005F4B1E /* PlayerAvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */; };
 		3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69803328B676AC005F4B1E /* PlayerViewModel.swift */; };
+		3E7DB48228CB2B71009E30C0 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DB48128CB2B71009E30C0 /* NewPlayerView.swift */; };
 		3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */; };
 		3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */; };
 		3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E7F28BDABD5008780D8 /* PlayerView.swift */; };
 		3EA10E8228BDB345008780D8 /* PlayerTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */; };
 		A313B02028C9CD4D004C1035 /* ArrowAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */; };
 		A313B02428C9EAC9004C1035 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B02328C9EAC9004C1035 /* Orientation.swift */; };
+		A313B02628C9FFE7004C1035 /* CardPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313B02528C9FFE7004C1035 /* CardPlayerView.swift */; };
 		A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328067728BF49B8004EB8B3 /* PauseMenuView.swift */; };
 		A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CA19B28C5D938001FFE97 /* MainMenuView.swift */; };
 		A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */; };
@@ -52,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E4792AB28C9CC66006F9D1B /* AllPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlayerView.swift; sourceTree = "<group>"; };
+		3E4792AD28C9D689006F9D1B /* AllPlayerNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlayerNavBarView.swift; sourceTree = "<group>"; };
 		3E69801428B63324005F4B1E /* MahotmaGandhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MahotmaGandhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E69801728B63324005F4B1E /* MahotmaGandhiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahotmaGandhiApp.swift; sourceTree = "<group>"; };
 		3E69801928B63324005F4B1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,12 +69,14 @@
 		3E69802F28B67149005F4B1E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarSelectionView.swift; sourceTree = "<group>"; };
 		3E69803328B676AC005F4B1E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		3E7DB48128CB2B71009E30C0 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		3EA10E7428BCB529008780D8 /* PlayerTurnCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardView.swift; sourceTree = "<group>"; };
 		3EA10E7628BCB53F008780D8 /* PlayerTurnCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnCardViewModel.swift; sourceTree = "<group>"; };
 		3EA10E7F28BDABD5008780D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3EA10E8128BDB345008780D8 /* PlayerTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTurnView.swift; sourceTree = "<group>"; };
 		A313B01F28C9CD4D004C1035 /* ArrowAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowAnimationView.swift; sourceTree = "<group>"; };
 		A313B02328C9EAC9004C1035 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		A313B02528C9FFE7004C1035 /* CardPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlayerView.swift; sourceTree = "<group>"; };
 		A328067728BF49B8004EB8B3 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
 		A35CA19B28C5D938001FFE97 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3A28FE528BDF9D80031DCDA /* PlayerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerAnimationView.swift; path = MahotmaGandhi/Menu/PlayerAnimationView.swift; sourceTree = SOURCE_ROOT; };
@@ -166,6 +174,10 @@
 				3E69802D28B670FA005F4B1E /* CardPlayerInputView.swift */,
 				3E69803128B671F2005F4B1E /* PlayerAvatarSelectionView.swift */,
 				3EA10E7F28BDABD5008780D8 /* PlayerView.swift */,
+				3E4792AB28C9CC66006F9D1B /* AllPlayerView.swift */,
+				A313B02528C9FFE7004C1035 /* CardPlayerView.swift */,
+				3E4792AD28C9D689006F9D1B /* AllPlayerNavBarView.swift */,
+				3E7DB48128CB2B71009E30C0 /* NewPlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,14 +386,17 @@
 				A35CA19C28C5D938001FFE97 /* MainMenuView.swift in Sources */,
 				3EA10E7728BCB53F008780D8 /* PlayerTurnCardViewModel.swift in Sources */,
 				3EA10E7528BCB529008780D8 /* PlayerTurnCardView.swift in Sources */,
+				3E4792AC28C9CC66006F9D1B /* AllPlayerView.swift in Sources */,
 				A3A28FE628BDF9D80031DCDA /* PlayerAnimationView.swift in Sources */,
 				A313B02428C9EAC9004C1035 /* Orientation.swift in Sources */,
 				F79FE6E128C5F5D800322A7A /* AnimationView.swift in Sources */,
 				3E69803028B67149005F4B1E /* PlayerModel.swift in Sources */,
 				F7F160A228B7B1C800E83273 /* TellYourTale.swift in Sources */,
+				3E7DB48228CB2B71009E30C0 /* NewPlayerView.swift in Sources */,
 				3E69803428B676AC005F4B1E /* PlayerViewModel.swift in Sources */,
 				A328067828BF49B8004EB8B3 /* PauseMenuView.swift in Sources */,
 				F7F160AA28B8A31700E83273 /* GameViewModel.swift in Sources */,
+				3E4792AE28C9D689006F9D1B /* AllPlayerNavBarView.swift in Sources */,
 				F7F160A028B7B0B800E83273 /* Floor.swift in Sources */,
 				F79EE63028C9D846004B7A72 /* TutorialCardView.swift in Sources */,
 				F7F1609E28B7A93800E83273 /* GameModel.swift in Sources */,
@@ -389,6 +404,7 @@
 				3E69801A28B63324005F4B1E /* ContentView.swift in Sources */,
 				3EA10E8028BDABD5008780D8 /* PlayerView.swift in Sources */,
 				F7F160CE28BD060400E83273 /* FloorView.swift in Sources */,
+				A313B02628C9FFE7004C1035 /* CardPlayerView.swift in Sources */,
 				F7F160D228BDD3CD00E83273 /* BottomMenuView.swift in Sources */,
 				F7F160A828B8A2E000E83273 /* GameView.swift in Sources */,
 				F7F160D028BD0D3D00E83273 /* TopMenuView.swift in Sources */,
