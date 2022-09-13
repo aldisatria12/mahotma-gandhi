@@ -32,10 +32,11 @@ struct TutorialFloorView: View {
                     .resizable()
                     .scaledToFit()
             })
-            .frame(width: UIScreen.main.bounds.width * 81 / 390, height: UIScreen.main.bounds.height * 111 / 844)
-            .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 240 / 844))
-            .disabled(tutorialVM.isTutorialPresented)
+            .frame(width: UIScreen.main.bounds.width * 59 / 390, height: UIScreen.main.bounds.height * 80 / 844)
+            .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 671) + (UIScreen.main.bounds.height * 40 / 671 ))
+            .disabled(true)
         }// ZStack Pertama
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
         .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))
         .animation(keyFrames[keyFrameIndex].animation, value: keyFrameIndex)
         .onChange(of: keyFrameIndex) {_ in

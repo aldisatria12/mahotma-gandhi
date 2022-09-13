@@ -16,7 +16,7 @@ struct TutorialBottomMenuView: View {
                 Image("turnsBackground")
                     .resizable()
                     .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height * 0.21)
-                PlayerTurnView(playerTurnViewModel: PlayerTurnCardViewModel(game: GameModel(players: vm.dummyPlayers)), card: $card)
+                TutorialPlayerTurnView(tutorialVM: vm, card: $card)
                     .offset(y: 15)
             }
         }
