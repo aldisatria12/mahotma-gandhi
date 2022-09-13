@@ -18,7 +18,7 @@ struct ArrowAnimationView: View {
     let timer = Timer.publish(every: 0.3, on: .main, in: .common).autoconnect()
     var body: some View {
         ZStack {
-            Image(systemName: "arrowtriangle.\(orientation.imageType).fill")
+            Image("Tutorial_Arrow")
                 .resizable()
                 .frame(width: 25, height: 30)
                 .foregroundColor(yellow02)

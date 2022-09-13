@@ -19,7 +19,7 @@ class TutorialViewModel : ObservableObject {
     @Published var isTextAnimated = false
     @Published var isTutorialItemShowed = false
     @Published var isCardFlipped = false
-//    @Published var isDotsUp = false
+    @Published var isDotsUp = false
     
 //    @Published var letterShowing : Double = 0
     
@@ -33,7 +33,7 @@ class TutorialViewModel : ObservableObject {
         PlayerModel(name: "Noone", avatar: "Guardian")
     ]
     
-    private let tutorialPointer : [Int:[String]] = [
+    let tutorialPointer : [Int:[String]] = [
         0 : [
             "What's up, Adventurers! Welcome to The Spire.",
             "You can call me as The Sage.  Now allow me to show you around.",
@@ -78,8 +78,10 @@ class TutorialViewModel : ObservableObject {
             tutorialPointerText = "\(selectedPointer.prefix(numberOfLetterShowed))"
             numberOfLetterShowed += 1
         } else {
-//            isDotsUp = true
             isTextAnimated = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                self.isDotsUp = true
+            }
         }
     }
     
@@ -87,6 +89,9 @@ class TutorialViewModel : ObservableObject {
         if isTextAnimated {
             isTextAnimated = false
             tutorialPointerText = selectedPointer
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                self.isDotsUp = true
+            }
         } else if tutorialPointerText == "No Text Found" {
             isTextAnimated = false
             isTutorialPresented = false

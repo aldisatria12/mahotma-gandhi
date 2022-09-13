@@ -38,7 +38,7 @@ struct TutorialPointerView: View {
                     TutorialItemView(tutorialVM: tutorialVM)
                 }
                 TutorialDialogCardView(tutorialVM: tutorialVM, date: timeline.date)
-                    .position(x: UIScreen.main.bounds.width / 2, y: tutorialVM.isTutorialItemShowed && tutorialVM.tutorialState.0 == 3 ? (UIScreen.main.bounds.height * 300 / 844) + (UIScreen.main.bounds.height * 141 * 0.5 / 844) : (UIScreen.main.bounds.height * 437 / 844) + (UIScreen.main.bounds.height * 141 * 0.5 / 844))
+                    .position(x: UIScreen.main.bounds.width / 2, y: tutorialVM.isTutorialItemShowed && tutorialVM.tutorialState.0 == 3 ? (UIScreen.main.bounds.height * 250 / 844) + (UIScreen.main.bounds.height * 194 * 0.5 / 844) : (UIScreen.main.bounds.height * 387 / 844) + (UIScreen.main.bounds.height * 194 * 0.5 / 844))
             } //ZStack
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
