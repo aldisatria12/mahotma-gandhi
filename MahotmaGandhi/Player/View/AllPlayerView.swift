@@ -12,6 +12,7 @@ struct AllPlayerView: View {
     @State var editPlayer: Bool = false
     @State var selectedPlayer: Int = 0
     @State var refresh:Bool = false
+    @State var cancelAdd: Bool = false
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
         GridItem(.flexible(minimum: 0, maximum: .infinity))
@@ -32,7 +33,7 @@ struct AllPlayerView: View {
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(0 ..< 6, id: \.self) { i in
                         if playerViewModel.allPlayer.count == i {
-                            AddPlayerView(allPlayer: $playerViewModel.allPlayer, editedPlayer: $selectedPlayer, editMode: $editPlayer)
+                            AddPlayerView(allPlayer: $playerViewModel.allPlayer, editedPlayer: $selectedPlayer, editMode: $editPlayer, cancelAdd: $cancelAdd)
                         } else if i < playerViewModel.allPlayer.count {
                             if refresh == true || refresh == false{
                                 CardPlayerView(selectedPlayer: .constant(i), editedPlayer: $selectedPlayer, allPlayer: $playerViewModel.allPlayer, editMode: $editPlayer, refresh: $refresh)
@@ -48,7 +49,7 @@ struct AllPlayerView: View {
             //            .ignoresSafeArea()
             .navigationBarHidden(true)
             if editPlayer {
-                NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $playerViewModel.allPlayer[selectedPlayer], avatarName: $playerViewModel.avatarName,  editMode: $editPlayer)
+                NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $playerViewModel.allPlayer[selectedPlayer], avatarName: $playerViewModel.avatarName,  editMode: $editPlayer, cancelAdd: $cancelAdd)
             }
         }
     }

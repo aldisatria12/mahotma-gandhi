@@ -21,7 +21,7 @@ struct CardPlayerView: View {
             VStack {
 //                if let p = $allPlayer[selectedPlayer]{
                 if selectedPlayer < allPlayer.count{
-                    PlayerAnimationWalkView(player: $allPlayer[selectedPlayer], stopTimer: $check)
+                    PlayerAnimationIdleView(player: $allPlayer[selectedPlayer], stopTimer: $check)
                         .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     Text(allPlayer[selectedPlayer].name)
                         .padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
@@ -36,7 +36,6 @@ struct CardPlayerView: View {
             ZStack {
                 if selectedPlayer > 0 {
                     Button(action: {
-                        
                         allPlayer.remove(at: selectedPlayer)
                         check = true
                         refresh.toggle()
@@ -67,6 +66,7 @@ struct AddPlayerView: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var editedPlayer: Int
     @Binding var editMode: Bool
+    @Binding var cancelAdd: Bool
     var body: some View {
         ZStack {
             Image("PlayerCard_Empty")
@@ -76,6 +76,7 @@ struct AddPlayerView: View {
                     allPlayer.append(PlayerModel(name: "", avatar: ""))
                     editedPlayer = allPlayer.count - 1
                     editMode = true
+                    cancelAdd = true
                 }, label: {
                     ZStack{
                         Circle()

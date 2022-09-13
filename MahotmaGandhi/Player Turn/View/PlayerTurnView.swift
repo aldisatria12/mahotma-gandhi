@@ -10,6 +10,7 @@ import SwiftUI
 struct PlayerTurnView: View {
     @StateObject var playerTurnViewModel: PlayerTurnCardViewModel
     @Binding var card: Bool
+    @State var update: Bool = true
     var body: some View {
         ZStack{
 //            RoundedRectangle(cornerRadius: 20)
@@ -17,7 +18,9 @@ struct PlayerTurnView: View {
             ScrollView(.horizontal){
                 HStack{
                     ForEach(0..<playerTurnViewModel.gameVM.players.count, id: \.self) {i in
-                        PlayerTurnCardView(player: $playerTurnViewModel.gameVM.players[i], card: $card, turns: i + 1, divider: i == playerTurnViewModel.gameVM.players.count - 1 ? false : true)
+                        if update == true || update == false {
+                            PlayerTurnCardView(player: $playerTurnViewModel.gameVM.players[i], card: $card, turns: i + 1, divider: i == playerTurnViewModel.gameVM.players.count - 1 ? false : true)
+                        }
 //                        Divider()
                     }
 //                    Button {
@@ -39,8 +42,9 @@ struct PlayerTurnView: View {
         }
         .onChange(of: card) { newValue in
             if card == true {
+                playerTurnViewModel.randomizeTurn()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    playerTurnViewModel.randomizeTurn()
+                    update.toggle()
                 }
             }
         }

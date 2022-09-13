@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject var vm : GameViewModel 
-    
+    @StateObject var vm : GameViewModel
     
     var body: some View {
         ZStack {
@@ -22,12 +21,11 @@ struct GameView: View {
                 ZStack {
                     ForEach(0..<vm.game.players.count, id: \.self) { i in
                         if vm.isMoving {
-                            PlayerAnimationWalkView()
+                            WalkAnimationView(player: $vm.allPlayers[i])
                                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
-                            
                         } else {
-                            PlayerAnimationIdleView()
+                            IdleAnimationView(player: $vm.allPlayers[i])
                                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
                         }

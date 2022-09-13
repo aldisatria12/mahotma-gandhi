@@ -14,6 +14,7 @@ struct NewPlayerView: View {
     @State var playerName: String = ""
     @State var oldAvatar: String = ""
     @Binding var editMode: Bool
+    @Binding var cancelAdd: Bool
     var body: some View {
         VStack(spacing: 0){
             Rectangle()
@@ -21,10 +22,11 @@ struct NewPlayerView: View {
                 .ignoresSafeArea()
                 .foregroundColor(blue01)
             ZStack {
-                PlayerNavBar(editMode: $editMode, selectedPlayer: $selectedPlayer, playerName: $playerName, oldAvatar: $oldAvatar)
+                PlayerNavBar(allPlayer: $allPlayer,editMode: $editMode, selectedPlayer: $selectedPlayer, playerName: $playerName, oldAvatar: $oldAvatar, cancelAdd: $cancelAdd)
             }
             ZStack {
                 Image("AddPlayer_Preview")
+                PlayerAnimationWalkView(player: $selectedPlayer,stopTimer: .constant(false))
                 VStack(alignment: .center){
                     Spacer()
                     NameTextBox(playerName: $playerName)
@@ -47,10 +49,12 @@ struct NewPlayerView: View {
 }
 
 struct PlayerNavBar: View {
+    @Binding var allPlayer: [PlayerModel]
     @Binding var editMode: Bool
     @Binding var selectedPlayer: PlayerModel
     @Binding var playerName: String
     @Binding var oldAvatar: String
+    @Binding var cancelAdd: Bool
     var body: some View {
         Image("AddPlayer_Navbar")
         HStack {
@@ -58,6 +62,10 @@ struct PlayerNavBar: View {
                 selectedPlayer.avatar = oldAvatar
                 print(selectedPlayer.avatar)
                 editMode = false
+                if cancelAdd == true {
+                    allPlayer.remove(at: allPlayer.count-1)
+                    cancelAdd = false
+                }
             } label: {
                 Image(systemName: "chevron.backward.circle.fill").imageScale(.large)
                     .foregroundColor(blue03)
@@ -68,6 +76,7 @@ struct PlayerNavBar: View {
             Button {
                 selectedPlayer.name = playerName
                 editMode = false
+                cancelAdd = false
             } label: {
                 Text("Done")
                     .frame(width: UIScreen.main.bounds.width * 64 / 390, height: UIScreen.main.bounds.height * 36 / 844)
@@ -111,6 +120,6 @@ struct NameTextBox: View {
 
 struct CharacterNewView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPlayerView(allPlayer: .constant([PlayerModel(name: "", avatar: "")]), selectedPlayer: .constant(PlayerModel(name: "", avatar: "")), avatarName: .constant([""]), editMode: .constant(true))
+        NewPlayerView(allPlayer: .constant([PlayerModel(name: "", avatar: "")]), selectedPlayer: .constant(PlayerModel(name: "", avatar: "")), avatarName: .constant([""]), editMode: .constant(true), cancelAdd: .constant(true))
     }
 }

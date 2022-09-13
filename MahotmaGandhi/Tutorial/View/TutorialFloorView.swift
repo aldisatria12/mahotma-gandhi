@@ -11,6 +11,7 @@ struct TutorialFloorView: View {
     
     @ObservedObject var tutorialVM : TutorialViewModel
     
+    
     let keyFrameIndex : Int
     
     let keyFrames = [

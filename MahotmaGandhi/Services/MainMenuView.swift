@@ -12,7 +12,7 @@ struct MainMenuView: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: {
-                    PlayerView()
+                    AllPlayerView()
                 }, label: {
                     Image(systemName: "play.circle")
                 })
