@@ -25,7 +25,7 @@ struct TutorialPointerView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
                                     .frame(width:75, height:35)
-                                    .foregroundColor(blue03)
+                                    .foregroundColor(yellow02)
                                 Text("Skip")
                                     .foregroundColor(blue01)
                             }

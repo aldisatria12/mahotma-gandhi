@@ -99,7 +99,9 @@ struct TutorialItemView: View {
                         tutorialVM.isCardOpen.toggle()
                         tutorialVM.changeTutorialState()
                         tutorialVM.animateTutorialMovement()
+                        tutorialVM.isMoving = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            tutorialVM.isMoving = false
                             tutorialVM.isTutorialPresented = true
                         }
                     }
