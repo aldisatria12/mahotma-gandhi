@@ -35,25 +35,25 @@ class TutorialViewModel : ObservableObject {
     
     private let tutorialPointer : [Int:[String]] = [
         0 : [
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
-             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
+            "What's up, Adventurers! Welcome to The Spire.",
+            "You can call me as The Sage.  Now allow me to show you around.",
+            "The Spire holds a lot of fascinating treasures.",
+            "Upon unravelling each one, it is better to SHARE them with your fellow Adventurers.",
+            "Oh look! You found a chest. Let’s tap to see what’s inside."
             ] ,
         1 : [
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+            "Well, would you look at that — it’s a card!",
+            "Everyone will have to take turns in answering each statement on the card.",
+            "If you still don’t know how to answer a card, tap the question mark for instructions on how to play them!"
         ],
         2 : [
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+            "Now that everyone has understood the instructions, tap the back button to return."
         ],
         3 : [
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+            "And once everyone had finished their turns, to continue your journey, click on the “Next Floor” button!"
         ],
         4 : [
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+            "So what do you say, fellow Adventurers?  Ready to hunt for more treasure?"
         ]
     ]
     
@@ -98,7 +98,7 @@ class TutorialViewModel : ObservableObject {
                     selectedPointer = tempSelectedPointer
                     numberOfLetterShowed = 0
                     isTextAnimated = true
-                    if tutorialState.1 == tutorialPointer[tutorialState.0]!.count - 1 || (tutorialState.0 == 0 && tutorialState.1 == 1) {
+                    if tutorialState.1 == tutorialPointer[tutorialState.0]!.count - 1 || (tutorialState.0 == 1 && tutorialState.1 == 1) {
                         isTutorialItemShowed = true
                     } else {
                         isTutorialItemShowed = false

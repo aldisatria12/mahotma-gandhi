@@ -27,7 +27,7 @@ struct TutorialCardView: View {
                     Image("Card_TellATale_Guide")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 280, height: 400, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width * 319 / 390, height: UIScreen.main.bounds.height * 475 / 844)
                     Button(action: {
                         vm.isCardFlipped.toggle()
                     },label: {
@@ -39,7 +39,7 @@ struct TutorialCardView: View {
                             .clipShape(Circle())
                             .foregroundColor(red01)
                             .frame(width: 30, height: 30, alignment: .bottomLeading)
-                            .padding(.top, 20)
+                            .padding(.top, 26)
                             .padding(.trailing, 20)
                     })
                 }
@@ -48,7 +48,7 @@ struct TutorialCardView: View {
                     Image("Card_TellATale_Front")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 280, height: 400, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width * 319 / 390, height: UIScreen.main.bounds.height * 475 / 844)
                     VStack (){
                         HStack {
                             Spacer()
@@ -63,10 +63,11 @@ struct TutorialCardView: View {
                                     .clipShape(Circle())
                                     .foregroundColor(red01)
                                     .frame(width: 30, height: 30, alignment: .bottomLeading)
-                                    .padding(.top, 20)
+                                    .padding(.top, 26)
                                     .padding(.trailing, 20)
                             })
                         }
+//                        .padding(.top, -35)
                         
                         VStack {
                             //                            Text(vm.gameTitle)
@@ -74,12 +75,14 @@ struct TutorialCardView: View {
                             //                                .fontWeight(.bold)
                             //                                .foregroundColor(.black)
                             //                                .padding(.init(top: 25, leading: 0, bottom: 0, trailing: 0))
+                            Spacer()
                             Text(vm.gameQuestion)
                                 .font(.system(.title, design: .rounded))
                                 .fontWeight(.bold)
                                 .foregroundColor(yellow01)
                                 .multilineTextAlignment(.center)
-                                .frame(width: 220, height: 275, alignment: .center)
+                                .frame(width: 243, height: 300, alignment: .center)
+                            Spacer()
                             Button(action: {
                                 openCard.toggle()
                                 vm.animateTutorialMovement()
@@ -96,7 +99,7 @@ struct TutorialCardView: View {
                                         .foregroundColor(yellow03)
                                 }
                                 .frame(width: 200, height: 40, alignment: .center)
-                            }).padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0))
+                            }).padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
                             //if counter{PlayerAnimationView(counter:$counter)}
                         }
                     }
@@ -105,7 +108,7 @@ struct TutorialCardView: View {
         }
         .rotation3DEffect(.degrees(content), axis: (x: 0, y:1, z:0))
         .rotation3DEffect(.degrees(degree), axis: (x: 0, y:1, z:0))
-        .frame(width: 280, height: 400)
+        .frame(width: UIScreen.main.bounds.width * 319 / 390, height: UIScreen.main.bounds.height * 475 / 844)
         .onChange(of: vm.isCardFlipped) { newValue in
             let animationDuration = 0.75
             withAnimation(Animation.linear(duration: animationDuration)) {
@@ -151,6 +154,6 @@ struct TutorialCardView: View {
 
 //struct TutorialCardView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        TutorialCardView(vm:TutorialViewModel(), openCard: <#Binding<Bool>#>)
+//        TutorialCardView(vm:TutorialViewModel(), openCard: false)
 //    }
 //}

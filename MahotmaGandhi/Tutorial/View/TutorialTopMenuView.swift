@@ -13,8 +13,8 @@ struct TutorialTopMenuView: View {
     
     var body: some View {
         HStack {
-            Spacer()
-                .frame(width: UIScreen.main.bounds.width * 40 / 390, height: UIScreen.main.bounds.height * 31 / 844)
+//            Spacer()
+//                .frame(width: UIScreen.main.bounds.width * 40 / 390, height: UIScreen.main.bounds.height * 31 / 844)
             Spacer()
             Text("Floor - 0")
 //                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 18 / 844)
@@ -22,11 +22,6 @@ struct TutorialTopMenuView: View {
                 .foregroundColor(blue04)
 //                .padding(.bottom, 40)
             Spacer()
-            Button {
-                NavigationUtil.popToRootView()
-            } label: {
-                Text("Skip")
-            }
         } // HStack
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 45 / 844)
     }

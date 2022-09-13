@@ -17,9 +17,9 @@ struct TutorialView: View {
             ZStack {
                 TutorialFloorView(tutorialVM: tutorialVM, keyFrameIndex: tutorialVM.tutorialCounter[0] ?? 0)
                 TutorialFloorView(tutorialVM: tutorialVM, keyFrameIndex: tutorialVM.tutorialCounter[1] ?? 1)
-                Button("Activate Tutorial") {
-                    tutorialVM.isTutorialPresented.toggle()
-                }
+//                Button("Activate Tutorial") {
+//                    tutorialVM.isTutorialPresented.toggle()
+//                }
             }
             VStack {
                 ZStack {
@@ -52,12 +52,19 @@ struct TutorialView: View {
             } // VStack
             if tutorialVM.isCardOpen {
                 TutorialCardView(vm: tutorialVM, openCard: $tutorialVM.isCardOpen)
+                    .padding(.bottom, 120)
             }
             if tutorialVM.isTutorialPresented {
                 TutorialPointerView(tutorialVM: tutorialVM)
             }
         } // ZStack Pertama
         .navigationBarHidden(true)
+//        .ignoresSafeArea()
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                tutorialVM.isTutorialPresented.toggle()
+            }
+        }
     }
 }
 

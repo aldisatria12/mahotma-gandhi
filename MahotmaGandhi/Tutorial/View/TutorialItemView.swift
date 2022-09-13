@@ -13,12 +13,12 @@ struct TutorialItemView: View {
     
     var body: some View {
         ZStack {
-            if tutorialVM.tutorialState.0 == 0 && tutorialVM.tutorialState.1 == 1 {
+            if tutorialVM.tutorialState.0 == 1 && tutorialVM.tutorialState.1 == 1 {
                 TutorialBottomMenuView(vm: tutorialVM, card: $tutorialVM.isCardOpen)
-                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height) - (UIScreen.main.bounds.height * 129 / 844))
+                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height) - (UIScreen.main.bounds.height * 129 / 844) + 47)
                 ArrowAnimationView(orientation: .down)
-                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height) - (UIScreen.main.bounds.height * 129 * 2 / 844))
-            } else if tutorialVM.tutorialState.0 == 0 && tutorialVM.tutorialState.1 == 2 {
+                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height) - (UIScreen.main.bounds.height * 129 * 2 / 844) + 60)
+            } else if tutorialVM.tutorialState.0 == 0 {
                 Button (action: {
                     if tutorialVM.isTextAnimated {
                         tutorialVM.getTutorialPointer()
@@ -33,9 +33,9 @@ struct TutorialItemView: View {
                         .scaledToFit()
                 })
                 .frame(width: UIScreen.main.bounds.width * 59 / 390, height: UIScreen.main.bounds.height * 80 / 844)
-                .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 844))
+                .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 160 / 844) + (UIScreen.main.bounds.height * 80 * 0.5 / 844) + 5)
                 ArrowAnimationView(orientation: .down)
-                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 844) - (UIScreen.main.bounds.height * 40 / 844))
+                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 844) + (UIScreen.main.bounds.height * 40 / 844) - 30)
             } else if tutorialVM.tutorialState.0 == 1 {
                 Button(action: {
                     if tutorialVM.isTextAnimated {
@@ -60,9 +60,9 @@ struct TutorialItemView: View {
                         .foregroundColor(red01)
                 })
                 .frame(width: 30, height: 30, alignment: .bottomLeading)
-                .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) + 15)
+                .position(x: (UIScreen.main.bounds.width * 306 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) + 15)
                 ArrowAnimationView(orientation: .down)
-                    .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) - 15)
+                    .position(x: (UIScreen.main.bounds.width * 306 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) - 15)
             } else if tutorialVM.tutorialState.0 == 2 {
                 Button(action: {
                     if tutorialVM.isTextAnimated {
@@ -87,9 +87,9 @@ struct TutorialItemView: View {
                         .foregroundColor(red01)
                 })
                 .frame(width: 30, height: 30, alignment: .bottomLeading)
-                .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) + 15)
+                .position(x: (UIScreen.main.bounds.width * 306 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) + 15)
                 ArrowAnimationView(orientation: .down)
-                    .position(x: (UIScreen.main.bounds.width * 303 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) - 15)
+                    .position(x: (UIScreen.main.bounds.width * 306 / 390) + 15, y: (UIScreen.main.bounds.height * 158 / 844) - 15)
             } else if tutorialVM.tutorialState.0 == 3 {
                 Button(action: {
                     if tutorialVM.isTextAnimated {
@@ -114,7 +114,9 @@ struct TutorialItemView: View {
                     }
                 })
                 .frame(width: 200, height: 40, alignment: .center)
-                .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 534 / 844) + 20)
+                .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 534 / 844) + 12)
+                ArrowAnimationView(orientation: .down)
+                    .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 534 / 844) - 22)
 //                .padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0))
             }
             
@@ -122,6 +124,7 @@ struct TutorialItemView: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        .ignoresSafeArea()
     }
 }
 

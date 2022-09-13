@@ -16,11 +16,29 @@ struct TutorialPointerView: View {
         TimelineView(.animation(minimumInterval: 0.05, paused: !tutorialVM.isTextAnimated)) { timeline in
             ZStack {
                 TutorialCoverView()
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button {
+                            NavigationUtil.popToRootView()
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .frame(width:75, height:35)
+                                    .foregroundColor(blue03)
+                                Text("Skip")
+                                    .foregroundColor(blue01)
+                            }
+                        }
+                        .padding(.trailing, 25)
+                    }
+                    Spacer()
+                }
                 if tutorialVM.isTutorialItemShowed {
                     TutorialItemView(tutorialVM: tutorialVM)
                 }
                 TutorialDialogCardView(tutorialVM: tutorialVM, date: timeline.date)
-                    .position(x: UIScreen.main.bounds.width / 2, y: tutorialVM.isTutorialItemShowed && tutorialVM.tutorialState.0 == 3 ? (UIScreen.main.bounds.height * 349 / 844) + (UIScreen.main.bounds.height * 141 * 0.5 / 844) : (UIScreen.main.bounds.height * 492 / 844) + (UIScreen.main.bounds.height * 141 * 0.5 / 844))
+                    .position(x: UIScreen.main.bounds.width / 2, y: tutorialVM.isTutorialItemShowed && tutorialVM.tutorialState.0 == 3 ? (UIScreen.main.bounds.height * 300 / 844) + (UIScreen.main.bounds.height * 141 * 0.5 / 844) : (UIScreen.main.bounds.height * 437 / 844) + (UIScreen.main.bounds.height * 141 * 0.5 / 844))
             } //ZStack
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
