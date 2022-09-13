@@ -13,13 +13,14 @@ struct CardPlayerView: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var editMode: Bool
     @State var check:Bool = false
+    @Binding var refresh:Bool
     var body: some View {
         ZStack {
             Image("PlayerCard_Filled")
                 .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
             VStack {
 //                if let p = $allPlayer[selectedPlayer]{
-                if check == false{
+                if selectedPlayer < allPlayer.count{
                     PlayerAnimationWalkView(player: $allPlayer[selectedPlayer], stopTimer: $check)
                         .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     Text(allPlayer[selectedPlayer].name)
@@ -35,8 +36,10 @@ struct CardPlayerView: View {
             ZStack {
                 if selectedPlayer > 0 {
                     Button(action: {
-                        check = true
+                        
                         allPlayer.remove(at: selectedPlayer)
+                        check = true
+                        refresh.toggle()
                         selectedPlayer = 0
                     }, label: {
                         ZStack{

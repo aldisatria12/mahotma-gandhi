@@ -11,6 +11,7 @@ struct AllPlayerView: View {
     @StateObject var playerViewModel = PlayerViewModel()
     @State var editPlayer: Bool = false
     @State var selectedPlayer: Int = 0
+    @State var refresh:Bool = false
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
         GridItem(.flexible(minimum: 0, maximum: .infinity))
@@ -23,7 +24,7 @@ struct AllPlayerView: View {
             VStack{
                 Rectangle().frame(height: 29)
                     .foregroundColor(.clear)
-                AllPlayerNavBarView()
+                AllPlayerNavBarView(allPlayers: $playerViewModel.allPlayer)
                 Spacer()
             }.ignoresSafeArea()
             VStack {
@@ -33,7 +34,9 @@ struct AllPlayerView: View {
                         if playerViewModel.allPlayer.count == i {
                             AddPlayerView(allPlayer: $playerViewModel.allPlayer, editedPlayer: $selectedPlayer, editMode: $editPlayer)
                         } else if i < playerViewModel.allPlayer.count {
-                            CardPlayerView(selectedPlayer: .constant(i), editedPlayer: $selectedPlayer, allPlayer: $playerViewModel.allPlayer, editMode: $editPlayer)
+                            if refresh == true || refresh == false{
+                                CardPlayerView(selectedPlayer: .constant(i), editedPlayer: $selectedPlayer, allPlayer: $playerViewModel.allPlayer, editMode: $editPlayer, refresh: $refresh)
+                            }
                         } else {
                             BlankView()
                         }
