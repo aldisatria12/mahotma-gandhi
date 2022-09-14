@@ -16,7 +16,7 @@ extension View{
 
 struct NewPlayerView: View {
     @Binding var allPlayer: [PlayerModel]
-    @Binding var selectedPlayer: PlayerModel
+    @Binding var selectedPlayer: Int
     @Binding var avatarName: [String]
     @State var playerName: String = ""
     @State var oldAvatar: String = ""
@@ -33,7 +33,7 @@ struct NewPlayerView: View {
             }
             ZStack {
                 Image("AddPlayer_Preview")
-                PlayerAnimationWalkView(player: $selectedPlayer,stopTimer: .constant(false))
+                PlayerAnimationWalkView(player: $allPlayer[selectedPlayer],stopTimer: .constant(false))
                 VStack(alignment: .center){
                     Spacer()
                     NameTextBox(playerName: $playerName)
@@ -42,15 +42,16 @@ struct NewPlayerView: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 248 / 844)
             ZStack {
-                PlayerAvatarSelectionView(allPlayer: $allPlayer, selectedPlayer: $selectedPlayer, avatarName: $avatarName)
+                PlayerAvatarSelectionView(allPlayer: $allPlayer, selectedPlayer: $allPlayer[selectedPlayer], avatarName: $avatarName)
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 266 / 844)
             Spacer()
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .background(blue01)
-        .onAppear {
-            oldAvatar = selectedPlayer.avatar
+        .onChange(of: editMode) { _ in
+            oldAvatar = allPlayer[selectedPlayer].avatar
+            playerName = allPlayer[selectedPlayer].name
         }
         .onTapGesture {
             hideKeyboard()
@@ -61,7 +62,7 @@ struct NewPlayerView: View {
 struct PlayerNavBar: View {
     @Binding var allPlayer: [PlayerModel]
     @Binding var editMode: Bool
-    @Binding var selectedPlayer: PlayerModel
+    @Binding var selectedPlayer: Int
     @Binding var playerName: String
     @Binding var oldAvatar: String
     @Binding var cancelAdd: Bool
@@ -69,10 +70,13 @@ struct PlayerNavBar: View {
         Image("AddPlayer_Navbar")
         HStack {
             Button {
-                selectedPlayer.avatar = oldAvatar
-                print(selectedPlayer.avatar)
+                allPlayer[selectedPlayer].avatar = oldAvatar
+                print(oldAvatar)
                 editMode = false
                 if cancelAdd == true {
+                    if selectedPlayer == allPlayer.count - 1 {
+                        selectedPlayer -= 1
+                    }
                     allPlayer.remove(at: allPlayer.count-1)
                     cancelAdd = false
                 }
@@ -84,7 +88,7 @@ struct PlayerNavBar: View {
 
             Spacer()
             Button {
-                selectedPlayer.name = playerName
+                allPlayer[selectedPlayer].name = playerName
                 editMode = false
                 cancelAdd = false
             } label: {
@@ -130,6 +134,6 @@ struct NameTextBox: View {
 
 struct CharacterNewView_Previews: PreviewProvider {
     static var previews: some View {
-        NewPlayerView(allPlayer: .constant([PlayerModel(name: "", avatar: "")]), selectedPlayer: .constant(PlayerModel(name: "", avatar: "")), avatarName: .constant([""]), editMode: .constant(true), cancelAdd: .constant(true))
+        NewPlayerView(allPlayer: .constant([PlayerModel(name: "", avatar: "")]), selectedPlayer: .constant(0), avatarName: .constant([""]), editMode: .constant(true), cancelAdd: .constant(true))
     }
 }
