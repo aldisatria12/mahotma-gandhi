@@ -10,4 +10,5 @@ import Foundation
 enum FloorType {
     case neverHaveIEver
     case tellYourTale
+    case wouldYouRather
 }

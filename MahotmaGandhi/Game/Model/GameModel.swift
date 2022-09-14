@@ -16,10 +16,10 @@ class GameModel {
     private var neverHaveIEverGame : NeverHaveIEver
     private var tellYourTaleGame : TellYourTale
     private var gameTypeSequence : [[FloorType]] = [
-        [.tellYourTale, .tellYourTale],
-        [.tellYourTale, .neverHaveIEver],
-        [.neverHaveIEver, .tellYourTale],
-        [.neverHaveIEver, .neverHaveIEver]
+        [.tellYourTale, .tellYourTale, .neverHaveIEver, .wouldYouRather, .neverHaveIEver, .wouldYouRather],
+        [.tellYourTale, .neverHaveIEver, .wouldYouRather, .tellYourTale, .wouldYouRather, .neverHaveIEver],
+        [.neverHaveIEver, .tellYourTale, .tellYourTale, .neverHaveIEver, .wouldYouRather, .wouldYouRather],
+        [.neverHaveIEver, .neverHaveIEver, .wouldYouRather, .tellYourTale, .tellYourTale, .wouldYouRather]
     ]
     var floorImages : [String] = ["stage_1", "stage_2"]
     
@@ -49,6 +49,8 @@ class GameModel {
             self.floorInfo = neverHaveIEverGame.getQuestion()
         case .tellYourTale:
             self.floorInfo = tellYourTaleGame.getQuestion()
+        case .wouldYouRather:
+            break
         }
     }
     
