@@ -27,7 +27,7 @@ struct TutorialFloorView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
             Image("Sage_Avatar")
                 .frame(width: UIScreen.main.bounds.width * 82 / 390, height: UIScreen.main.bounds.height * 114 / 844)
-                .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 229 / 671) + (UIScreen.main.bounds.height * 114 * 0.5 / 671) - 20)
+                .position(x: (UIScreen.main.bounds.width / 2) + (UIScreen.main.bounds.width * 82 / 390), y:(UIScreen.main.bounds.height * 161 / 671) + (UIScreen.main.bounds.height * 40 / 671 ) )
 //            Button (action: {
 //                tutorialVM.isCardOpen.toggle()
 //            }, label: {
