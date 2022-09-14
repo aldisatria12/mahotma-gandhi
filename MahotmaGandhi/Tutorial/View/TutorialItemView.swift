@@ -24,6 +24,7 @@ struct TutorialItemView: View {
                         tutorialVM.getTutorialPointer()
                     } else {
                         tutorialVM.isCardOpen.toggle()
+                        tutorialVM.isDotsUp = false
                         tutorialVM.changeTutorialState()
                         tutorialVM.getTutorialPointer()
                     }
@@ -97,10 +98,12 @@ struct TutorialItemView: View {
                     } else {
                         tutorialVM.isTutorialPresented = false
                         tutorialVM.isCardOpen.toggle()
+                        tutorialVM.isDotsUp = false
                         tutorialVM.changeTutorialState()
                         tutorialVM.animateTutorialMovement()
                         tutorialVM.isMoving = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            tutorialVM.isTopMenuShowed = true
                             tutorialVM.isMoving = false
                             tutorialVM.isTutorialPresented = true
                         }

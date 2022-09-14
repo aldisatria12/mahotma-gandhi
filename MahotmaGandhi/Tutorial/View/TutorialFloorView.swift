@@ -25,16 +25,19 @@ struct TutorialFloorView: View {
             Image("stage")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
-            Button (action: {
-                tutorialVM.isCardOpen.toggle()
-            }, label: {
-                Image("Chest")
-                    .resizable()
-                    .scaledToFit()
-            })
-            .frame(width: UIScreen.main.bounds.width * 59 / 390, height: UIScreen.main.bounds.height * 80 / 844)
-            .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 671) + (UIScreen.main.bounds.height * 40 / 671 ))
-            .disabled(true)
+            Image("Sage_Avatar")
+                .frame(width: UIScreen.main.bounds.width * 82 / 390, height: UIScreen.main.bounds.height * 114 / 844)
+                .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 229 / 671) + (UIScreen.main.bounds.height * 114 * 0.5 / 671) - 20)
+//            Button (action: {
+//                tutorialVM.isCardOpen.toggle()
+//            }, label: {
+//                Image("Chest")
+//                    .resizable()
+//                    .scaledToFit()
+//            })
+//            .frame(width: UIScreen.main.bounds.width * 59 / 390, height: UIScreen.main.bounds.height * 80 / 844)
+//            .position(x: UIScreen.main.bounds.width / 2, y: (UIScreen.main.bounds.height * 161 / 671) + (UIScreen.main.bounds.height * 40 / 671 ))
+//            .disabled(true)
         }// ZStack Pertama
 //        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 671 / 844)
         .modifier(Effects(keyframe: keyFrames[keyFrameIndex]))

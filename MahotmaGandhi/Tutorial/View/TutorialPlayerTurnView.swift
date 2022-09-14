@@ -20,11 +20,6 @@ struct TutorialPlayerTurnView: View {
                         PlayerTurnCardView(player: $tutorialVM.dummyPlayers[i], card: $card, turns: i + 1, divider: i == tutorialVM.dummyPlayers.count - 1 ? false : true)
 //                        Divider()
                     }
-//                    Button {
-//                        playerTurnViewModel.randomTurnPlayer = playerTurnViewModel.randomizeTurn()
-//                    } label: {
-//                        Text("Test")
-//                    }
 
                 }//HStack
                 .padding()

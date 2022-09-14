@@ -61,6 +61,7 @@ class TutorialViewModel : ObservableObject {
     private var numberOfLetterShowed = 0
     
     func animateTutorialMovement() {
+        isTopMenuShowed = false
         tutorialCounter[0] = 1
         tutorialCounter[1] = 2
     }

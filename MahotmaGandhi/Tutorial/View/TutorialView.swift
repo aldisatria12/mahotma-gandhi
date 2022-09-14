@@ -26,12 +26,12 @@ struct TutorialView: View {
                     ForEach(0..<tutorialVM.dummyPlayers.count, id: \.self) { i in
                         if tutorialVM.isMoving {
                             WalkAnimationView(player: $tutorialVM.dummyPlayers[i])
-                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 319 / 844 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
 
                         } else {
                             IdleAnimationView(player: $tutorialVM.dummyPlayers[i])
-                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.242 + UIScreen.main.bounds.height * 0.059)
+                                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 319 / 844 + UIScreen.main.bounds.height * 0.059)
                                 .offset(y: CGFloat(i * 62))
                         }
                     } // ForEach
@@ -44,7 +44,7 @@ struct TutorialView: View {
             }
             VStack {
                 if tutorialVM.isTopMenuShowed {
-                    TutorialTopMenuView()
+                    TutorialTopMenuView(floorNumber: tutorialVM.tutorialCounter[0] == 0 ? "0" : "00")
                 }
                 Spacer()
                 TutorialBottomMenuView(vm: tutorialVM ,card: $tutorialVM.isCardOpen)
@@ -56,6 +56,7 @@ struct TutorialView: View {
             }
             if tutorialVM.isTutorialPresented {
                 TutorialPointerView(tutorialVM: tutorialVM)
+                    .ignoresSafeArea()
             }
         } // ZStack Pertama
         .navigationBarHidden(true)

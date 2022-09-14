@@ -26,6 +26,9 @@ struct TutorialDialogCardView: View {
                         //                    .padding(.top, 34)
                         //                    .padding(.leading, 31)
                         //                    .padding(.trailing, 25)
+                            .font(.system(size: 17, design:.rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(blue01)
                             .frame(width: (UIScreen.main.bounds.width * 268 / 390),  height: (UIScreen.main.bounds.height * 97 / 844), alignment: .topLeading)
                             .offset(x: 5, y: 25)
                             .onChange(of: date) { _ in
@@ -35,9 +38,14 @@ struct TutorialDialogCardView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            if tutorialVM.isTextAnimated == false && tutorialVM.tutorialState.1 != tutorialVM.tutorialPointer[tutorialVM.tutorialState.0]!.count - 1 {
-                                Text("...")
-                                    .padding([.trailing, .bottom])
+                            if tutorialVM.isTextAnimated == false && (tutorialVM.tutorialState.1 != tutorialVM.tutorialPointer[tutorialVM.tutorialState.0]!.count - 1 || tutorialVM.tutorialState.0 == 4) {
+                                Text(". . .")
+                                    .font(.system(size: 30, design: .rounded))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(blue01)
+                                    .frame(width: 31, height: 12, alignment: .bottom)
+                                    .padding(.trailing, 20)
+                                    .padding(.bottom, 20)
                                     .offset(x: 0, y: tutorialVM.isDotsUp ? -5 : 5)
                                     .animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0), value: tutorialVM.isDotsUp)
                                     .onChange(of: tutorialVM.isDotsUp) { _ in
