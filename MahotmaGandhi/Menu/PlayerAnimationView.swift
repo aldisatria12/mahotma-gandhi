@@ -47,8 +47,8 @@ struct IdleAnimationView: View {
 
 struct PlayerAnimationWalkView: View {
     @State var imageFrame: String = ""
-
-    @Binding var player: PlayerModel
+    var avatar: String
+//    @Binding var player: PlayerModel
     @Binding var stopTimer:Bool
     let timer = Timer.publish(every: 0.033, on: .main, in: .common).autoconnect()
     @State var index = 0
@@ -57,7 +57,7 @@ struct PlayerAnimationWalkView: View {
             Image(imageFrame)
                 .onReceive(timer) { _ in
                     
-                    imageFrame = "\(player.avatar)_Walking_\(index)"
+                    imageFrame = "\(avatar)_Walking_\(index)"
                     index += 1
                     if (index > 58) {
                         index = 0
