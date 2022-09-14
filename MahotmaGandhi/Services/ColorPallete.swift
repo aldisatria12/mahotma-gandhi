@@ -22,3 +22,7 @@ let purple02 = Color("Purple-2")
 let purple03 = Color("Purple-3")
 let ocean01 = Color("Ocean-1")
 let earth01 = Color("Earth-1")
+let green01 = Color("Green-1")
+let green02 = Color("Green-2")
+let green03 = Color("Green-3")
+

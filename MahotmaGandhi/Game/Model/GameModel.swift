@@ -15,6 +15,7 @@ class GameModel {
     var floorInfo : Floor
     private var neverHaveIEverGame : NeverHaveIEver
     private var tellYourTaleGame : TellYourTale
+    private var wouldYouRather : WouldYouRather
     private var gameTypeSequence : [[FloorType]] = [
         [.tellYourTale, .tellYourTale, .neverHaveIEver, .wouldYouRather, .neverHaveIEver, .wouldYouRather],
         [.tellYourTale, .neverHaveIEver, .wouldYouRather, .tellYourTale, .wouldYouRather, .neverHaveIEver],
@@ -31,6 +32,7 @@ class GameModel {
         floorInfo = Floor(gameType: "", question: "", helpImage: "", cardImage: "",  cardBaseColor: red01)
         neverHaveIEverGame = NeverHaveIEver()
         tellYourTaleGame = TellYourTale()
+        wouldYouRather = WouldYouRather()
     }
     
     func toNextFloor() {
@@ -50,7 +52,7 @@ class GameModel {
         case .tellYourTale:
             self.floorInfo = tellYourTaleGame.getQuestion()
         case .wouldYouRather:
-            break
+            self.floorInfo = wouldYouRather.getQuestion()
         }
     }
     
