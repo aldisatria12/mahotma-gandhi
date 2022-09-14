@@ -13,6 +13,7 @@ struct AllPlayerView: View {
     @State var selectedPlayer: Int = 0
     @State var refresh:Bool = false
     @State var cancelAdd: Bool = false
+    @State var offset: CGFloat = 1000
     let columns = [
         GridItem(.flexible(minimum: 0, maximum: .infinity)),
         GridItem(.flexible(minimum: 0, maximum: .infinity))
@@ -49,7 +50,18 @@ struct AllPlayerView: View {
             //            .ignoresSafeArea()
             .navigationBarHidden(true)
             if editPlayer {
-                NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $playerViewModel.allPlayer[selectedPlayer], avatarName: $playerViewModel.avatarName,  editMode: $editPlayer, cancelAdd: $cancelAdd)
+                NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $selectedPlayer, avatarName: $playerViewModel.avatarName,  editMode: $editPlayer, cancelAdd: $cancelAdd)
+//                    .animation(.linear(duration: 0.5), value: editPlayer)
+//                    .offset(y: editPlayer ? 0 : 500)
+//                    .onChange(of: editPlayer) { newValue in
+//                        withAnimation() {
+//                            if editPlayer {
+//                                offset = 0
+//                            } else {
+//                                offset = 1000
+//                            }
+//                        }
+//                    }
             }
         }
     }

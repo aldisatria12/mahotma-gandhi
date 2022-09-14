@@ -16,13 +16,13 @@ class PlayerViewModel: ObservableObject {
         selectedPlayer = selectPlayer
     }
     
-    func addPlayer(){
+    func addPlayer( editedPlayer: inout [PlayerModel]){
         var randomAva = "Wayfarer"
-        selectedPlayer = allPlayer.count
-        while allPlayer.contains(where: {$0.avatar == randomAva}) {
+//        selectedPlayer = editedPlayer.count
+        while editedPlayer.contains(where: {$0.avatar == randomAva}) {
             randomAva = avatarName[Int.random(in: 0...avatarName.count - 1)]
         }
-        allPlayer.append(PlayerModel(name: "", avatar: randomAva))
+        editedPlayer.append(PlayerModel(name: "", avatar: randomAva))
     }
     
     func playerRemove(removeAt: Int){

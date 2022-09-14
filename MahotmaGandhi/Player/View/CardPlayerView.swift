@@ -63,6 +63,7 @@ struct CardPlayerView: View {
 }
 
 struct AddPlayerView: View {
+    @StateObject var playerViewModel = PlayerViewModel()
     @Binding var allPlayer: [PlayerModel]
     @Binding var editedPlayer: Int
     @Binding var editMode: Bool
@@ -73,7 +74,8 @@ struct AddPlayerView: View {
                 .frame(width: UIScreen.main.bounds.width * 155 / 340, height: UIScreen.main.bounds.height * 221 / 844)
             VStack {
                 Button(action: {
-                    allPlayer.append(PlayerModel(name: "", avatar: ""))
+//                    allPlayer.append(PlayerModel(name: "", avatar: ""))
+                    playerViewModel.addPlayer(editedPlayer: &allPlayer)
                     editedPlayer = allPlayer.count - 1
                     editMode = true
                     cancelAdd = true

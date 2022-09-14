@@ -32,7 +32,7 @@ struct PlayerTurnCardView: View {
                     Text(player.name)
                         .font(.system(.caption2, design: .rounded))
                 }//vstack
-                .frame(width: 62, height: 42)
+                .frame(width: 68, height: 42)
             }
             
         }//zstack
