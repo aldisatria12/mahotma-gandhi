@@ -20,6 +20,7 @@ struct TopMenuView: View {
             Text("Floor - \(gameVM.gameFloor)")
 //                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 18 / 844)
                 .font(.system(size: 30,design: .rounded))
+                .fontWeight(.bold)
                 .foregroundColor(blue04)
             Spacer()
             Button {
@@ -28,7 +29,7 @@ struct TopMenuView: View {
                 Image(systemName: "pause.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width * 24 / 390, height: UIScreen.main.bounds.height * 31 / 844)
+                    .frame(width: UIScreen.main.bounds.width * 16 / 390, height: UIScreen.main.bounds.height * 23 / 844)
                     .foregroundColor(blue04)
                     .padding(.trailing, 15)
             } // Button

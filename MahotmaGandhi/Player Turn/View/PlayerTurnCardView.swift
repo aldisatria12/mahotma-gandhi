@@ -21,16 +21,19 @@ struct PlayerTurnCardView: View {
             HStack{
                 VStack{
                     Text("\(turns)")
+                        .font(.system(size: 12, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(blue01)
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
-//                        .font(.caption)
-                        .font(.system(.caption, design: .rounded))
                     Image("\(player.avatar)_Icon")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .scaledToFit()
                         .clipShape(Circle())
                     Text(player.name)
-                        .font(.system(.caption2, design: .rounded))
+                        .font(.system(size: 12, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(blue01)
                 }//vstack
                 .frame(width: 62, height: 42)
             }
