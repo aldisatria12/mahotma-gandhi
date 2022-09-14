@@ -22,7 +22,7 @@ struct CardPlayerView: View {
 //                if let p = $allPlayer[selectedPlayer]{
                 if selectedPlayer < allPlayer.count{
                     if selectedPlayer >= 0 {
-                        PlayerAnimationIdleView(player: $allPlayer[selectedPlayer], stopTimer: $check)
+                        PlayerAnimationIdleView(avatar: allPlayer[selectedPlayer].avatar, stopTimer: $check)
                             .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))                        
                     }
                     Text(allPlayer[selectedPlayer].name)
