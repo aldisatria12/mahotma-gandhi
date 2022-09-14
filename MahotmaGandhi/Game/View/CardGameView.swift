@@ -73,6 +73,7 @@ struct CardGameView: View{
                             openCard.toggle()
                             vm.animateMovement()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                                vm.isChestShowed = true
                                 vm.goToNextFloor()
                             }
                             //                                counter()
