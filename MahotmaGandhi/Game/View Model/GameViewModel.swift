@@ -25,6 +25,7 @@ class GameViewModel : ObservableObject {
     @Published var isCardOpen = false
     @Published var isMoving = true
     @Published var showingPauseMenu = false
+//    @Published var isChestShowed = true
 //    @AppStorage("isTutorial") var isTutorial = true
     
     @Published var showingPlayerMenu = false
@@ -65,6 +66,7 @@ class GameViewModel : ObservableObject {
         for i in 0...2 {
             mainCounter[i] = addCounter(counter: mainCounter[i]!)
         }
+//        isChestShowed = false
         changeFloorImageIndex()
         isTopMenuShowed = false
         isMoving = true
