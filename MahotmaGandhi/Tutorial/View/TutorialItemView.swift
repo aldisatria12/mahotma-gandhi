@@ -23,10 +23,13 @@ struct TutorialItemView: View {
                     if tutorialVM.isTextAnimated {
                         tutorialVM.getTutorialPointer()
                     } else {
+                        tutorialVM.isTutorialPresented = false
                         tutorialVM.isCardOpen.toggle()
                         tutorialVM.isDotsUp = false
                         tutorialVM.changeTutorialState()
-                        tutorialVM.getTutorialPointer()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            tutorialVM.isTutorialPresented = true
+                        }
                     }
                 }, label: {
                     Image("Chest")
