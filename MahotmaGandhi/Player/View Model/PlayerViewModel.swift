@@ -10,7 +10,7 @@ import SwiftUI
 class PlayerViewModel: ObservableObject {
     @Published var allPlayer = [PlayerModel(name: "", avatar: "Wayfarer")]
     @Published var selectedPlayer: Int = 0
-    var avatarName = ["Wayfarer", "Guardian", "Nekomancer", "Wayfarer02", "Guardian02", "Nekomancer02"]
+    var avatarName = ["Wayfarer", "Guardian", "Nekomancer", "Wayfarer_Alt", "Guardian_Alt", "Nekomancer_Alt"]
     
     func playerSelect(selectPlayer: Int){
         selectedPlayer = selectPlayer
