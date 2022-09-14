@@ -33,7 +33,9 @@ struct NewPlayerView: View {
             }
             ZStack {
                 Image("AddPlayer_Preview")
-                PlayerAnimationWalkView(player: $allPlayer[selectedPlayer],stopTimer: .constant(false))
+                if selectedPlayer >= 0 {
+                    PlayerAnimationWalkView(avatar: allPlayer[selectedPlayer].avatar,stopTimer: .constant(false))
+                }
                 VStack(alignment: .center){
                     Spacer()
                     NameTextBox(playerName: $playerName)
@@ -42,7 +44,9 @@ struct NewPlayerView: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 248 / 844)
             ZStack {
-                PlayerAvatarSelectionView(allPlayer: $allPlayer, selectedPlayer: $allPlayer[selectedPlayer], avatarName: $avatarName)
+                if selectedPlayer >= 0 {
+                    PlayerAvatarSelectionView(allPlayer: $allPlayer, selectedPlayer: $allPlayer[selectedPlayer], avatarName: $avatarName)                    
+                }
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 266 / 844)
             Spacer()

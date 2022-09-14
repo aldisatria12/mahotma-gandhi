@@ -21,8 +21,10 @@ struct CardPlayerView: View {
             VStack {
 //                if let p = $allPlayer[selectedPlayer]{
                 if selectedPlayer < allPlayer.count{
-                    PlayerAnimationIdleView(player: $allPlayer[selectedPlayer], stopTimer: $check)
-                        .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
+                    if selectedPlayer >= 0 {
+                        PlayerAnimationIdleView(player: $allPlayer[selectedPlayer], stopTimer: $check)
+                            .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))                        
+                    }
                     Text(allPlayer[selectedPlayer].name)
                         .padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
                 }
