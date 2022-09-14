@@ -18,24 +18,45 @@ struct AllPlayerNavBarView: View {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Image(systemName: "chevron.backward.circle.fill").imageScale(.large)
-                            .foregroundColor(blue03)
-                            .padding(.leading)
+                        ZStack{
+                            Circle()
+                                .foregroundColor(blue01)
+                                .frame(width: 32, height: 32)
+                            Circle()
+                                .foregroundColor(blue03)
+                                .frame(width: 26, height: 26)
+                            Image(systemName: "lessthan")
+                                .font(.system(size: 14, weight: .black, design: .rounded))
+                                .foregroundColor(blue01)
+                                .frame(width: 13, height: 17, alignment: .center)
+                        }
                     }
+                    .frame(width: 32, height: 32)
+                    .padding(.leading)
                     
                     Spacer()
                     NavigationLink {
                         GameView(vm: GameViewModel(players: allPlayers))
                     } label: {
-                        Text("Start")
-                            .frame(width: UIScreen.main.bounds.width * 64 / 390, height: UIScreen.main.bounds.height * 36 / 844)
-                            .background(yellow02)
-                            .foregroundColor(blue01)
-                            .clipShape(RoundedRectangle(cornerRadius: 36))
-                            .padding(.trailing)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: UIScreen.main.bounds.width * 64 / 390, height: UIScreen.main.bounds.height * 36 / 844)
+                                .foregroundColor(blue01)
+                            Text("Start")
+                                .font(.system(size: 16, design: .rounded))
+                                .fontWeight(.bold)
+                                .frame(width: UIScreen.main.bounds.width * 58 / 390, height: UIScreen.main.bounds.height * 30 / 844)
+                                .background(yellow02)
+                                .foregroundColor(blue01)
+                                .clipShape(RoundedRectangle(cornerRadius: 36))
+                        }
                     }
+                    .padding(.trailing)
                 }
                 Text("\(allPlayers.count) / 6")
+                    .font(.system(size: 18, design: .rounded))
+                    .fontWeight(.heavy)
+                    .foregroundColor(blue01)
                     .offset(y: 9)
             }
         }

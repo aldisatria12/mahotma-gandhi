@@ -82,25 +82,43 @@ struct PlayerNavBar: View {
                     cancelAdd = false
                 }
             } label: {
-                Image(systemName: "chevron.backward.circle.fill").imageScale(.large)
-                    .foregroundColor(blue03)
-                    .padding(.leading)
+                ZStack{
+                    Circle()
+                        .foregroundColor(blue01)
+                        .frame(width: 32, height: 32)
+                    Circle()
+                        .foregroundColor(blue03)
+                        .frame(width: 26, height: 26)
+                    Image(systemName: "lessthan")
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundColor(blue01)
+                        .frame(width: 13, height: 17, alignment: .center)
+                }
             }
-
+            .frame(width: 32, height: 32)
+            .padding(.leading)
+            
             Spacer()
             Button {
                 allPlayer[selectedPlayer].name = playerName
                 editMode = false
                 cancelAdd = false
             } label: {
-                Text("Done")
-                    .frame(width: UIScreen.main.bounds.width * 64 / 390, height: UIScreen.main.bounds.height * 36 / 844)
-                    .background(yellow02)
-                    .foregroundColor(blue01)
-                    .clipShape(RoundedRectangle(cornerRadius: 36))
-                    .padding(.trailing)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: UIScreen.main.bounds.width * 64 / 390, height: UIScreen.main.bounds.height * 36 / 844)
+                        .foregroundColor(blue01)
+                    Text("Done")
+                        .font(.system(size: 16, design: .rounded))
+                        .fontWeight(.bold)
+                        .frame(width: UIScreen.main.bounds.width * 58 / 390, height: UIScreen.main.bounds.height * 30 / 844)
+                        .background(yellow02)
+                        .foregroundColor(blue01)
+                        .clipShape(RoundedRectangle(cornerRadius: 36))
+                }
             }
-
+            .padding(.trailing)
+            
         }
     }
 }
@@ -109,32 +127,41 @@ struct NameTextBox: View {
     @Binding var playerName: String
     @State var placeholder: Bool = true
     var body: some View {
-        ZStack{
-            TextField("Input your name", text: $playerName)
-                .multilineTextAlignment(.center)
-                .padding()
-                .frame(width: UIScreen.main.bounds.width * 240 / 390, height: UIScreen.main.bounds.height * 42 / 844)
+        ZStack {
+            TextField("", text: $playerName)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
                 .foregroundColor(blue01)
-                .onChange(of: playerName) { newValue in
-                    if playerName == "" {
-                        placeholder = true
-                    } else {
-                        placeholder = false
-                    }
+                .multilineTextAlignment(.center)
+                .placeholder(when: playerName.isEmpty) {
+                    Text("Player Name")
+                        .font(.system(size: 20, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(yellow01)
+                        .multilineTextAlignment(.center)
+                        .frame(width: UIScreen.main.bounds.width * 240 / 390, height: UIScreen.main.bounds.height * 42 / 844)
                 }
+                .frame(width: UIScreen.main.bounds.width * 240 / 390, height: UIScreen.main.bounds.height * 42 / 844)
                 .background(yellow03)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
-//            if placeholder {
-//                Text("Input your name")
-//                    .foregroundColor(.black)
-//                    .opacity(0.5)
-//            }
         }
     }
 }
 
-struct CharacterNewView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewPlayerView(allPlayer: .constant([PlayerModel(name: "", avatar: "")]), selectedPlayer: .constant(0), avatarName: .constant([""]), editMode: .constant(true), cancelAdd: .constant(true))
-    }
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+            
+            ZStack(alignment: alignment) {
+                placeholder().opacity(shouldShow ? 1 : 0)
+                self
+            }
+        }
 }
+
+//struct CharacterNewView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewPlayerView(allPlayer: .constant([PlayerModel(name: "", avatar: "")]), selectedPlayer: .constant(PlayerModel(name: "", avatar: "")), avatarName: .constant([""]), editMode: .constant(true), cancelAdd: .constant(true))
+//    }
+//}
