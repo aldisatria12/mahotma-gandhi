@@ -24,6 +24,9 @@ struct CardPlayerView: View {
                     PlayerAnimationIdleView(player: $allPlayer[selectedPlayer], stopTimer: $check)
                         .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                     Text(allPlayer[selectedPlayer].name)
+                        .font(.system(size: 19, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(blue01)
                         .padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
                 }
 //                }
@@ -80,15 +83,18 @@ struct AddPlayerView: View {
                 }, label: {
                     ZStack{
                         Circle()
-                            .frame(width: 70, height: 70)
-                            .foregroundColor(.red)
+                            .frame(width: 74, height: 74)
+                            .foregroundColor(blue03)
                         Image(systemName: "plus")
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .foregroundColor(blue01)
+                            .frame(width: 34, height: 36)
                     }
                 })
                 Text("Add Player")
+                    .font(.system(size: 17, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(blue01)
             }
         }
     }
