@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Wayfarer_TurnsIcon.png",
+      "filename" : "Wayfarer_Alt_TurnsIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Wayfarer_TurnsIcon@2x.png",
+      "filename" : "Wayfarer_Alt_TurnsIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Wayfarer_TurnsIcon@3x.png",
+      "filename" : "Wayfarer_Alt_TurnsIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

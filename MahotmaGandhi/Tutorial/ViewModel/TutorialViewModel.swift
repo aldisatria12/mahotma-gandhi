@@ -29,8 +29,8 @@ class TutorialViewModel : ObservableObject {
     let gameQuestion = "What is your favorite childhood memory?"
     
     var dummyPlayers : [PlayerModel] = [
-        PlayerModel(name: "Someone", avatar: "Wayfarer"),
-        PlayerModel(name: "Noone", avatar: "Guardian")
+        PlayerModel(name: "Wayfarer", avatar: "Wayfarer"),
+        PlayerModel(name: "Guardian", avatar: "Guardian")
     ]
     
     let tutorialPointer : [Int:[String]] = [
@@ -98,7 +98,6 @@ class TutorialViewModel : ObservableObject {
             isTutorialPresented = false
         } else if tutorialState.1 != tutorialPointer[tutorialState.0]!.count - 1 {
             changeTutorialState()
-            print(tutorialState.0, " : ", tutorialState.1)
             if tutorialState.1 != -1 {
                 if let tempSelectedPointer = tutorialPointer[tutorialState.0]?[tutorialState.1] {
                     selectedPointer = tempSelectedPointer
