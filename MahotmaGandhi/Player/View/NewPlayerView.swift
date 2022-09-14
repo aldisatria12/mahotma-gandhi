@@ -49,8 +49,9 @@ struct NewPlayerView: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .background(blue01)
-        .onChange(of: editMode) { _ in
+        .onAppear {
             oldAvatar = allPlayer[selectedPlayer].avatar
+            print(oldAvatar)
             playerName = allPlayer[selectedPlayer].name
         }
         .onTapGesture {

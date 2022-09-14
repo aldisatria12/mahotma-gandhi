@@ -49,17 +49,20 @@ struct AllPlayerView: View {
             }
             //            .ignoresSafeArea()
             .navigationBarHidden(true)
-            NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $selectedPlayer, avatarName: $playerViewModel.avatarName,  editMode: $editPlayer, cancelAdd: $cancelAdd)
-                .offset(y: offset)
-                .onChange(of: editPlayer) { newValue in
-                    withAnimation(.easeIn(duration: 0.2)) {
-                        if editPlayer {
-                            offset = 0
-                        } else {
-                            offset = 1000
-                        }
-                    }
-                }
+            if editPlayer {
+                NewPlayerView(allPlayer: $playerViewModel.allPlayer, selectedPlayer: $selectedPlayer, avatarName: $playerViewModel.avatarName,  editMode: $editPlayer, cancelAdd: $cancelAdd)
+//                    .animation(.linear(duration: 0.5), value: editPlayer)
+//                    .offset(y: editPlayer ? 0 : 500)
+//                    .onChange(of: editPlayer) { newValue in
+//                        withAnimation() {
+//                            if editPlayer {
+//                                offset = 0
+//                            } else {
+//                                offset = 1000
+//                            }
+//                        }
+//                    }
+            }
         }
     }
 }
