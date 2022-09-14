@@ -42,6 +42,7 @@ struct TutorialCardView: View {
                             .padding(.top, 26)
                             .padding(.trailing, 20)
                     })
+                    .disabled(true)
                 }
             } else {
                 ZStack {
@@ -66,6 +67,7 @@ struct TutorialCardView: View {
                                     .padding(.top, 26)
                                     .padding(.trailing, 20)
                             })
+                            .disabled(true)
                         }
 //                        .padding(.top, -35)
                         
@@ -99,7 +101,9 @@ struct TutorialCardView: View {
                                         .foregroundColor(yellow03)
                                 }
                                 .frame(width: 200, height: 40, alignment: .center)
-                            }).padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
+                            })
+                            .padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
+                            .disabled(true)
                             //if counter{PlayerAnimationView(counter:$counter)}
                         }
                     }
