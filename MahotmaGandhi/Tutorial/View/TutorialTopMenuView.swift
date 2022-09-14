@@ -9,18 +9,15 @@ import SwiftUI
 
 struct TutorialTopMenuView: View {
     
-//    var gameVM : GameViewModel
+    let floorNumber : String
     
     var body: some View {
         HStack {
-//            Spacer()
-//                .frame(width: UIScreen.main.bounds.width * 40 / 390, height: UIScreen.main.bounds.height * 31 / 844)
             Spacer()
-            Text("Floor - 0")
-//                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 18 / 844)
+            Text("Floor - \(floorNumber)")
                 .font(.system(size: 30,design: .rounded))
+                .fontWeight(.bold)
                 .foregroundColor(blue04)
-//                .padding(.bottom, 40)
             Spacer()
         } // HStack
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 45 / 844)
@@ -29,6 +26,6 @@ struct TutorialTopMenuView: View {
 
 struct TutorialTopMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialTopMenuView()
+        TutorialTopMenuView(floorNumber: "0")
     }
 }

@@ -11,7 +11,7 @@ struct TutorialCoverView: View {
     var body: some View {
         Rectangle()
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .background(.black)
+            .foregroundColor(black01)
             .opacity(0.5)
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
     }
