@@ -62,7 +62,7 @@ struct CardPlayerView: View {
                 }
             }
             .frame(width: 35, height: 35)
-            .position(x: 155, y: 10)
+            .position(x: 155 / 390 * UIScreen.main.bounds.width, y: 10 / 844 * UIScreen.main.bounds.height)
         }
     }
 }

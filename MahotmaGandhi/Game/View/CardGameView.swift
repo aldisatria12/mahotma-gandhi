@@ -60,7 +60,7 @@ struct CardGameView: View{
                                 .clipShape(Circle())
                                 .foregroundColor(vm.baseColor)
                                 .frame(width: 30, height: 30)
-                                .position(x: 320, y: 120)
+                                .position(x: 320 / 390 * UIScreen.main.bounds.width, y: 120 / 844 * UIScreen.main.bounds.height)
                         })
                         Text(vm.gameQuestion)
                             .font(.system(size: 31, design: .rounded))
