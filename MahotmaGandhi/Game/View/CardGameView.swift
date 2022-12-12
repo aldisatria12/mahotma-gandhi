@@ -26,7 +26,7 @@ struct CardGameView: View{
                     Image(vm.cardHelpName)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 325, height: 475, alignment: .center)
+                        .frame(width: 325 / 390 * UIScreen.main.bounds.width, height: 475 / 844 * UIScreen.main.bounds.height, alignment: .center)
                     Button(action: {
                         tapFlipBack()
                     },label: {
@@ -37,7 +37,7 @@ struct CardGameView: View{
                             .background(yellow03)
                             .clipShape(Circle())
                             .foregroundColor(vm.baseColor)
-                            .frame(width: 30, height: 30, alignment: .bottomLeading)
+                            .frame(width: 30 / 390 * UIScreen.main.bounds.width, height: 30 / 844 * UIScreen.main.bounds.height, alignment: .bottomLeading)
                             .padding(.top, 20)
                             .padding(.trailing, 20)
                     })
@@ -47,7 +47,7 @@ struct CardGameView: View{
                     Image(vm.cardImageName)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 325, height: 475, alignment: .center)
+                        .frame(width: 325 / 390 * UIScreen.main.bounds.width, height: 475 / 844 * UIScreen.main.bounds.height, alignment: .center)
                     VStack {
                         Button(action: {
                             tapFlipCard()
@@ -59,7 +59,7 @@ struct CardGameView: View{
                                 .background(yellow03)
                                 .clipShape(Circle())
                                 .foregroundColor(vm.baseColor)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 30 / 390 * UIScreen.main.bounds.width, height: 30 / 844 * UIScreen.main.bounds.height)
                                 .position(x: 320 / 390 * UIScreen.main.bounds.width, y: 120 / 844 * UIScreen.main.bounds.height)
                         })
                         Text(vm.gameQuestion)
@@ -67,7 +67,7 @@ struct CardGameView: View{
                             .fontWeight(.bold)
                             .foregroundColor(earth01)
                             .multilineTextAlignment(.center)
-                            .frame(width: 242, height: 299, alignment: .center)
+                            .frame(width: 242 / 390 * UIScreen.main.bounds.width, height: 299 / 844 * UIScreen.main.bounds.height, alignment: .center)
                             .padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                         Button(action: {
                             openCard.toggle()
@@ -86,7 +86,7 @@ struct CardGameView: View{
                                     .fontWeight(.medium)
                                     .foregroundColor(yellow03)
                             }
-                            .frame(width: 242, height: 41, alignment: .center)
+                            .frame(width: 242 / 390 * UIScreen.main.bounds.width, height: 41 / 844 * UIScreen.main.bounds.height, alignment: .center)
                         }).padding(.init(top: 0, leading: 0, bottom: 110, trailing: 0))
                     }
                 }

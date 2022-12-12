@@ -26,7 +26,7 @@ struct PlayerAvatarSelectionView: View {
                                 if allPlayer.contains(where: {$0.avatar == item}){
                                     Image("\(item)_Icon")
                                         .resizable()
-                                        .frame(width: 96, height: 96)
+                                        .frame(width: 96 / 390 * UIScreen.main.bounds.width, height: 96 / 844 * UIScreen.main.bounds.height)
                                         .scaledToFit()
                                         .clipShape(Circle())
                                         .grayscale(selectedPlayer.avatar == item ? 0 : 0.9995)
@@ -39,7 +39,7 @@ struct PlayerAvatarSelectionView: View {
                                 } else {
                                     Image("\(item)_Icon")
                                         .resizable()
-                                        .frame(width: 96, height: 96)
+                                        .frame(width: 96 / 390 * UIScreen.main.bounds.width, height: 96 / 844 * UIScreen.main.bounds.height)
                                         .scaledToFit()
                                         .clipShape(Circle())
                                         .simultaneousGesture(TapGesture().onEnded({ _ in

@@ -20,7 +20,7 @@ struct ArrowAnimationView: View {
         ZStack {
             Image("Tutorial_Arrow")
                 .resizable()
-                .frame(width: 25, height: 30)
+                .frame(width: 25 / 390 * UIScreen.main.bounds.width, height: 30 / 844 * UIScreen.main.bounds.height)
                 .foregroundColor(yellow02)
                 .offset(x: offsetx, y: offsety)
                 .onReceive(timer) { _ in

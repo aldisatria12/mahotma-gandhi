@@ -19,7 +19,7 @@ struct PauseMenuView: View {
             ZStack {
                 Image("Pause_Menu")
                     .resizable()
-                    .frame(width: 272, height: 310, alignment: .center)
+                    .frame(width: 272 / 390 * UIScreen.main.bounds.width, height: 310 / 844 * UIScreen.main.bounds.height, alignment: .center)
                 VStack {
                     Spacer()
                     Button(action: {
@@ -31,9 +31,9 @@ struct PauseMenuView: View {
                             .foregroundColor(blue01)
                             .background(yellow02
                                 .cornerRadius(25)
-                                .frame(width: 200, height: 50, alignment: .center))
+                                .frame(width: 200 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height, alignment: .center))
                     })
-                    .frame(width: 200, height: 50, alignment: .center)
+                    .frame(width: 200 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height, alignment: .center)
                     .padding(.init(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Button(action: {
                         showingPlayerView = true
@@ -44,9 +44,9 @@ struct PauseMenuView: View {
                             .foregroundColor(blue01)
                             .background(yellow02
                                 .cornerRadius(25)
-                                .frame(width: 200, height: 50, alignment: .center))
+                                .frame(width: 200 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height, alignment: .center))
                     })
-                    .frame(width: 200, height: 50, alignment: .center)
+                    .frame(width: 200 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height, alignment: .center)
                     .padding(.init(top: 0, leading: 0, bottom: 5, trailing: 0))
                     Button(action: {
                         NavigationUtil.popToRootView()
@@ -57,13 +57,13 @@ struct PauseMenuView: View {
                             .foregroundColor(blue01)
                             .background(yellow02
                                 .cornerRadius(25)
-                                .frame(width: 200, height: 50, alignment: .center))
+                                .frame(width: 200 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height, alignment: .center))
                     })
-                    .frame(width: 200, height: 50, alignment: .center)
+                    .frame(width: 200 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height, alignment: .center)
                     .padding(.init(top: 0, leading: 0, bottom: 35, trailing: 0))
                 }
             }
-            .frame(width: 272, height: 310)
+            .frame(width: 272 / 390 * UIScreen.main.bounds.width, height: 310 / 844 * UIScreen.main.bounds.height)
         }
     }
 }

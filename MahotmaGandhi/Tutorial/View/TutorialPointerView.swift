@@ -24,7 +24,7 @@ struct TutorialPointerView: View {
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .frame(width:75, height:35)
+                                    .frame(width:75 / 390 * UIScreen.main.bounds.width, height:35 / 844 * UIScreen.main.bounds.height)
                                     .foregroundColor(yellow02)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 20)

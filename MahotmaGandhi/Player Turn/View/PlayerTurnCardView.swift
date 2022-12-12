@@ -27,7 +27,7 @@ struct PlayerTurnCardView: View {
                         .padding(.init(top: 0, leading: 0, bottom: -2, trailing: 0))
                     Image("\(player.avatar)_Icon")
                         .resizable()
-                        .frame(width: 50, height: 50)
+                        .frame(width: 50 / 390 * UIScreen.main.bounds.width, height: 50 / 844 * UIScreen.main.bounds.height)
                         .scaledToFit()
                         .clipShape(Circle())
                     Text(player.name)
@@ -35,7 +35,7 @@ struct PlayerTurnCardView: View {
                         .fontWeight(.bold)
                         .foregroundColor(blue01)
                 }//vstack
-                .frame(width: 68, height: 42)
+                .frame(width: 68 / 390 * UIScreen.main.bounds.width, height: 42 / 844 * UIScreen.main.bounds.height)
             }
             
         }//zstack

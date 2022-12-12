@@ -48,20 +48,20 @@ struct CardPlayerView: View {
                     }, label: {
                         ZStack{
                             Circle()
-                                .frame(width: 35, height: 35)
+                                .frame(width: 35 / 390 * UIScreen.main.bounds.width, height: 35 / 844 * UIScreen.main.bounds.height)
                                 .foregroundColor(red01)
                             Circle()
-                                .frame(width: 32, height: 32)
+                                .frame(width: 32 / 390 * UIScreen.main.bounds.width, height: 32 / 844 * UIScreen.main.bounds.height)
                                 .foregroundColor(red02)
                             Image(systemName: "xmark.circle")
                                 .resizable()
                                 .foregroundColor(yellow03)
-                                .frame(width: 25, height: 25)
+                                .frame(width: 25 / 390 * UIScreen.main.bounds.width, height: 25 / 844 * UIScreen.main.bounds.height)
                         }
                     })
                 }
             }
-            .frame(width: 35, height: 35)
+            .frame(width: 35 / 390 * UIScreen.main.bounds.width, height: 35 / 844 * UIScreen.main.bounds.height)
             .position(x: 155 / 390 * UIScreen.main.bounds.width, y: 10 / 844 * UIScreen.main.bounds.height)
         }
     }
@@ -87,12 +87,12 @@ struct AddPlayerView: View {
                 }, label: {
                     ZStack{
                         Circle()
-                            .frame(width: 74, height: 74)
+                            .frame(width: 74 / 390 * UIScreen.main.bounds.width, height: 74 / 844 * UIScreen.main.bounds.height)
                             .foregroundColor(blue03)
                         Image(systemName: "plus")
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .foregroundColor(blue01)
-                            .frame(width: 34, height: 36)
+                            .frame(width: 34 / 390 * UIScreen.main.bounds.width, height: 36 / 844 * UIScreen.main.bounds.height)
                     }
                 })
                 Text("Add Player")

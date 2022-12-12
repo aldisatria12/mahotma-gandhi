@@ -24,9 +24,9 @@ struct MainMenuView: View {
                             .foregroundColor(yellow03)
                             .background(ocean01
                                 .cornerRadius(40)
-                                .frame(width: 216, height: 54, alignment: .center))
+                                .frame(width: 216 / 390 * UIScreen.main.bounds.width, height: 54 / 844 * UIScreen.main.bounds.height, alignment: .center))
                     })
-                    .frame(width: 216, height: 54)
+                    .frame(width: 216 / 390 * UIScreen.main.bounds.width, height: 54 / 844 * UIScreen.main.bounds.height)
                     .padding(.init(top: 40, leading: 0, bottom: 0, trailing: 0))
                     NavigationLink {
                         TutorialView()
@@ -37,9 +37,9 @@ struct MainMenuView: View {
                             .foregroundColor(yellow03)
                             .background(ocean01
                                 .cornerRadius(40)
-                                .frame(width: 216, height: 54, alignment: .center))
+                                .frame(width: 216 / 390 * UIScreen.main.bounds.width, height: 54 / 844 * UIScreen.main.bounds.height, alignment: .center))
                     }
-                    .frame(width: 216, height: 54)
+                    .frame(width: 216 / 390 * UIScreen.main.bounds.width, height: 54 / 844 * UIScreen.main.bounds.height)
                     .padding(.init(top: 10, leading: 0, bottom: 0, trailing: 0))
                 } // VStack
             } // ZStack

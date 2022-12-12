@@ -21,17 +21,17 @@ struct AllPlayerNavBarView: View {
                         ZStack{
                             Circle()
                                 .foregroundColor(blue01)
-                                .frame(width: 32, height: 32)
+                                .frame(width: 32 / 390 * UIScreen.main.bounds.width, height: 32 / 844 * UIScreen.main.bounds.height)
                             Circle()
                                 .foregroundColor(blue03)
-                                .frame(width: 26, height: 26)
+                                .frame(width: 26 / 390 * UIScreen.main.bounds.width, height: 26 / 844 * UIScreen.main.bounds.height)
                             Image(systemName: "lessthan")
                                 .font(.system(size: 14, weight: .black, design: .rounded))
                                 .foregroundColor(blue01)
-                                .frame(width: 13, height: 17, alignment: .center)
+                                .frame(width: 13 / 390 * UIScreen.main.bounds.width, height: 17 / 844 * UIScreen.main.bounds.height, alignment: .center)
                         }
                     }
-                    .frame(width: 32, height: 32)
+                    .frame(width: 32 / 390 * UIScreen.main.bounds.width, height: 32 / 844 * UIScreen.main.bounds.height)
                     .padding(.leading)
                     
                     Spacer()

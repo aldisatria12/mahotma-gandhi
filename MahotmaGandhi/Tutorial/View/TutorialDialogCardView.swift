@@ -43,7 +43,7 @@ struct TutorialDialogCardView: View {
                                     .font(.system(size: 30, design: .rounded))
                                     .fontWeight(.bold)
                                     .foregroundColor(blue01)
-                                    .frame(width: 31, height: 12, alignment: .bottom)
+                                    .frame(width: 31 / 390 * UIScreen.main.bounds.width, height: 12 / 844 * UIScreen.main.bounds.height, alignment: .bottom)
                                     .padding(.trailing, 20)
                                     .padding(.bottom, 20)
                                     .offset(x: 0, y: tutorialVM.isDotsUp ? -5 : 5)
@@ -66,7 +66,7 @@ struct TutorialDialogCardView: View {
                 HStack() {
                     Image("Sage_Icon")
                         .resizable()
-                        .frame(width: 82, height: 82)
+                        .frame(width: 82 / 390 * UIScreen.main.bounds.width, height: 82 / 844 * UIScreen.main.bounds.height)
                     Spacer()
                 }
                 Spacer()

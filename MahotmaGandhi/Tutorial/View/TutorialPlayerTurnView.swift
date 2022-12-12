@@ -27,7 +27,7 @@ struct TutorialPlayerTurnView: View {
             }//ScrollView
             
         }//ZStack
-        .frame(height: 126)
+        .frame(height: 126 / 844 * UIScreen.main.bounds.height)
         .padding()
         .onAppear {
 //            playerTurnViewModel.randomizeTurn()

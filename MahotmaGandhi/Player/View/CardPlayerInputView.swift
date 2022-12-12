@@ -17,17 +17,17 @@ struct CardPlayerInputView: View {
             VStack{
                 Image("\(selectedPlayer.avatar)_Icon")
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 100 / 390 * UIScreen.main.bounds.width, height: 100 / 844 * UIScreen.main.bounds.height)
                     .scaledToFit()
                     .clipShape(Circle())
                     
                 TextField("Input your name", text: $selectedPlayer.name)
                     .padding()
-                    .frame(width: 240)
+                    .frame(width: 240 / 390 * UIScreen.main.bounds.width)
             }
         }
         .padding()
-        .frame(height: 240)
+        .frame(height: 240 / 844 * UIScreen.main.bounds.height)
     }
 }
 

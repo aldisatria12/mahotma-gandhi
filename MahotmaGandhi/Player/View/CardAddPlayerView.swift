@@ -16,14 +16,14 @@ struct CardAddPlayerView: View {
             VStack{
                 Image(systemName: "plus.circle.fill")
                     .resizable()
-                    .frame(width: 72, height: 72)
+                    .frame(width: 72 / 390 * UIScreen.main.bounds.width, height: 72 / 844 * UIScreen.main.bounds.height)
                     .scaledToFit()
                     .clipShape(Circle())
                 Text("Add player")
             }
             .padding(5)
         }
-        .frame(width: 96, height: 128)
+        .frame(width: 96 / 390 * UIScreen.main.bounds.width, height: 128 / 844 * UIScreen.main.bounds.height)
     }
 }
 
